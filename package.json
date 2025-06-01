@@ -1,0 +1,31 @@
+{
+  "name": "paper-visualization",
+  "version": "0.0.1",
+  "description": "Paper de Visualización con Svelte y D3.js",
+  "homepage": "https://fgv-vis-2025.github.io/final-project-security-urban-perception-tracking",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@fontsource/fira-mono": "^4.5.10",
+    "@neoconfetti/svelte": "^1.0.0",
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/adapter-static": "^2.0.3",
+    "@sveltejs/kit": "^1.5.0",
+    "svelte": "^4.2.20",
+    "vite": "^4.3.0"
+  },
+  "keywords": [
+    "svelte",
+    "d3",
+    "visualization",
+    "paper",
+    "rio-de-janeiro",
+    "eye-tracking",
+    "urban-perception"
+  ],
+  "author": "Andres, Luis, Leython",
+  "type": "module"
+}
