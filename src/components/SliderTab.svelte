@@ -88,7 +88,6 @@
   </p>
 
   <div class="controls-section">
-    <!-- Navigation controls -->
     <div class="navigation-controls">
       <button
         class="nav-button"
@@ -96,7 +95,7 @@
         disabled={$currentImage === 1}
         title="Previous image (←)"
       >
-        ◀
+        <span class="arrow-icon">‹</span>
       </button>
 
       <div class="image-counter">
@@ -120,7 +119,7 @@
         disabled={$currentImage === currentConfig.imageCount}
         title="Next image (→)"
       >
-        ▶
+        <span class="arrow-icon">›</span>
       </button>
     </div>
 
@@ -153,28 +152,6 @@
   </div>
 
   <div class="image-container">
-    {#if imageError}
-      <div class="error-placeholder">
-        <div class="error-icon">❌</div>
-        <h4>Error loading image</h4>
-        <p class="error-text">Could not load: <code>{$currentImage}.jpg</code></p>
-        <button
-          class="retry-button"
-          on:click={() => {
-            imageError = false;
-            imageLoaded = false;
-          }}
-        >
-          🔄 Retry
-        </button>
-      </div>
-    {:else if !imageLoaded}
-      <div class="loading-placeholder">
-        <div class="loading-spinner"></div>
-        <h4>Loading #{$currentImage}</h4>
-      </div>
-    {/if}
-
     <img
       bind:this={imageElement}
       src={imagePath}
@@ -215,46 +192,52 @@
   }
 
   .description {
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.5rem 0;
     color: rgba(255, 255, 255, 0.7);
-    font-size: 0.85rem;
-    line-height: 1.4;
+    font-size: 0.8rem;
+    line-height: 1;
     flex-shrink: 0;
   }
 
   .controls-section {
     background: rgba(255, 255, 255, 0.03);
-    padding: 1rem;
     border-radius: 8px;
-    margin-bottom: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    flex-shrink: 0;
+    padding: 1rem;
   }
 
   .navigation-controls {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
-    margin-bottom: 1rem;
+    gap: 1rem;
   }
 
   .nav-button {
     background: linear-gradient(135deg, #667eea, #764ba2);
     border: none;
     color: white;
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    font-size: 0.9rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
-    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .arrow-icon {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .nav-button:hover:not(:disabled) {
-    transform: scale(1.05);
+    transform: scale(1.1);
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
   }
 
@@ -265,34 +248,37 @@
   }
 
   .image-counter {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     font-family: "Courier New", monospace;
-    font-size: 1rem;
-    min-width: 80px;
-    text-align: center;
-    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    min-width: 90px;
+    justify-content: center;
   }
 
   .current-number-input {
     font-weight: bold;
     color: #667eea;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     background: transparent;
     border: none;
-    outline: none;
     text-align: center;
-    width: 45px;
     font-family: "Courier New", monospace;
     transition: all 0.3s ease;
+    width: auto;
+    min-width: 20px;
+    max-width: 40px;
   }
 
   .current-number-input:focus {
     background: rgba(102, 126, 234, 0.1);
     border-radius: 4px;
     color: #5a67d8;
+    outline: none;
   }
 
   .current-number-input::-webkit-outer-spin-button,
@@ -306,17 +292,20 @@
   }
 
   .separator {
-    margin: 0 6px;
     color: #999;
+    font-weight: normal;
+    font-size: 0.9rem;
   }
 
   .total-number {
     color: #666;
+    font-weight: normal;
+    font-size: 0.9rem;
   }
 
   .slider-container {
     position: relative;
-    margin: 0;
+    padding: 0.5rem 0;
   }
 
   .slider {
@@ -367,15 +356,16 @@
     justify-content: space-between;
     margin-top: 0.5rem;
     position: relative;
-    height: 15px;
+    height: 16px;
   }
 
   .marker {
     position: absolute;
     transform: translateX(-50%);
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     color: rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease;
+    font-family: "Courier New", monospace;
   }
 
   .marker.active {
@@ -395,7 +385,8 @@
     align-items: center;
     justify-content: center;
     min-height: 200px;
-    max-height: 300px;
+    max-height: 150px;
+    margin-top: 1rem;
   }
 
   .main-image {
@@ -413,113 +404,12 @@
     opacity: 1;
   }
 
-  .loading-placeholder,
-  .error-placeholder {
-    text-align: center;
-    padding: 2rem 1rem;
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  .loading-spinner {
-    width: 35px;
-    height: 35px;
-    border: 3px solid rgba(102, 126, 234, 0.2);
-    border-left: 3px solid #667eea;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 1rem;
-  }
-
   @keyframes spin {
     0% {
       transform: rotate(0deg);
     }
     100% {
       transform: rotate(360deg);
-    }
-  }
-
-  .error-icon {
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .error-placeholder h4,
-  .loading-placeholder h4 {
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 0.5rem 0;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
-  .error-text {
-    font-size: 0.8rem;
-    margin: 0.5rem 0 1rem 0;
-    line-height: 1.3;
-  }
-
-  .error-placeholder code {
-    background: rgba(102, 126, 234, 0.15);
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-family: "Courier New", monospace;
-    color: #667eea;
-  }
-
-  .retry-button {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.85rem;
-  }
-
-  .retry-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-  }
-
-  @media (max-width: 1400px) {
-    .navigation-controls {
-      gap: 0.6rem;
-    }
-    
-    .nav-button {
-      width: 32px;
-      height: 32px;
-      font-size: 0.8rem;
-    }
-    
-    .image-counter {
-      padding: 0.4rem 0.8rem;
-      font-size: 0.9rem;
-    }
-    
-    .current-number-input {
-      width: 40px;
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 1200px) {
-    .slider-section h2 {
-      font-size: 1.2rem;
-    }
-    
-    .description {
-      font-size: 0.8rem;
-    }
-    
-    .controls-section {
-      padding: 0.8rem;
-    }
-    
-    .image-container {
-      min-height: 180px;
-      max-height: 250px;
     }
   }
 </style>

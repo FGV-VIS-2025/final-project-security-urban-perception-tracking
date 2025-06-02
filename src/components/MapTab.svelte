@@ -124,11 +124,17 @@
     map = window.L.map(mapContainer, {
       center: [-22.9068, -43.1729],
       zoom: 11,
-      zoomControl: true,
+      zoomControl: false,
+      attributionControl: false,
     });
 
+    // Agregar controles de zoom personalizados en la esquina inferior derecha
+    window.L.control.zoom({
+      position: 'bottomright'
+    }).addTo(map);
+
     window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "© OpenStreetMap contributors",
+      attribution: "",
       maxZoom: 18,
     }).addTo(map);
 
@@ -252,10 +258,6 @@
 />
 
 <div class="dashboard-container">
-  <div class="top-bar">
-    <div class="page-title">🗺️ Security Dashboard - Rio de Janeiro</div>
-  </div>
-
   <div class="dashboard">
     <div class="card map-section">
       <div class="card-header">
@@ -268,7 +270,6 @@
           <div class="map-controls">
             <button class="control-btn" on:click={resetMap}>🏠 Home</button>
             <button class="control-btn" on:click={fitMapToPoints}>📍 All Points</button>
-            <button class="control-btn">🔍 Zoom</button>
           </div>
           
           <div class="stats-overlay">
@@ -280,7 +281,6 @@
       </div>
     </div>
 
-    <!-- Timeline Section con SliderTab integrado -->
     <div class="card">
       <div class="card-header">
         <div class="card-icon">⏱️</div>
@@ -292,7 +292,6 @@
       </div>
     </div>
 
-    <!-- Analytics Section -->
     <div class="card analytics-section">
       <div class="card-header">
         <div class="card-icon">📊</div>
@@ -322,32 +321,7 @@
 <style>
   .dashboard-container {
     width: 100%;
-    min-height: 100vh;
     color: #ffffff;
-  }
-
-  /* Top Bar */
-  .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding: 1rem 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .page-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
   }
 
   .dashboard {
@@ -355,7 +329,7 @@
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr auto;
     gap: 2rem;
-    height: calc(100vh - 200px);
+    /*height: calc(100vh - 200px);*/
   }
 
   .card {
@@ -363,7 +337,7 @@
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    padding: 2rem;
+    padding: 0.85rem;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
@@ -389,7 +363,7 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .card-icon {
@@ -408,7 +382,6 @@
     font-weight: 600;
   }
 
-  /* Map Section */
   .map-section {
     grid-row: 1 / 3;
     position: relative;
@@ -430,7 +403,7 @@
     right: 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     z-index: 1000;
     pointer-events: none;
   }
@@ -488,7 +461,6 @@
     overflow: auto;
   }
 
-  /* Estilos para adaptar SliderTab al dashboard */
   .slider-integration :global(.slider-section) {
     background: transparent;
     padding: 0;
@@ -500,7 +472,7 @@
   }
 
   .slider-integration :global(.slider-section h2) {
-    display: none; /* Ocultamos el título porque ya tenemos uno en el card header */
+    display: none;
   }
 
   .slider-integration :global(.description) {
@@ -517,17 +489,15 @@
   }
 
   .slider-integration :global(.image-container) {
-    max-height: 300px;
-    margin-top: 1rem;
+    max-height: 100px;
   }
 
   .slider-integration :global(.main-image) {
     max-height: 250px;
   }
 
-  /* Analytics Section */
   .analytics-section {
-    height: 300px;
+    height: 210px;
   }
 
   .metrics-container {
