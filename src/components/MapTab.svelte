@@ -140,7 +140,7 @@
 
     dataPoints.forEach((point, index) => {
       const color = getSafetyColor(point.safety);
-      const imagePath = `/assets/images/${point.id - 1}.jpg`;
+      const imagePath = `/assets/images/${point.id}.jpg`;
 
       const customIcon = window.L.divIcon({
         className: "custom-marker",
@@ -201,9 +201,9 @@
 
   function getSafetyColor(safety) {
     if (!safety) return "#808080";
-    if (safety >= 4) return "#4CAF50"; // Verde
-    if (safety >= 3) return "#FFC107"; // Amarillo
-    if (safety >= 2) return "#FF9800"; // Naranja
+    if (safety >= 6) return "#4CAF50"; // Verde
+    if (safety >= 4) return "#FFC107"; // Amarillo
+    //if (safety >= 3) return "#FF9800"; // Naranja
     return "#F44336"; // Rojo
   }
 

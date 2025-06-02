@@ -32,19 +32,19 @@
   }
 
   function previousImage() {
-    if ($currentImage > 0) {
+    if ($currentImage > 1) {
       currentImage.set($currentImage - 1);
     }
   }
 
   function nextImage() {
-    if ($currentImage < currentConfig.imageCount - 1) {
+    if ($currentImage < currentConfig.imageCount) {
       currentImage.set($currentImage + 1);
     }
   }
 
   function jumpToImage(imageNumber) {
-    if (imageNumber >= 0 && imageNumber < currentConfig.imageCount) {
+    if (imageNumber >= 1 && imageNumber <= currentConfig.imageCount) {
       currentImage.set(imageNumber);
       imageLoaded = false;
       imageError = false;
@@ -83,7 +83,7 @@
 <div class="slider-section" class:mounted>
   <h2>🖼️ Time Browsing</h2>
   <p class="description">
-    Navigate through images (0-{currentConfig.imageCount - 1}) using controls or arrow keys.
+    Navigate through images (1-{currentConfig.imageCount}) using controls or arrow keys.
   </p>
 
   <div class="controls-section">
@@ -92,7 +92,7 @@
       <button
         class="nav-button"
         on:click={previousImage}
-        disabled={$currentImage === 0}
+        disabled={$currentImage === 1}
         title="Previous image (←)"
       >
         ◀
@@ -101,8 +101,8 @@
       <div class="image-counter">
         <input
           type="number"
-          min="0"
-          max={currentConfig.imageCount - 1}
+          min="1"
+          max={currentConfig.imageCount}
           value={$currentImage}
           class="current-number-input"
           on:input={handleManualInput}
@@ -110,13 +110,13 @@
           title="Enter image number"
         />
         <span class="separator">/</span>
-        <span class="total-number">{currentConfig.imageCount - 1}</span>
+        <span class="total-number">{currentConfig.imageCount}</span>
       </div>
 
       <button
         class="nav-button"
         on:click={nextImage}
-        disabled={$currentImage === currentConfig.imageCount - 1}
+        disabled={$currentImage === currentConfig.imageCount}
         title="Next image (→)"
       >
         ▶
@@ -126,8 +126,8 @@
     <div class="slider-container">
       <input
         type="range"
-        min="0"
-        max={currentConfig.imageCount - 1}
+        min="1"
+        max={currentConfig.imageCount}
         value={$currentImage}
         class="slider"
         on:input={handleSliderChange}
@@ -137,7 +137,7 @@
       <div class="slider-markers">
         {#each Array(Math.min(6, currentConfig.imageCount)) as _, i}
           {@const markerValue = Math.floor(
-            ((currentConfig.imageCount - 1) * i) / Math.min(5, currentConfig.imageCount - 1)
+            1 + ((currentConfig.imageCount - 1) * i) / Math.min(5, currentConfig.imageCount - 1)
           )}
           <div
             class="marker"
