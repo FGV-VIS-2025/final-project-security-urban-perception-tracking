@@ -82,9 +82,15 @@
               });
             }
 
+            // El contador del JSON representa el punto (1-150)
+            // La imagen correspondiente es (contador - 1).jpg (0-149)
+            const pointId = point.Contador || index + 1;
+            const imageIndex = pointId - 1; // Para mapear a 0.jpg - 149.jpg
+
             return {
-              id: point.Contador || index + 1,
-              name: `Point ${point.Contador || index + 1}`,
+              id: pointId, // Mantener el ID del punto (1-150)
+              imageIndex: imageIndex, // Índice real de la imagen (0-149)
+              name: `Point ${pointId}`,
               coords: [lng, lat],
               lat: lat,
               lng: lng,
@@ -95,21 +101,22 @@
           .filter((point) => point !== null);
 
         console.log("DataPoints procesados:", dataPoints.length);
+        console.log("Mapeo ejemplo - Punto 1:", dataPoints[0]);
       } else {
         console.warn("No se pudo cargar el archivo JSON");
         // Datos de ejemplo para desarrollo
         dataPoints = [
-          { id: 1, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
-          { id: 2, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
-          { id: 3, name: "Point 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
+          { id: 1, imageIndex: 0, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
+          { id: 2, imageIndex: 1, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
+          { id: 3, imageIndex: 2, name: "Point 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
         ];
       }
     } catch (error) {
       console.error("Error cargando datos JSON:", error);
       dataPoints = [
-        { id: 1, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
-        { id: 2, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
-        { id: 3, name: "Point 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
+        { id: 1, imageIndex: 0, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
+        { id: 2, imageIndex: 1, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
+        { id: 3, imageIndex: 2, name: "Point 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
       ];
     }
   }
@@ -147,7 +154,8 @@
 
     dataPoints.forEach((point, index) => {
       const color = getSafetyColor(point.safety);
-      const imagePath = base + `/assets/images/${point.id}.jpg`;
+      // Usar imageIndex para la ruta de la imagen
+      const imagePath = base + `/assets/images/${point.imageIndex}.jpg`;
 
       const customIcon = window.L.divIcon({
         className: "custom-marker",
@@ -182,14 +190,13 @@
         <h3 style="margin: 0 0 10px 0; color: #000000;">${point.name}</h3> 
         <div style="margin-bottom: 15px; text-align: center;"> 
           <img src="${imagePath}" 
-          alt="Image of point ${point.id}" 
+          alt="Image ${point.imageIndex}.jpg of point ${point.id}" 
           style="width: 100%; max-width: 250px; height: 150px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid ${color};" 
           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /> 
-          <div style="display: none; padding: 20px; background: #f5f5f5; border-radius: 8px; color: #666;">📷 Image not available</div> 
+          <div style="display: none; padding: 20px; background: #f5f5f5; border-radius: 8px; color: #666;">📷 Image ${point.imageIndex}.jpg not available</div> 
         </div> 
-<p style="color: #000;"><strong style="color: #000;">Coordinates:</strong> ${point.lat.toFixed(4)}, ${point.lng.toFixed(4)}</p> 
-<p><strong style="color: #000;">Safety:</strong> <span style="color: ${color};">${point.safety?.toFixed(2) || "N/A"}</span></p>
-
+        <p style="color: #000;"><strong style="color: #000;">Coordinates:</strong> ${point.lat.toFixed(4)}, ${point.lng.toFixed(4)}</p> 
+        <p><strong style="color: #000;">Safety:</strong> <span style="color: ${color};">${point.safety?.toFixed(2) || "N/A"}</span></p>
       </div>
     `;
 
@@ -210,7 +217,6 @@
     if (!safety) return "#808080";
     if (safety >= 6) return "#4CAF50"; // Verde
     if (safety >= 4) return "#FFC107"; // Amarillo
-    //if (safety >= 3) return "#FF9800"; // Naranja
     return "#F44336"; // Rojo
   }
 
@@ -218,6 +224,7 @@
     if (index >= 0 && index < dataPoints.length) {
       selectedPoint = dataPoints[index];
       map.setView([selectedPoint.lat, selectedPoint.lng], 15);
+      // Establecer currentImage al ID del punto (no al imageIndex)
       currentImage.set(selectedPoint.id);
       markers.forEach((marker, i) => {
         if (i === index) {
@@ -229,6 +236,7 @@
 
   function updateMapHighlight() {
     if (!map || markers.length === 0) return;
+    // Buscar por ID del punto (no por imageIndex)
     const currentIndex = dataPoints.findIndex(
       (point) => point.id === $currentImage
     );

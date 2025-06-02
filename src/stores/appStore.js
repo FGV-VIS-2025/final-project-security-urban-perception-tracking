@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 export const activeTab = writable('info');
-export const currentImage = writable(0);
+export const currentImage = writable(1);
 
 export const mapData = writable({
     points: [
@@ -31,7 +31,7 @@ export const setActiveTab = (tab) => {
 };
 
 export const setCurrentImage = (imageIndex) => {
-    currentImage.set(Math.max(0, Math.min(149, imageIndex)));
+    currentImage.set(Math.max(1, Math.min(150, imageIndex)));
 };
 
 export const addMapPoint = (point) => {
