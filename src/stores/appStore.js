@@ -22,7 +22,7 @@ export const config = writable({
     imageBasePath: './assets/images/',
     imagePrefix: '',              
     imageExtension: '.jpg',
-    paperTitle: 'Security Urban Perception Tracking',
+    paperTitle: 'SECURITY URBAN PERCEPTION TRACKING',
     paperSubtitle: 'Eye-tracking visualization'
 });
 
