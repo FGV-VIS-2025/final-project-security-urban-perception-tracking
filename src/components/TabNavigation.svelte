@@ -5,6 +5,7 @@
       title: "Main",
       items: [
         { id: "info", label: "Dashboard", icon: "🏠" },
+        { id: "temporal", label: "Eye Tracking Vis", icon: "⏱️" },
         { id: "map", label: "Interactive Map", icon: "🗺️", badge: "148" },
       ],
     },

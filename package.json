@@ -27,5 +27,9 @@
     "urban-perception"
   ],
   "author": "Andres, Luis, Leython",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@types/d3": "^7.4.3",
+    "d3": "^7.9.0"
+  }
 }

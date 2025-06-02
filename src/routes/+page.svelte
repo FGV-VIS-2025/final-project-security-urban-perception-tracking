@@ -3,8 +3,9 @@
   import InfoTab from "../components/InfoTab.svelte";
   import SliderTab from "../components/SliderTab.svelte";
   import MapTab from "../components/MapTab.svelte";
+  import TemporalExplorerTab from "../components/TemporalExplorerTab.svelte";
   import { activeTab, config } from "../stores/appStore.js";
-
+  
   $: currentConfig = $config;
 </script>
 
@@ -23,6 +24,8 @@
     <div class="content">
       {#if $activeTab === "info"}
         <InfoTab />
+      {:else if $activeTab === "temporal"}
+        <TemporalExplorerTab />
       {:else if $activeTab === "slider"}
         <SliderTab />
       {:else if $activeTab === "map"}
@@ -160,6 +163,26 @@
     50% {
       transform: translateY(-15px) scale(1.05);
       opacity: 0.8;
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .main-content {
+      margin-left: 0;
+      padding: 1rem;
+    }
+
+    .top-bar {
+      padding: 1rem;
+    }
+
+    .content {
+      padding: 1rem;
+    }
+
+    .page-title {
+      font-size: 1.5rem;
     }
   }
 </style>

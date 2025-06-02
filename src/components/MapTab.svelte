@@ -292,7 +292,7 @@
     <div class="card">
       <div class="card-header">
         <div class="card-icon">⏱️</div>
-        <div class="card-title">Temporal Explorer</div>
+        <div class="card-title">Map explorer</div>
       </div>
       
       <div class="slider-integration">

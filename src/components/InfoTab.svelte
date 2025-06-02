@@ -18,8 +18,8 @@
 
   <h3>🎨 Objectives</h3>
   <p>
-    The main objective is to provide a platform that allows users to explore
-    complex data through multiple perspectives:
+    The main objective is to provide a platform that allows users to explore 
+    eye tracking data from different locations in Rio de Janeiro: 
   </p>
 
   <div class="objectives-grid">
@@ -53,49 +53,32 @@
 
   <h3>⚙️ Methodology</h3>
   <p>
-    The application uses modern web technologies to create a fluid and
-    responsive user experience. <strong>Svelte</strong> provides efficient
-    reactivity and state management, while <strong>D3.js</strong> handles complex
-    visualizations and geospatial data manipulation.
+A survey was conducted with 30 participants, in which each 
+participant observed 50 images, these images are all images of Rio de Janeiro, 
+each image was observed for 15 seconds, and at the end the participant gave a score, 
+which could be from 1 to 10, with 1 being very insecure and 10 being very secure.
   </p>
 
   <div class="tech-stack">
     <div class="tech-item">
-      <strong>🔧 Frontend:</strong> Svelte 3 + JavaScript ES6+
+      <strong>🔧 Participants:</strong> 30 
     </div>
     <div class="tech-item">
-      <strong>📊 Visualization:</strong> D3.js v7 + SVG
+      <strong>📊 Images by participants:</strong> 50 images
     </div>
     <div class="tech-item">
-      <strong>🎨 Styles:</strong> CSS3 + Responsive Design
+      <strong>🎨 Time per image:</strong> 15 seconds
     </div>
-    <div class="tech-item">
-      <strong>📦 Build:</strong> Rollup + Live Reload
-    </div>
+ 
   </div>
 
   <h3>📊 Data</h3>
   <p>
-    The dataset comprises <strong>150 indexed elements (0-149)</strong>, each
+    The dataset comprises <strong>150 indexed elements (1-150)</strong>, each
     visually represented and geographically located in the metropolitan region
-    of Rio de Janeiro, Brazil. The data includes temporal and spatial
-    information that allows for multiple analytical perspectives.
+    of Rio de Janeiro, Brazil.
   </p>
 
-  <div class="stats-container">
-    <div class="stat-box">
-      <div class="stat-number">150</div>
-      <div class="stat-label">Data Elements</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">8</div>
-      <div class="stat-label">Geographic Points</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number">3</div>
-      <div class="stat-label">Display Modes</div>
-    </div>
-  </div>
 
   <h3>🚀 Main Features</h3>
   <ul class="features-list">
