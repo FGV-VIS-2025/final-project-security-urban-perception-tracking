@@ -9,7 +9,9 @@
   let mounted = false;
 
   $: currentConfig = $config;
-  $: imagePath = `${currentConfig.imageBasePath}${currentConfig.imagePrefix}${$currentImage}${currentConfig.imageExtension}`;
+  // Convertir el currentImage (que va de 1-150) a índice de imagen (0-149)
+  $: imageIndex = $currentImage - 1;
+  $: imagePath = `${currentConfig.imageBasePath}${currentConfig.imagePrefix}${imageIndex}${currentConfig.imageExtension}`;
 
   onMount(() => {
     mounted = true;
@@ -107,7 +109,7 @@
           class="current-number-input"
           on:input={handleManualInput}
           on:keydown={handleInputKeydown}
-          title="Enter image number"
+          title="Enter point number (1-{currentConfig.imageCount})"
         />
         <span class="separator">/</span>
         <span class="total-number">{currentConfig.imageCount}</span>
@@ -131,17 +133,20 @@
         value={$currentImage}
         class="slider"
         on:input={handleSliderChange}
-        title="Slide to change image"
+        title="Slide to change point"
       />
 
       <div class="slider-markers">
         {#each Array(Math.min(6, currentConfig.imageCount)) as _, i}
           {@const markerValue = Math.floor(
-            1 + ((currentConfig.imageCount - 1) * i) / Math.min(5, currentConfig.imageCount - 1)
+            1 +
+              ((currentConfig.imageCount - 1) * i) /
+                Math.min(5, currentConfig.imageCount - 1),
           )}
           <div
             class="marker"
-            style="left: {(i / Math.min(5, currentConfig.imageCount - 1)) * 100}%"
+            style="left: {(i / Math.min(5, currentConfig.imageCount - 1)) *
+              100}%"
             class:active={Math.abs($currentImage - markerValue) < 5}
           >
             {markerValue}
@@ -155,7 +160,7 @@
     <img
       bind:this={imageElement}
       src={imagePath}
-      alt="Image {$currentImage}"
+      alt="Point {$currentImage} - Image {imageIndex}.jpg"
       class="main-image"
       class:loaded={imageLoaded}
       on:load={handleImageLoad}
