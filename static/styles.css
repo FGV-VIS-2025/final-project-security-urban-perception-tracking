@@ -10,7 +10,7 @@
   /* Light theme */
   --background-color: #f8f9fa;
   --card-bg: #ffffff;
-  --text-color: #212529;
+  --text-color: #ffffff;
   --text-muted: #6c757d;
   --border-color: #e9ecef;
   --shadow: rgba(0, 0, 0, 0.05);
@@ -20,7 +20,7 @@
   /* Dark theme */
   --background-color: #121212;
   --card-bg: #1e1e1e;
-  --text-color: #f8f9fa;
+  --text-color: #ffffff;
   --text-muted: #adb5bd;
   --border-color: #343a40;
   --shadow: rgba(0, 0, 0, 0.2);
