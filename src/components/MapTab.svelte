@@ -2,6 +2,7 @@
   import { onMount, onDestroy } from "svelte";
   import { currentImage } from "../stores/appStore.js";
   import SliderTab from "./SliderTab.svelte";
+  import { base } from "$app/paths";
 
   let mapContainer;
   let map;
@@ -55,7 +56,7 @@
 
   async function loadDataFromJSON() {
     try {
-      const response = await fetch("./image_safety.json");
+      const response = await fetch(base +"/image_safety.json");
       if (response.ok) {
         jsonData = await response.json();
         console.log("Datos cargados:", jsonData.length, "puntos");
@@ -83,7 +84,7 @@
 
             return {
               id: point.Contador || index + 1,
-              name: `Punto ${point.Contador || index + 1}`,
+              name: `Point ${point.Contador || index + 1}`,
               coords: [lng, lat],
               lat: lat,
               lng: lng,
@@ -98,17 +99,17 @@
         console.warn("No se pudo cargar el archivo JSON");
         // Datos de ejemplo para desarrollo
         dataPoints = [
-          { id: 1, name: "Punto 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
-          { id: 2, name: "Punto 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
-          { id: 3, name: "Punto 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
+          { id: 1, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
+          { id: 2, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
+          { id: 3, name: "Point 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
         ];
       }
     } catch (error) {
       console.error("Error cargando datos JSON:", error);
       dataPoints = [
-        { id: 1, name: "Punto 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
-        { id: 2, name: "Punto 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
-        { id: 3, name: "Punto 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
+        { id: 1, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
+        { id: 2, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
+        { id: 3, name: "Point 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
       ];
     }
   }
@@ -140,7 +141,7 @@
 
     dataPoints.forEach((point, index) => {
       const color = getSafetyColor(point.safety);
-      const imagePath = `/assets/images/${point.id}.jpg`;
+      const imagePath = base + `/assets/images/${point.id}.jpg`;
 
       const customIcon = window.L.divIcon({
         className: "custom-marker",

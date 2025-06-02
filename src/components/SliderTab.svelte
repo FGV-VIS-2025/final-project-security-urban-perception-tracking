@@ -1,6 +1,7 @@
 <script>
   import { currentImage, config } from "../stores/appStore.js";
   import { onMount } from "svelte";
+  import { base } from "$app/paths";
 
   let imageElement;
   let imageLoaded = false;
