@@ -1,98 +1,110 @@
 <script>
-  import { onMount } from 'svelte';
-  
+  import { onMount } from "svelte";
+
   let mounted = false;
-  
+
   onMount(() => {
     mounted = true;
   });
 </script>
 
 <div class="info-section" class:mounted>
-  <h2>🎯 Introducción al Proyecto</h2>
+  <h2>🎯 Project Introduction</h2>
   <p>
-    Este proyecto presenta una herramienta interactiva de visualización de datos desarrollada 
-    con <strong>Svelte</strong> y <strong>D3.js</strong>, diseñada para explorar y analizar 
-    información geoespacial y temporal de manera intuitiva y moderna.
+    This project presents an interactive data visualization tool developed with
+    Svelte and D3.js, designed to explore and analyze geospatial and temporal
+    information in an intuitive and modern way.
   </p>
-  
-  <h3>🎨 Objetivos</h3>
-  <p>El objetivo principal es proporcionar una plataforma que permita a los usuarios explorar datos complejos a través de múltiples perspectivas:</p>
-  
+
+  <h3>🎨 Objectives</h3>
+  <p>
+    The main objective is to provide a platform that allows users to explore
+    complex data through multiple perspectives:
+  </p>
+
   <div class="objectives-grid">
     <div class="objective-card">
       <div class="objective-icon">⏱️</div>
-      <h4>Exploración Temporal</h4>
-      <p>Mediante un slider interactivo que permite navegar a través de diferentes momentos o estados de los datos de forma fluida.</p>
+      <h4>Time-based Exploration</h4>
+      <p>
+        Through an interactive slider that allows you to navigate through
+        different moments or states of the data in a fluid manner.
+      </p>
     </div>
-    
+
     <div class="objective-card">
       <div class="objective-icon">🌍</div>
-      <h4>Análisis Geoespacial</h4>
-      <p>A través de mapas interactivos que muestran la distribución espacial de la información en Río de Janeiro.</p>
+      <h4>Geospatial Analysis</h4>
+      <p>
+        Through interactive maps that show the spatial distribution of
+        information in Rio de Janeiro.
+      </p>
     </div>
-    
+
     <div class="objective-card">
       <div class="objective-icon">🧠</div>
-      <h4>Comprensión Integral</h4>
-      <p>Combinando múltiples formas de visualización para obtener insights más profundos y significativos.</p>
+      <h4>Comprehensive Understanding</h4>
+      <p>
+        Combining multiple visualization forms to gain deeper and more
+        meaningful insights.
+      </p>
     </div>
   </div>
-  
-  <h3>⚙️ Metodología</h3>
+
+  <h3>⚙️ Methodology</h3>
   <p>
-    La aplicación utiliza tecnologías web modernas para crear una experiencia de usuario 
-    fluida y responsiva. <strong>Svelte</strong> proporciona la reactividad y gestión del estado 
-    de manera eficiente, mientras que <strong>D3.js</strong> maneja las visualizaciones complejas 
-    y la manipulación de datos geoespaciales.
+    The application uses modern web technologies to create a fluid and
+    responsive user experience. <strong>Svelte</strong> provides efficient
+    reactivity and state management, while <strong>D3.js</strong> handles complex
+    visualizations and geospatial data manipulation.
   </p>
-  
+
   <div class="tech-stack">
     <div class="tech-item">
       <strong>🔧 Frontend:</strong> Svelte 3 + JavaScript ES6+
     </div>
     <div class="tech-item">
-      <strong>📊 Visualización:</strong> D3.js v7 + SVG
+      <strong>📊 Visualization:</strong> D3.js v7 + SVG
     </div>
     <div class="tech-item">
-      <strong>🎨 Estilos:</strong> CSS3 + Responsive Design
+      <strong>🎨 Styles:</strong> CSS3 + Responsive Design
     </div>
     <div class="tech-item">
       <strong>📦 Build:</strong> Rollup + Live Reload
     </div>
   </div>
-  
-  <h3>📊 Datos</h3>
+
+  <h3>📊 Data</h3>
   <p>
-    El conjunto de datos comprende <strong>150 elementos indexados (0-149)</strong>, 
-    cada uno representado visualmente y geográficamente localizado en la región 
-    metropolitana de Río de Janeiro, Brasil. Los datos incluyen información temporal 
-    y espacial que permite múltiples perspectivas de análisis.
+    The dataset comprises <strong>150 indexed elements (0-149)</strong>, each
+    visually represented and geographically located in the metropolitan region
+    of Rio de Janeiro, Brazil. The data includes temporal and spatial
+    information that allows for multiple analytical perspectives.
   </p>
-  
+
   <div class="stats-container">
     <div class="stat-box">
       <div class="stat-number">150</div>
-      <div class="stat-label">Elementos de Datos</div>
+      <div class="stat-label">Data Elements</div>
     </div>
     <div class="stat-box">
       <div class="stat-number">8</div>
-      <div class="stat-label">Puntos Geográficos</div>
+      <div class="stat-label">Geographic Points</div>
     </div>
     <div class="stat-box">
       <div class="stat-number">3</div>
-      <div class="stat-label">Modos de Visualización</div>
+      <div class="stat-label">Display Modes</div>
     </div>
   </div>
 
-  <h3>🚀 Características Principales</h3>
+  <h3>🚀 Main Features</h3>
   <ul class="features-list">
-    <li>✨ Interfaz moderna y responsiva</li>
-    <li>🎯 Navegación intuitiva por pestañas</li>
-    <li>🖼️ Visualización de imágenes con slider interactivo</li>
-    <li>🗺️ Mapa interactivo de Río de Janeiro</li>
-    <li>📱 Compatible con dispositivos móviles</li>
-    <li>⚡ Rendimiento optimizado con Svelte</li>
+    <li>✨ Modern and responsive interface</li>
+    <li>🎯 Intuitive tabbed navigation</li>
+    <li>🖼️ View images with interactive sliders</li>
+    <li>🗺️ Interactive map of Rio de Janeiro</li>
+    <li>📱 Mobile-friendly</li>
+    <li>⚡ Optimized performance with Svelte</li>
   </ul>
 </div>
 
@@ -129,7 +141,7 @@
   }
 
   .info-section h3::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 50%;
@@ -154,7 +166,11 @@
   }
 
   .objective-card {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    background: linear-gradient(
+      135deg,
+      rgba(102, 126, 234, 0.1),
+      rgba(118, 75, 162, 0.1)
+    );
     padding: 20px;
     border-radius: 12px;
     border: 1px solid rgba(102, 126, 234, 0.2);
@@ -164,13 +180,18 @@
   }
 
   .objective-card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
     transition: left 0.6s ease;
   }
 
@@ -272,20 +293,20 @@
     .objectives-grid {
       grid-template-columns: 1fr;
     }
-    
+
     .tech-stack {
       grid-template-columns: 1fr;
     }
-    
+
     .stats-container {
       flex-direction: column;
       align-items: center;
     }
-    
+
     .info-section h2 {
       font-size: 1.8rem;
     }
-    
+
     .info-section h3 {
       font-size: 1.2rem;
     }

@@ -19,11 +19,11 @@ export const mapData = writable({
 
 export const config = writable({
     imageCount: 150,
-    imageBasePath: './assets/images/',  // Cambio: usar ruta relativa
+    imageBasePath: './assets/images/',
     imagePrefix: '',              
     imageExtension: '.jpg',
     paperTitle: 'Security Urban Perception Tracking',
-    paperSubtitle: 'Eye-tracking visualization with Svelte and D3.js'
+    paperSubtitle: 'Eye-tracking visualization'
 });
 
 export const setActiveTab = (tab) => {
