@@ -1,0 +1,10802 @@
+{
+  "3": [
+    {
+      "score": 7,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "4": [
+    {
+      "score": 7,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 10,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "5": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "7": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "8": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "9": [
+    {
+      "score": 3,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "30": [
+    {
+      "score": 6,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    }
+  ],
+  "32": [
+    {
+      "score": 5,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "33": [
+    {
+      "score": 5,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "36": [
+    {
+      "score": 6,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "39": [
+    {
+      "score": 7,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "41": [
+    {
+      "score": 3,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "43": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "47": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "48": [
+    {
+      "score": 3,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "50": [
+    {
+      "score": 7,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 10,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "51": [
+    {
+      "score": 3,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "56": [
+    {
+      "score": 3,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "57": [
+    {
+      "score": 1,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "58": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "63": [
+    {
+      "score": 2,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "66": [
+    {
+      "score": 6,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "70": [
+    {
+      "score": 5,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "74": [
+    {
+      "score": 3,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "76": [
+    {
+      "score": 5,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "80": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "81": [
+    {
+      "score": 7,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "84": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "85": [
+    {
+      "score": 6,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "86": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "88": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    }
+  ],
+  "92": [
+    {
+      "score": 5,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "93": [
+    {
+      "score": 3,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "101": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "103": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    }
+  ],
+  "104": [
+    {
+      "score": 6,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "107": [
+    {
+      "score": 5,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "110": [
+    {
+      "score": 6,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "114": [
+    {
+      "score": 3,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    }
+  ],
+  "122": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "124": [
+    {
+      "score": 5,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "128": [
+    {
+      "score": 3,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "129": [
+    {
+      "score": 7,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 10,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "134": [
+    {
+      "score": 5,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "137": [
+    {
+      "score": 3,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "138": [
+    {
+      "score": 5,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "142": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "143": [
+    {
+      "score": 4,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "144": [
+    {
+      "score": 7,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "146": [
+    {
+      "score": 5,
+      "participant": 1,
+      "state": "PE/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "0": [
+    {
+      "score": 4,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "2": [
+    {
+      "score": 7,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "10": [
+    {
+      "score": 3,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "11": [
+    {
+      "score": 7,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "15": [
+    {
+      "score": 9,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "20": [
+    {
+      "score": 4,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "21": [
+    {
+      "score": 2,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "22": [
+    {
+      "score": 8,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "23": [
+    {
+      "score": 9,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 10,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 10,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    }
+  ],
+  "24": [
+    {
+      "score": 7,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "26": [
+    {
+      "score": 2,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    }
+  ],
+  "29": [
+    {
+      "score": 6,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "34": [
+    {
+      "score": 4,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "35": [
+    {
+      "score": 7,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "38": [
+    {
+      "score": 2,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "40": [
+    {
+      "score": 4,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "52": [
+    {
+      "score": 8,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 10,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "61": [
+    {
+      "score": 9,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "67": [
+    {
+      "score": 6,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "69": [
+    {
+      "score": 3,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "72": [
+    {
+      "score": 7,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "77": [
+    {
+      "score": 3,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "87": [
+    {
+      "score": 8,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "89": [
+    {
+      "score": 7,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "90": [
+    {
+      "score": 7,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 10,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "91": [
+    {
+      "score": 8,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "97": [
+    {
+      "score": 2,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    }
+  ],
+  "99": [
+    {
+      "score": 4,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    }
+  ],
+  "100": [
+    {
+      "score": 2,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "102": [
+    {
+      "score": 7,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "108": [
+    {
+      "score": 4,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "111": [
+    {
+      "score": 2,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "117": [
+    {
+      "score": 6,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "118": [
+    {
+      "score": 6,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "127": [
+    {
+      "score": 6,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "130": [
+    {
+      "score": 6,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "132": [
+    {
+      "score": 6,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "145": [
+    {
+      "score": 4,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "147": [
+    {
+      "score": 4,
+      "participant": 2,
+      "state": "ES/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "12": [
+    {
+      "score": 3,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "13": [
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "14": [
+    {
+      "score": 5,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "17": [
+    {
+      "score": 6,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "28": [
+    {
+      "score": 5,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "31": [
+    {
+      "score": 7,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 10,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "45": [
+    {
+      "score": 6,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    }
+  ],
+  "54": [
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "60": [
+    {
+      "score": 3,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "73": [
+    {
+      "score": 6,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "75": [
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "94": [
+    {
+      "score": 6,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "95": [
+    {
+      "score": 6,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "96": [
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    }
+  ],
+  "105": [
+    {
+      "score": 6,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "109": [
+    {
+      "score": 3,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "113": [
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "116": [
+    {
+      "score": 5,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    }
+  ],
+  "120": [
+    {
+      "score": 7,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "133": [
+    {
+      "score": 3,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "135": [
+    {
+      "score": 6,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "136": [
+    {
+      "score": 4,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "141": [
+    {
+      "score": 3,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "148": [
+    {
+      "score": 7,
+      "participant": 3,
+      "state": "Paraguai",
+      "age": 29,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "19": [
+    {
+      "score": 4,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "25": [
+    {
+      "score": 4,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "37": [
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "44": [
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "49": [
+    {
+      "score": 4,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "53": [
+    {
+      "score": 4,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "55": [
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "62": [
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "64": [
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "79": [
+    {
+      "score": 3,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "83": [
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "115": [
+    {
+      "score": 6,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "119": [
+    {
+      "score": 7,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 9,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 10,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    }
+  ],
+  "126": [
+    {
+      "score": 4,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "131": [
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "140": [
+    {
+      "score": 5,
+      "participant": 4,
+      "state": "Peru",
+      "age": 43,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 9,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "1": [
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "16": [
+    {
+      "score": 3,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "27": [
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "42": [
+    {
+      "score": 3,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "71": [
+    {
+      "score": 5,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "78": [
+    {
+      "score": 3,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "82": [
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "98": [
+    {
+      "score": 8,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "123": [
+    {
+      "score": 7,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "125": [
+    {
+      "score": 5,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "149": [
+    {
+      "score": 4,
+      "participant": 5,
+      "state": "Peru ",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "6": [
+    {
+      "score": 3,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "46": [
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    }
+  ],
+  "68": [
+    {
+      "score": 2,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 2,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "106": [
+    {
+      "score": 6,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    }
+  ],
+  "121": [
+    {
+      "score": 5,
+      "participant": 6,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "112": [
+    {
+      "score": 6,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 20,
+      "state": "MG/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "139": [
+    {
+      "score": 3,
+      "participant": 7,
+      "state": "Peru",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 10,
+      "state": "SC/Brasil",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 12,
+      "state": "PR/Brasil",
+      "age": 22,
+      "gener": "M"
+    },
+    {
+      "score": 1,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 26,
+      "state": "RS/Brasil ",
+      "age": 22,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 27,
+      "state": "SP/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 5,
+      "participant": 30,
+      "state": "CE/Brasil",
+      "age": 20,
+      "gener": "H"
+    }
+  ],
+  "65": [
+    {
+      "score": 1,
+      "participant": 8,
+      "state": "MG/Brasil",
+      "age": 24,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 3,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 17,
+      "state": "Peru",
+      "age": 25,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "18": [
+    {
+      "score": 4,
+      "participant": 9,
+      "state": "Peru",
+      "age": 38,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 3,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 4,
+      "participant": 14,
+      "state": "Peru",
+      "age": 19,
+      "gener": "M"
+    },
+    {
+      "score": 4,
+      "participant": 16,
+      "state": "Paraguai",
+      "age": 28,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 19,
+      "state": "GO/Brasil",
+      "age": 20,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 7,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 28,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ],
+  "59": [
+    {
+      "score": 7,
+      "participant": 11,
+      "state": "AL/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 2,
+      "participant": 13,
+      "state": "Peru ",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 8,
+      "participant": 15,
+      "state": "Paraguai",
+      "age": 27,
+      "gener": "H"
+    },
+    {
+      "score": 6,
+      "participant": 18,
+      "state": "RJ/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 5,
+      "participant": 21,
+      "state": "PR/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 6,
+      "participant": 22,
+      "state": "MS/Brasil",
+      "age": 20,
+      "gener": "M"
+    },
+    {
+      "score": 8,
+      "participant": 23,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 24,
+      "state": "MA/Brasil",
+      "age": 23,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 25,
+      "state": "SP/Brasil",
+      "age": 21,
+      "gener": "H"
+    },
+    {
+      "score": 7,
+      "participant": 29,
+      "state": "CE/Brasil",
+      "age": 21,
+      "gener": "H"
+    }
+  ]
+}
