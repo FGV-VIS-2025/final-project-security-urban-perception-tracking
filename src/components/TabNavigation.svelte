@@ -1,17 +1,18 @@
 <script>
   import { activeTab } from "../stores/appStore.js";
+  import Icon from "../lib/Icon.svelte";
   const navSections = [
     {
       title: "Main",
       items: [
-        { id: "info", label: "Dashboard", icon: "🏠" },
-        { id: "temporal", label: "Eye Tracking Vis", icon: "⏱️" },
-        { id: "map", label: "Interactive Map", icon: "🗺️", badge: "148" },
+        { id: "info", label: "Overview", icon: "home" },
+        { id: "temporal", label: "Eye Tracking Vis", icon: "eye" },
+        { id: "map", label: "Interactive Map", icon: "map", badge: "148" },
       ],
     },
     {
       title: "Developers",
-      items: [{ id: "profile", label: "Profiles", icon: "⚙️" }],
+      items: [{ id: "profile", label: "Profiles", icon: "develop" }],
     },
   ];
 
@@ -59,7 +60,16 @@
             role="button"
             tabindex="0"
           >
-            <div class="nav-icon">{item.icon}</div>
+            <div class="nav-icon">
+              <Icon
+                name={item.icon}
+                size={30}
+                color={$activeTab === item.id
+                  ? "white"
+                  : "rgba(255, 255, 255, 0.7)"}
+                strokeWidth={$activeTab === item.id ? 2 : 1.5}
+              />
+            </div>
             <div class="nav-label">{item.label}</div>
             {#if item.badge}
               <div class="nav-badge">{item.badge}</div>
@@ -197,20 +207,5 @@
 
   .sidebar-toggle:hover {
     background: rgba(102, 126, 234, 0.4);
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .sidebar {
-      transform: translateX(-100%);
-    }
-
-    .sidebar.open {
-      transform: translateX(0);
-    }
-
-    .sidebar-toggle {
-      display: block;
-    }
   }
 </style>

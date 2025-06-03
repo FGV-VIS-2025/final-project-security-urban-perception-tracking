@@ -3,6 +3,10 @@
   import { currentImage } from "../stores/appStore.js";
   import SliderTab from "./SliderTab.svelte";
   import { base } from "$app/paths";
+  import SecurityMetrics from "./SecurityMetrics.svelte";
+  import MapIcon from "../lib/Icons/MapIcon.svelte";
+  import ChartIcon from "../lib/Icons/ChartIcon.svelte";
+  import DataBaseIcon from "../lib/Icons/DataBaseIcon.svelte";
 
   let mapContainer;
   let map;
@@ -82,15 +86,13 @@
               });
             }
 
-            // El contador del JSON representa el punto (1-150)
-            // La imagen correspondiente es (contador - 1).jpg (0-149)
             const pointId = point.Contador || index + 1;
             const imageIndex = pointId - 1; // Para mapear a 0.jpg - 149.jpg
 
             return {
               id: pointId, // Mantener el ID del punto (1-150)
               imageIndex: imageIndex, // Índice real de la imagen (0-149)
-              name: `Point ${pointId}`,
+              name: `Image Location ${pointId}`,
               coords: [lng, lat],
               lat: lat,
               lng: lng,
@@ -99,12 +101,7 @@
             };
           })
           .filter((point) => point !== null);
-
-        console.log("DataPoints procesados:", dataPoints.length);
-        console.log("Mapeo ejemplo - Punto 1:", dataPoints[0]);
       } else {
-        console.warn("No se pudo cargar el archivo JSON");
-        // Datos de ejemplo para desarrollo
         dataPoints = [
           { id: 1, imageIndex: 0, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
           { id: 2, imageIndex: 1, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
@@ -112,7 +109,6 @@
         ];
       }
     } catch (error) {
-      console.error("Error cargando datos JSON:", error);
       dataPoints = [
         { id: 1, imageIndex: 0, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
         { id: 2, imageIndex: 1, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
@@ -131,14 +127,14 @@
     map = window.L.map(mapContainer, {
       center: [-22.9068, -43.1729],
       zoom: 11,
-      zoomControl: false,
+      zoomControl: false, 
       attributionControl: false,
+      scrollWheelZoom: true,
+      wheelPxPerZoomLevel: 120, 
     });
 
-    // Agregar controles de zoom personalizados en la esquina inferior derecha
-    window.L.control.zoom({
-      position: 'bottomright'
-    }).addTo(map);
+    map.options.zoomSnap = 0.25; 
+    map.options.zoomDelta = 0.25;
 
     window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "",
@@ -154,32 +150,32 @@
 
     dataPoints.forEach((point, index) => {
       const color = getSafetyColor(point.safety);
-      // Usar imageIndex para la ruta de la imagen
       const imagePath = base + `/assets/images/${point.imageIndex}.jpg`;
 
       const customIcon = window.L.divIcon({
-        className: "custom-marker",
-        html: `
-        <div style="
-          background-color: ${color};
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          border: 3px solid white;
-          box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: black;
-          font-weight: bold;
-          font-size: 10px;
-        ">
-          ${point.id}
-        </div>
-      `,
-        iconSize: [26, 26],
-        iconAnchor: [13, 13],
-      });
+  className: "custom-marker",
+  html: `
+    <div style="
+      background-color: ${color};
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      font-weight: bold;
+      font-size: 11px;
+    ">
+      ${point.id}
+    </div>
+  `,
+  iconSize: [34, 34],       // tamaño total del icono (28 + 2 * border de 3px)
+  iconAnchor: [17, 17],     // punto central del icono
+});
+
 
       const marker = window.L.marker([point.lat, point.lng], {
         icon: customIcon,
@@ -215,8 +211,8 @@
 
   function getSafetyColor(safety) {
     if (!safety) return "#808080";
-    if (safety >= 6) return "#4CAF50"; // Verde
-    if (safety >= 4) return "#FFC107"; // Amarillo
+    if (safety >= 7) return "#4CAF50"; // Verde
+    if (safety >= 5) return "#FFC107"; // Amarillo
     return "#F44336"; // Rojo
   }
 
@@ -224,7 +220,6 @@
     if (index >= 0 && index < dataPoints.length) {
       selectedPoint = dataPoints[index];
       map.setView([selectedPoint.lat, selectedPoint.lng], 15);
-      // Establecer currentImage al ID del punto (no al imageIndex)
       currentImage.set(selectedPoint.id);
       markers.forEach((marker, i) => {
         if (i === index) {
@@ -236,7 +231,6 @@
 
   function updateMapHighlight() {
     if (!map || markers.length === 0) return;
-    // Buscar por ID del punto (no por imageIndex)
     const currentIndex = dataPoints.findIndex(
       (point) => point.id === $currentImage
     );
@@ -249,11 +243,6 @@
     if (!map || dataPoints.length === 0) return;
     const group = new window.L.featureGroup(markers);
     map.fitBounds(group.getBounds().pad(0.1));
-  }
-
-  function resetMap() {
-    if (!map) return;
-    map.setView([-22.9068, -43.1729], 11);
   }
 </script>
 
@@ -269,14 +258,15 @@
   <div class="dashboard">
     <div class="card map-section">
       <div class="card-header">
-        <div class="card-icon">🗺️</div>
-        <div class="card-title">Río de Janeiro - Security Map</div>
+        <div class="card-icon">
+          <MapIcon />
+        </div>
+        <div class="card-title">Perception Analytics - Dataset PlacePulse2</div>
       </div>
       
       <div class="map-container" bind:this={mapContainer}>
         <div class="map-overlay">
           <div class="map-controls">
-            <button class="control-btn" on:click={resetMap}>🏠 Home</button>
             <button class="control-btn" on:click={fitMapToPoints}>📍 All Points</button>
           </div>
           
@@ -286,13 +276,33 @@
             <div class="stats-subtitle">active points</div>
           </div>
         </div>
+
+        <div class="safety-legend">
+          <div class="legend-title">Safety Levels</div>
+          <div class="legend-items">
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #4CAF50;"></div>
+              <span class="legend-text">High (7+)</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #FFC107;"></div>
+              <span class="legend-text">Medium (5-7)</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background-color: #F44336;"></div>
+              <span class="legend-text">Low (0-5)</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-header">
-        <div class="card-icon">⏱️</div>
-        <div class="card-title">Map explorer</div>
+        <div class="card-icon">
+          <DataBaseIcon />
+        </div>
+        <div class="card-title">Dataset Explorer</div>
       </div>
       
       <div class="slider-integration">
@@ -302,31 +312,24 @@
 
     <div class="card analytics-section">
       <div class="card-header">
-        <div class="card-icon">📊</div>
-        <div class="card-title">Security Metrics</div>
+        <div class="card-icon">
+          <ChartIcon />
+        </div>
+        <div class="card-title">Perception Analytics - Brazil</div>
       </div>
-      
-      <div class="metrics-container">
-        <div class="metrics-row">
-          <div class="metric-card">
-            <div class="metric-value">{dataPoints.length}</div>
-            <div class="metric-label">Total Points</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">
-              {dataPoints.length > 0
-                ? (dataPoints.reduce((sum, p) => sum + (p.safety || 0), 0) / dataPoints.length).toFixed(1)
-                : "N/A"}
-            </div>
-            <div class="metric-label">Average Index</div>
-          </div>
-        </div>        
+      <div class="metrics-content">
+        <SecurityMetrics />
       </div>
     </div>
   </div>
 </div>
 
 <style>
+  .metrics-content {
+    height: calc(100% - 60px);
+    overflow: hidden;
+  }
+
   .dashboard-container {
     width: 100%;
     color: #ffffff;
@@ -337,7 +340,6 @@
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr auto;
     gap: 2rem;
-    /*height: calc(100vh - 200px);*/
   }
 
   .card {
@@ -366,7 +368,6 @@
     background: linear-gradient(90deg, #667eea, #764ba2);
   }
 
-  /* Card Headers */
   .card-header {
     display: flex;
     align-items: center;
@@ -463,6 +464,51 @@
     opacity: 0.6;
   }
 
+  .safety-legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    min-width: 140px;
+  }
+
+  .legend-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.8rem;
+    text-align: center;
+  }
+
+  .legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  .legend-text {
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 500;
+  }
 
   .slider-integration {
     height: calc(100% - 60px);
@@ -505,51 +551,7 @@
   }
 
   .analytics-section {
-    height: 210px;
-  }
-
-  .metrics-container {
-    height: calc(100% - 60px);
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .metrics-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .metric-card {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .metric-card:hover {
-    background: rgba(102, 126, 234, 0.1);
-    transform: scale(1.02);
-  }
-
-  .metric-value {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .metric-label {
-    opacity: 0.7;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    height: 500px;
   }
 
   :global(.leaflet-container) {
@@ -572,4 +574,7 @@
     border: none !important;
   }
 
+  :global(.leaflet-control-zoom) {
+    display: none !important;
+  }
 </style>
