@@ -7,7 +7,7 @@
       items: [
         { id: "info", label: "Overview", icon: "home" },
         { id: "temporal", label: "Eye Tracking Vis", icon: "eye" },
-        { id: "map", label: "Interactive Map", icon: "map", badge: "148" },
+        { id: "map", label: "Interactive Map", icon: "map", badge: "150" },
       ],
     },
     {
