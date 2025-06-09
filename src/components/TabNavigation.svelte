@@ -1,11 +1,12 @@
 <script>
-  import { activeTab } from "../stores/appStore.js";
+  import { currentRoute, navigateTo } from "../stores/router.js";
   import Icon from "../lib/Icon.svelte";
+  
   const navSections = [
     {
       title: "Main",
       items: [
-        { id: "info", label: "Overview", icon: "home" },
+        { id: "overview", label: "Overview", icon: "home" },
         { id: "temporal", label: "Eye Tracking Vis", icon: "eye" },
         { id: "map", label: "Interactive Map", icon: "map", badge: "150" },
       ],
@@ -19,7 +20,7 @@
   let sidebarOpen = false;
 
   function selectTab(tabId) {
-    activeTab.set(tabId);
+    navigateTo(tabId);
   }
 
   function toggleSidebar() {
@@ -54,7 +55,7 @@
         {#each section.items as item}
           <div
             class="nav-item"
-            class:active={$activeTab === item.id}
+            class:active={$currentRoute === item.id}
             on:click={() => selectTab(item.id)}
             on:keydown={(e) => e.key === "Enter" && selectTab(item.id)}
             role="button"
@@ -64,10 +65,10 @@
               <Icon
                 name={item.icon}
                 size={30}
-                color={$activeTab === item.id
+                color={$currentRoute === item.id
                   ? "white"
                   : "rgba(255, 255, 255, 0.7)"}
-                strokeWidth={$activeTab === item.id ? 2 : 1.5}
+                strokeWidth={$currentRoute === item.id ? 2 : 1.5}
               />
             </div>
             <div class="nav-label">{item.label}</div>
@@ -208,4 +209,5 @@
   .sidebar-toggle:hover {
     background: rgba(102, 126, 234, 0.4);
   }
+
 </style>

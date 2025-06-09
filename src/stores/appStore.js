@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-export const activeTab = writable('info');
+export const activeTab = writable('overview');
 export const currentImage = writable(1);
 
 export const mapData = writable({
