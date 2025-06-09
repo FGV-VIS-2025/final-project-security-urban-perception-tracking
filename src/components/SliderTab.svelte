@@ -1,5 +1,6 @@
 <script>
-  import { currentImage, config } from "../stores/appStore.js";
+  import { eyeTrackingImage, config } from "../stores/appStore.js";
+  //import { currentImage, config } from "../stores/appStore.js";
   import { onMount } from "svelte";
   import { base } from "$app/paths";
 
@@ -10,7 +11,7 @@
 
   $: currentConfig = $config;
   // Convertir el currentImage (que va de 1-150) a índice de imagen (0-149)
-  $: imageIndex = $currentImage - 1;
+  $: imageIndex = $eyeTrackingImage - 1;
   $: imagePath = `${currentConfig.imageBasePath}${currentConfig.imagePrefix}${imageIndex}${currentConfig.imageExtension}`;
 
   onMount(() => {
@@ -19,7 +20,9 @@
 
   function handleSliderChange(event) {
     const newValue = parseInt(event.target.value);
-    currentImage.set(newValue);
+    //Actualizamos eyeTrackingImage en vez de currentImage
+    eyeTrackingImage.set(newValue);
+    //currentImage.set(newValue);
     imageLoaded = false;
     imageError = false;
   }
@@ -35,20 +38,20 @@
   }
 
   function previousImage() {
-    if ($currentImage > 1) {
-      currentImage.set($currentImage - 1);
+    if ($eyeTrackingImage > 1) { //update
+      eyeTrackingImage.set($eyeTrackingImage - 1); //update
     }
   }
 
   function nextImage() {
-    if ($currentImage < currentConfig.imageCount) {
-      currentImage.set($currentImage + 1);
+    if ($eyeTrackingImage < currentConfig.imageCount) { //update
+      eyeTrackingImage.set($eyeTrackingImage + 1); //update
     }
   }
 
   function jumpToImage(imageNumber) {
     if (imageNumber >= 1 && imageNumber <= currentConfig.imageCount) {
-      currentImage.set(imageNumber);
+      eyeTrackingImage.set(imageNumber); //update
       imageLoaded = false;
       imageError = false;
     }
@@ -83,18 +86,20 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
+<!-- Slider "Eye tracking Vis" -->
 <div class="slider-section" class:mounted>
   <h2>🖼️ Time Browsing</h2>
   <p class="description">
     Navigate through images (1-{currentConfig.imageCount}) using controls or arrow keys.
   </p>
 
+  
   <div class="controls-section">
     <div class="navigation-controls">
       <button
         class="nav-button"
         on:click={previousImage}
-        disabled={$currentImage === 1}
+        disabled={$eyeTrackingImage === 1}
         title="Previous image (←)"
       >
         <span class="arrow-icon">‹</span>
@@ -105,7 +110,7 @@
           type="number"
           min="1"
           max={currentConfig.imageCount}
-          value={$currentImage}
+          value={$eyeTrackingImage}
           class="current-number-input"
           on:input={handleManualInput}
           on:keydown={handleInputKeydown}
@@ -118,7 +123,7 @@
       <button
         class="nav-button"
         on:click={nextImage}
-        disabled={$currentImage === currentConfig.imageCount}
+        disabled={$eyeTrackingImage === currentConfig.imageCount}
         title="Next image (→)"
       >
         <span class="arrow-icon">›</span>
@@ -130,7 +135,7 @@
         type="range"
         min="1"
         max={currentConfig.imageCount}
-        value={$currentImage}
+        value={$eyeTrackingImage}
         class="slider"
         on:input={handleSliderChange}
         title="Slide to change point"
@@ -147,7 +152,7 @@
             class="marker"
             style="left: {(i / Math.min(5, currentConfig.imageCount - 1)) *
               100}%"
-            class:active={Math.abs($currentImage - markerValue) < 5}
+            class:active={Math.abs($eyeTrackingImage - markerValue) < 5}
           >
             {markerValue}
           </div>
@@ -160,7 +165,7 @@
     <img
       bind:this={imageElement}
       src={imagePath}
-      alt="Point {$currentImage} - Image {imageIndex}.jpg"
+      alt="Point {$eyeTrackingImage} - Image {imageIndex}.jpg"
       class="main-image"
       class:loaded={imageLoaded}
       on:load={handleImageLoad}

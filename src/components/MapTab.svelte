@@ -60,6 +60,7 @@
 
   async function loadDataFromJSON() {
     try {
+      // const response = await fetch(base +"/image_safety.json");
       const response = await fetch(base +"/image_safety.json");
       if (response.ok) {
         jsonData = await response.json();
@@ -92,11 +93,11 @@
             return {
               id: pointId, // Mantener el ID del punto (1-150)
               imageIndex: imageIndex, // Índice real de la imagen (0-149)
-              name: `Image Location ${pointId}`,
+              name: `Image Location ${pointId}`, 
               coords: [lng, lat],
               lat: lat,
               lng: lng,
-              safety: point.safety || 0,
+              safety: point.safety || 0, // <-- cambiar dataset propio
               image_id: point.image_id,
             };
           })
@@ -297,6 +298,7 @@
       </div>
     </div>
 
+    <!-- No se usará el Dataset Explorer -->
     <div class="card">
       <div class="card-header">
         <div class="card-icon">
@@ -309,6 +311,7 @@
         <SliderTab />
       </div>
     </div>
+    <!-- Eliminar este bloque -->
 
     <div class="card analytics-section">
       <div class="card-header">

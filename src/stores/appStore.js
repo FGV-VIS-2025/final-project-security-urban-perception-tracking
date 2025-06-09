@@ -1,6 +1,7 @@
 import { writable } from 'svelte/store';
 export const activeTab = writable('overview');
-export const currentImage = writable(1);
+export const currentImage = writable(1); //Para Interactivee Map (Tercera pestanha)
+export const eyeTrackingImage = writable(1); // Para la segunda pestanha
 
 export const mapData = writable({
     points: [
@@ -30,8 +31,14 @@ export const setActiveTab = (tab) => {
     activeTab.set(tab);
 };
 
+// Funcionalidad de Interactive Map
 export const setCurrentImage = (imageIndex) => {
     currentImage.set(Math.max(1, Math.min(150, imageIndex)));
+};
+
+// Nueva funcionalidad para definir la imagen de imagem do Eye Tracking Vis
+export const setEyeTrackingImage = (imageIndex) => {
+    eyeTrackingImage.set(Math.max(1, Math.min(150, imageIndex)));
 };
 
 export const addMapPoint = (point) => {
