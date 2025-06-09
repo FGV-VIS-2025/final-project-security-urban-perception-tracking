@@ -7,6 +7,7 @@
   import { currentRoute, initRouter } from "../stores/router.js";
   import { config } from "../stores/appStore.js";
   import InfoTab from '../components/InfoTab.svelte';
+  import Profiles from '../components/Profiles.svelte';
   
   $: currentConfig = $config;
 
@@ -29,6 +30,8 @@
       {:else if $currentRoute === "map"}
         <MapTab />
       {:else if $currentRoute === "profile"}
+        <Profiles />
+      {:else if $currentRoute === "profile"}
         <div class="placeholder">
           <h2>Profiles Section</h2>
           <p>Developer profiles will be displayed here.</p>
@@ -48,7 +51,7 @@
   }
 
   .main-content {
-    margin-left: 280px;
+    margin-left: 320px;
     flex: 1;
     position: relative;
     min-height: 100vh;
