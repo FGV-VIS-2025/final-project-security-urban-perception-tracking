@@ -3,13 +3,14 @@
   import PictureIcon from "../../lib/Icons/PictureIcon.svelte";
   import UserIcon from "../../lib/Icons/UserIcon.svelte";
   import ScanningFrame from "./ScanningFrame.svelte";
+  import { base } from "$app/paths";
 </script>
 
 <section class="hero-section">
   <div class="background-overlay"></div>
   <div class="noise-texture"></div>
   
-  <img src="/hololens.webp" alt="hololens" class="hero-image" />
+  <img src="{`${base}/hololens.webp`}" alt="hololens" class="hero-image" />
   
   <div class="hero-content">    
     <h1 class="hero-title">
