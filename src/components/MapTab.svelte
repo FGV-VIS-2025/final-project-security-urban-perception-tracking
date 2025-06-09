@@ -22,11 +22,10 @@
 
     mounted = true;
     initializeMap();
-    const unsubscribe = currentImage.subscribe(() => {
-      updateMapHighlight();
-    });
-
-    return unsubscribe;
+    // const unsubscribe = currentImage.subscribe(() => {
+    //   updateMapHighlight();
+    // });
+    // return unsubscribe;
   });
 
   onDestroy(() => {
@@ -221,7 +220,7 @@
     if (index >= 0 && index < dataPoints.length) {
       selectedPoint = dataPoints[index];
       map.setView([selectedPoint.lat, selectedPoint.lng], 15);
-      currentImage.set(selectedPoint.id);
+      //currentImage.set(selectedPoint.id);
       markers.forEach((marker, i) => {
         if (i === index) {
           marker.openPopup();
@@ -230,15 +229,15 @@
     }
   }
 
-  function updateMapHighlight() {
-    if (!map || markers.length === 0) return;
-    const currentIndex = dataPoints.findIndex(
-      (point) => point.id === $currentImage
-    );
-    if (currentIndex >= 0) {
-      selectPoint(currentIndex);
-    }
-  }
+  // function updateMapHighlight() {
+  //   if (!map || markers.length === 0) return;
+  //   const currentIndex = dataPoints.findIndex(
+  //     (point) => point.id === $currentImage
+  //   );
+  //   if (currentIndex >= 0) {
+  //     selectPoint(currentIndex);
+  //   }
+  // }
 
   function fitMapToPoints() {
     if (!map || dataPoints.length === 0) return;
@@ -271,11 +270,13 @@
             <button class="control-btn" on:click={fitMapToPoints}>📍 All Points</button>
           </div>
           
-          <div class="stats-overlay">
+          <!-- Este bloque no va -->
+          <!-- <div class="stats-overlay">
             <div class="stats-title">Loaded Data</div>
             <div class="stats-number">{dataPoints.length}</div>
             <div class="stats-subtitle">active points</div>
-          </div>
+          </div> -->
+
         </div>
 
         <div class="safety-legend">
@@ -469,8 +470,8 @@
 
   .safety-legend {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    top: 20px; 
+    right: 20px;
     background: rgba(0, 0, 0, 0.8);
     padding: 1rem;
     border-radius: 12px;
