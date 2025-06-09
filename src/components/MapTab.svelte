@@ -142,6 +142,7 @@
     }).addTo(map);
 
     addMarkersToMap();
+    fitMapToPoints(); //Para ajustar todos los puntos al inicio del mapa
   }
 
   function addMarkersToMap() {
@@ -168,6 +169,7 @@
       color: black;
       font-weight: bold;
       font-size: 11px;
+      line-height: 1;
     ">
       ${point.id}
     </div>
@@ -300,7 +302,7 @@
     </div>
 
     <!-- No se usará el Dataset Explorer -->
-    <div class="card">
+    <!-- <div class="card">
       <div class="card-header">
         <div class="card-icon">
           <DataBaseIcon />
@@ -311,7 +313,7 @@
       <div class="slider-integration">
         <SliderTab />
       </div>
-    </div>
+    </div> -->
     <!-- Eliminar este bloque -->
 
     <div class="card analytics-section">
@@ -342,8 +344,9 @@
   .dashboard {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr; 
     gap: 2rem;
+    height: 100%;
   }
 
   .card {
@@ -396,8 +399,11 @@
   }
 
   .map-section {
-    grid-row: 1 / 3;
-    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .map-container {
@@ -555,7 +561,10 @@
   }
 
   .analytics-section {
-    height: 500px;
+    grid-column: 2; 
+    grid-row: 1; 
+    height: 100%; 
+    flex-direction: column;
   }
 
   :global(.leaflet-container) {
