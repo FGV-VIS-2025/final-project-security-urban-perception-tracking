@@ -9,11 +9,20 @@
   import InfoTab from '../components/InfoTab.svelte';
   import Profiles from '../components/Profiles.svelte';
   
+  let mapComponent; // Esta variable contiene la referencia al componente MapTab.
+
   $: currentConfig = $config;
 
   onMount(() => {
     initRouter();
   });
+
+  $: if ($currentRoute === 'map' && mapComponent) {
+    setTimeout(() => {
+      mapComponent.invalidateMapSize();
+    }, 150); // Ajustando milisegundos (si es necesario)
+  }
+
 </script>
 
 <div class="app-container">
@@ -28,7 +37,7 @@
       {:else if $currentRoute === "slider"}
         <SliderTab />
       {:else if $currentRoute === "map"}
-        <MapTab />
+        <MapTab bind:this={mapComponent}/>
       {:else if $currentRoute === "profile"}
         <Profiles />
       {:else if $currentRoute === "profile"}

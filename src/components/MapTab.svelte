@@ -16,6 +16,14 @@
   let dataPoints = [];
   let jsonData = [];
 
+  //Funcion para evitar bug de Mapa
+  export function invalidateMapSize() {
+    if (map) {
+      map.invalidateSize();
+      console.log("map.invalidateSize() llamado desde MapTab.svelte.");
+    }
+  }
+
   onMount(async () => {
     await loadLeaflet();
     await loadDataFromJSON();
@@ -133,8 +141,8 @@
       wheelPxPerZoomLevel: 120, 
     });
 
-    map.options.zoomSnap = 0.25; 
-    map.options.zoomDelta = 0.25;
+    map.options.zoomSnap = 0.1; //manejo del zoom
+    map.options.zoomDelta = 0.1;
 
     window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "",
