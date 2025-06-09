@@ -27,6 +27,9 @@ export const config = writable({
     paperSubtitle: 'Eye-tracking visualization'
 });
 
+//Guardar punto seleccionado del mapa
+export const selectedMapPoint = writable(null);
+
 export const setActiveTab = (tab) => {
     activeTab.set(tab);
 };

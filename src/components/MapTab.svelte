@@ -7,6 +7,7 @@
   import MapIcon from "../lib/Icons/MapIcon.svelte";
   import ChartIcon from "../lib/Icons/ChartIcon.svelte";
   import DataBaseIcon from "../lib/Icons/DataBaseIcon.svelte";
+  import { selectedMapPoint } from '../stores/appStore.js';
 
   let mapContainer;
   let map;
@@ -236,6 +237,9 @@
           marker.openPopup();
         }
       });
+
+      //Actualizar el punto seleccionado
+      selectedMapPoint.set(selectedPoint);
     }
   }
 

@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import { currentImage } from "../stores/appStore.js";
   import { base } from "$app/paths";
+  import { selectedMapPoint } from '../stores/appStore.js';
 
   let surveyData = {};
   let selectedPointData = null;
@@ -38,6 +39,11 @@
       };
       updateSelectedPointData();
     }
+  }
+
+  $: if ($selectedMapPoint) {
+    currentPointId = $selectedMapPoint.id; // Usa el ID del punto seleccionado
+    updateSelectedPointData();
   }
 
   function updateSelectedPointData() {
