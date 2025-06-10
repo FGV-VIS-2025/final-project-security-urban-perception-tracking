@@ -16,6 +16,7 @@
   let selectedPoint = null;
   let dataPoints = [];
   let jsonData = [];
+  let crossJsonData = {};
 
   //Funcion para evitar bug de Mapa
   export function invalidateMapSize() {
@@ -28,6 +29,7 @@
   onMount(async () => {
     await loadLeaflet();
     await loadDataFromJSON();
+    await loadCrossJsonData();
 
     mounted = true;
     initializeMap();
@@ -154,7 +156,34 @@
     fitMapToPoints(); //Para ajustar todos los puntos al inicio del mapa
   }
 
+  async function loadCrossJsonData() {
+    try {
+      const response = await fetch(base + "/cross.json");
+      if (response.ok) {
+        crossJsonData = await response.json();
+        // Opcional: Combina los datos de cross.json con dataPoints aquí si lo prefieres
+        // Por ahora, lo mantenemos separado y lo accedemos cuando sea necesario.
+      } else {
+        console.error("Failed to load cross.json:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error loading cross.json:", error);
+    }
+  }
+
+  //Calculo del Avg. Score de cross.json
+  function getAverageScoreForPoint(pointId) {
+    const jsonKey = (pointId + 1).toString(); // Ajusta según tu lógica de mapeo de ID
+    const data = crossJsonData[jsonKey];
+    if (!data || data.length === 0) return 'N/A';
+    const total = data.reduce((sum, item) => sum + item.score, 0);
+    return (total / data.length).toFixed(1);
+  }
+
+
   function addMarkersToMap() {
+    if (!map || dataPoints.length === 0) return;
+
     markers.forEach((marker) => map.removeLayer(marker));
     markers = [];
 
@@ -192,18 +221,22 @@
         icon: customIcon,
       }).addTo(map);
 
+      const avgScore = getAverageScoreForPoint(point.id);
+      const avgScoreColor = getSafetyColor(parseFloat(avgScore)); // Color para el texto del Avg. Score en el popup
+
       const popupContent = `
-      <div style="min-width: 250px; max-width: 300px;"> 
-        <h3 style="margin: 0 0 10px 0; color: #000000;">${point.name}</h3> 
-        <div style="margin-bottom: 15px; text-align: center;"> 
-          <img src="${imagePath}" 
-          alt="Image ${point.imageIndex}.jpg of point ${point.id}" 
-          style="width: 100%; max-width: 250px; height: 150px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid ${color};" 
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /> 
-          <div style="display: none; padding: 20px; background: #f5f5f5; border-radius: 8px; color: #666;">📷 Image ${point.imageIndex}.jpg not available</div> 
-        </div> 
-        <p style="color: #000;"><strong style="color: #000;">Coordinates:</strong> ${point.lat.toFixed(4)}, ${point.lng.toFixed(4)}</p> 
-        <p><strong style="color: #000;">Safety:</strong> <span style="color: ${color};">${point.safety?.toFixed(2) || "N/A"}</span></p>
+      <div style="min-width: 250px; max-width: 300px;">
+        <h3 style="margin: 0 0 10px 0; color: #000000;">${point.name}</h3>
+        <div style="margin-bottom: 15px; text-align: center;">
+          <img src="${imagePath}"
+          alt="Image ${point.imageIndex}.jpg of point ${point.id}"
+          style="width: 100%; max-width: 250px; height: 150px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid ${color};"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div style="display: none; padding: 20px; background: #f5f5f5; border-radius: 8px; color: #666;">📷 Image ${point.imageIndex}.jpg not available</div>
+        </div>
+        <p style="color: #000;"><strong style="color: #000;">Coordinates:</strong> ${point.lat.toFixed(4)}, ${point.lng.toFixed(4)}</p>
+        <p><strong style="color: #000;">Safety value (according to Dataset Urban Perception Tracking):</strong> <span style="color: ${avgScoreColor};">${avgScore}</span></p>
+        <p><strong style="color: #000;">Safety value (according to Dataset PlacePulse2):</strong> <span style="color: ${color};">${point.safety?.toFixed(2) || "N/A"}</span></p>
       </div>
     `;
 
@@ -275,7 +308,7 @@
         <div class="card-icon">
           <MapIcon />
         </div>
-        <div class="card-title">Perception Analytics - Dataset PlacePulse2</div>
+        <div class="card-title">Perception Analytics - GeoSpatial Analysis</div>
       </div>
       
       <div class="map-container" bind:this={mapContainer}>
