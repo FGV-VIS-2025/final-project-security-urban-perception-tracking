@@ -42,7 +42,7 @@
   }
 
   $: if ($selectedMapPoint) {
-    currentPointId = $selectedMapPoint.id; // Usa el ID del punto seleccionado
+    currentPointId = $selectedMapPoint.id; // Usa el ID del punto seleccionadoo
     updateSelectedPointData();
   }
 
