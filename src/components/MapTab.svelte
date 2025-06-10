@@ -7,6 +7,7 @@
   import MapIcon from "../lib/Icons/MapIcon.svelte";
   import ChartIcon from "../lib/Icons/ChartIcon.svelte";
   import DataBaseIcon from "../lib/Icons/DataBaseIcon.svelte";
+  import { selectedMapPoint } from '../stores/appStore.js';
 
   let mapContainer;
   let map;
@@ -15,18 +16,27 @@
   let selectedPoint = null;
   let dataPoints = [];
   let jsonData = [];
+  let crossJsonData = {};
+
+  //Funcion para evitar bug de Mapa
+  export function invalidateMapSize() {
+    if (map) {
+      map.invalidateSize();
+      console.log("map.invalidateSize() llamado desde MapTab.svelte.");
+    }
+  }
 
   onMount(async () => {
     await loadLeaflet();
     await loadDataFromJSON();
+    await loadCrossJsonData();
 
     mounted = true;
     initializeMap();
-    const unsubscribe = currentImage.subscribe(() => {
-      updateMapHighlight();
-    });
-
-    return unsubscribe;
+    // const unsubscribe = currentImage.subscribe(() => {
+    //   updateMapHighlight();
+    // });
+    // return unsubscribe;
   });
 
   onDestroy(() => {
@@ -60,6 +70,7 @@
 
   async function loadDataFromJSON() {
     try {
+      // const response = await fetch(base +"/image_safety.json");
       const response = await fetch(base +"/image_safety.json");
       if (response.ok) {
         jsonData = await response.json();
@@ -92,11 +103,11 @@
             return {
               id: pointId, // Mantener el ID del punto (1-150)
               imageIndex: imageIndex, // Índice real de la imagen (0-149)
-              name: `Image Location ${pointId}`,
+              name: `Image Location ${pointId}`, 
               coords: [lng, lat],
               lat: lat,
               lng: lng,
-              safety: point.safety || 0,
+              safety: point.safety || 0, // <-- cambiar dataset propio
               image_id: point.image_id,
             };
           })
@@ -133,8 +144,8 @@
       wheelPxPerZoomLevel: 120, 
     });
 
-    map.options.zoomSnap = 0.25; 
-    map.options.zoomDelta = 0.25;
+    map.options.zoomSnap = 0.1; //manejo del zoom
+    map.options.zoomDelta = 0.1;
 
     window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "",
@@ -142,9 +153,37 @@
     }).addTo(map);
 
     addMarkersToMap();
+    fitMapToPoints(); //Para ajustar todos los puntos al inicio del mapa
   }
 
+  async function loadCrossJsonData() {
+    try {
+      const response = await fetch(base + "/cross.json");
+      if (response.ok) {
+        crossJsonData = await response.json();
+        // Opcional: Combina los datos de cross.json con dataPoints aquí si lo prefieres
+        // Por ahora, lo mantenemos separado y lo accedemos cuando sea necesario.
+      } else {
+        console.error("Failed to load cross.json:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error loading cross.json:", error);
+    }
+  }
+
+  //Calculo del Avg. Score de cross.json
+  function getAverageScoreForPoint(pointId) {
+    const jsonKey = (pointId + 1).toString(); // Ajusta según tu lógica de mapeo de ID
+    const data = crossJsonData[jsonKey];
+    if (!data || data.length === 0) return 'N/A';
+    const total = data.reduce((sum, item) => sum + item.score, 0);
+    return (total / data.length).toFixed(1);
+  }
+
+
   function addMarkersToMap() {
+    if (!map || dataPoints.length === 0) return;
+
     markers.forEach((marker) => map.removeLayer(marker));
     markers = [];
 
@@ -168,6 +207,7 @@
       color: black;
       font-weight: bold;
       font-size: 11px;
+      line-height: 1;
     ">
       ${point.id}
     </div>
@@ -181,18 +221,22 @@
         icon: customIcon,
       }).addTo(map);
 
+      const avgScore = getAverageScoreForPoint(point.id);
+      const avgScoreColor = getSafetyColor(parseFloat(avgScore)); // Color para el texto del Avg. Score en el popup
+
       const popupContent = `
-      <div style="min-width: 250px; max-width: 300px;"> 
-        <h3 style="margin: 0 0 10px 0; color: #000000;">${point.name}</h3> 
-        <div style="margin-bottom: 15px; text-align: center;"> 
-          <img src="${imagePath}" 
-          alt="Image ${point.imageIndex}.jpg of point ${point.id}" 
-          style="width: 100%; max-width: 250px; height: 150px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid ${color};" 
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" /> 
-          <div style="display: none; padding: 20px; background: #f5f5f5; border-radius: 8px; color: #666;">📷 Image ${point.imageIndex}.jpg not available</div> 
-        </div> 
-        <p style="color: #000;"><strong style="color: #000;">Coordinates:</strong> ${point.lat.toFixed(4)}, ${point.lng.toFixed(4)}</p> 
-        <p><strong style="color: #000;">Safety:</strong> <span style="color: ${color};">${point.safety?.toFixed(2) || "N/A"}</span></p>
+      <div style="min-width: 250px; max-width: 300px;">
+        <h3 style="margin: 0 0 10px 0; color: #000000;">${point.name}</h3>
+        <div style="margin-bottom: 15px; text-align: center;">
+          <img src="${imagePath}"
+          alt="Image ${point.imageIndex}.jpg of point ${point.id}"
+          style="width: 100%; max-width: 250px; height: 150px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid ${color};"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+          <div style="display: none; padding: 20px; background: #f5f5f5; border-radius: 8px; color: #666;">📷 Image ${point.imageIndex}.jpg not available</div>
+        </div>
+        <p style="color: #000;"><strong style="color: #000;">Coordinates:</strong> ${point.lat.toFixed(4)}, ${point.lng.toFixed(4)}</p>
+        <p><strong style="color: #000;">Safety value (according to Dataset Urban Perception Tracking):</strong> <span style="color: ${avgScoreColor};">${avgScore}</span></p>
+        <p><strong style="color: #000;">Safety value (according to Dataset PlacePulse2):</strong> <span style="color: ${color};">${point.safety?.toFixed(2) || "N/A"}</span></p>
       </div>
     `;
 
@@ -220,24 +264,27 @@
     if (index >= 0 && index < dataPoints.length) {
       selectedPoint = dataPoints[index];
       map.setView([selectedPoint.lat, selectedPoint.lng], 15);
-      currentImage.set(selectedPoint.id);
+      //currentImage.set(selectedPoint.id);
       markers.forEach((marker, i) => {
         if (i === index) {
           marker.openPopup();
         }
       });
+
+      //Actualizar el punto seleccionado
+      selectedMapPoint.set(selectedPoint);
     }
   }
 
-  function updateMapHighlight() {
-    if (!map || markers.length === 0) return;
-    const currentIndex = dataPoints.findIndex(
-      (point) => point.id === $currentImage
-    );
-    if (currentIndex >= 0) {
-      selectPoint(currentIndex);
-    }
-  }
+  // function updateMapHighlight() {
+  //   if (!map || markers.length === 0) return;
+  //   const currentIndex = dataPoints.findIndex(
+  //     (point) => point.id === $currentImage
+  //   );
+  //   if (currentIndex >= 0) {
+  //     selectPoint(currentIndex);
+  //   }
+  // }
 
   function fitMapToPoints() {
     if (!map || dataPoints.length === 0) return;
@@ -261,7 +308,7 @@
         <div class="card-icon">
           <MapIcon />
         </div>
-        <div class="card-title">Perception Analytics - Dataset PlacePulse2</div>
+        <div class="card-title">Perception Analytics - GeoSpatial Analysis</div>
       </div>
       
       <div class="map-container" bind:this={mapContainer}>
@@ -270,11 +317,13 @@
             <button class="control-btn" on:click={fitMapToPoints}>📍 All Points</button>
           </div>
           
-          <div class="stats-overlay">
+          <!-- Este bloque no va -->
+          <!-- <div class="stats-overlay">
             <div class="stats-title">Loaded Data</div>
             <div class="stats-number">{dataPoints.length}</div>
             <div class="stats-subtitle">active points</div>
-          </div>
+          </div> -->
+
         </div>
 
         <div class="safety-legend">
@@ -297,7 +346,8 @@
       </div>
     </div>
 
-    <div class="card">
+    <!-- No se usará el Dataset Explorer -->
+    <!-- <div class="card">
       <div class="card-header">
         <div class="card-icon">
           <DataBaseIcon />
@@ -308,7 +358,8 @@
       <div class="slider-integration">
         <SliderTab />
       </div>
-    </div>
+    </div> -->
+    <!-- Eliminar este bloque -->
 
     <div class="card analytics-section">
       <div class="card-header">
@@ -338,8 +389,9 @@
   .dashboard {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr; 
     gap: 2rem;
+    height: 100%;
   }
 
   .card {
@@ -392,8 +444,11 @@
   }
 
   .map-section {
-    grid-row: 1 / 3;
-    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .map-container {
@@ -466,8 +521,8 @@
 
   .safety-legend {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    top: 20px; 
+    right: 20px;
     background: rgba(0, 0, 0, 0.8);
     padding: 1rem;
     border-radius: 12px;
@@ -551,7 +606,10 @@
   }
 
   .analytics-section {
-    height: 500px;
+    grid-column: 2; 
+    grid-row: 1; 
+    height: 100%; 
+    flex-direction: column;
   }
 
   :global(.leaflet-container) {

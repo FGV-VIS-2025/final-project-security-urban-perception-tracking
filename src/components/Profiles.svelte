@@ -29,7 +29,7 @@
       },
       {
         id: 3,
-        name: "Leandro Leighton",
+        name: "Leandro Estrada",
         role: "Backend Engineer",
         specialty: "DevOps & Security",
         avatar: "",
