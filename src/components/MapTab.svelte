@@ -1,13 +1,11 @@
 <script>
   import { onMount, onDestroy } from "svelte";
-  import { currentImage } from "../stores/appStore.js";
-  import SliderTab from "./SliderTab.svelte";
   import { base } from "$app/paths";
-  import SecurityMetrics from "./SecurityMetrics.svelte";
+  import SecurityMetrics from "./InteractiveMap/PerceptionAnalysis.svelte";
   import MapIcon from "../lib/Icons/MapIcon.svelte";
   import ChartIcon from "../lib/Icons/ChartIcon.svelte";
-  import DataBaseIcon from "../lib/Icons/DataBaseIcon.svelte";
   import { selectedMapPoint } from '../stores/appStore.js';
+    import PerceptionAnalysis from "./InteractiveMap/PerceptionAnalysis.svelte";
 
   let mapContainer;
   let map;
@@ -18,7 +16,6 @@
   let jsonData = [];
   let crossJsonData = {};
 
-  //Funcion para evitar bug de Mapa
   export function invalidateMapSize() {
     if (map) {
       map.invalidateSize();
@@ -33,10 +30,6 @@
 
     mounted = true;
     initializeMap();
-    // const unsubscribe = currentImage.subscribe(() => {
-    //   updateMapHighlight();
-    // });
-    // return unsubscribe;
   });
 
   onDestroy(() => {
@@ -115,15 +108,11 @@
       } else {
         dataPoints = [
           { id: 1, imageIndex: 0, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
-          { id: 2, imageIndex: 1, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
-          { id: 3, imageIndex: 2, name: "Point 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
         ];
       }
     } catch (error) {
       dataPoints = [
         { id: 1, imageIndex: 0, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
-        { id: 2, imageIndex: 1, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
-        { id: 3, imageIndex: 2, name: "Point 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
       ];
     }
   }
@@ -161,8 +150,7 @@
       const response = await fetch(base + "/cross.json");
       if (response.ok) {
         crossJsonData = await response.json();
-        // Opcional: Combina los datos de cross.json con dataPoints aquí si lo prefieres
-        // Por ahora, lo mantenemos separado y lo accedemos cuando sea necesario.
+        console.log(crossJsonData)
       } else {
         console.error("Failed to load cross.json:", response.statusText);
       }
@@ -276,16 +264,6 @@
     }
   }
 
-  // function updateMapHighlight() {
-  //   if (!map || markers.length === 0) return;
-  //   const currentIndex = dataPoints.findIndex(
-  //     (point) => point.id === $currentImage
-  //   );
-  //   if (currentIndex >= 0) {
-  //     selectPoint(currentIndex);
-  //   }
-  // }
-
   function fitMapToPoints() {
     if (!map || dataPoints.length === 0) return;
     const group = new window.L.featureGroup(markers);
@@ -316,14 +294,7 @@
           <div class="map-controls">
             <button class="control-btn" on:click={fitMapToPoints}>📍 All Points</button>
           </div>
-          
-          <!-- Este bloque no va -->
-          <!-- <div class="stats-overlay">
-            <div class="stats-title">Loaded Data</div>
-            <div class="stats-number">{dataPoints.length}</div>
-            <div class="stats-subtitle">active points</div>
-          </div> -->
-
+        
         </div>
 
         <div class="safety-legend">
@@ -346,41 +317,11 @@
       </div>
     </div>
 
-    <!-- No se usará el Dataset Explorer -->
-    <!-- <div class="card">
-      <div class="card-header">
-        <div class="card-icon">
-          <DataBaseIcon />
-        </div>
-        <div class="card-title">Dataset Explorer</div>
-      </div>
-      
-      <div class="slider-integration">
-        <SliderTab />
-      </div>
-    </div> -->
-    <!-- Eliminar este bloque -->
-
-    <div class="card analytics-section">
-      <div class="card-header">
-        <div class="card-icon">
-          <ChartIcon />
-        </div>
-        <div class="card-title">Perception Analytics - Brazil</div>
-      </div>
-      <div class="metrics-content">
-        <SecurityMetrics />
-      </div>
-    </div>
+    <PerceptionAnalysis/>
   </div>
 </div>
 
 <style>
-  .metrics-content {
-    height: calc(100% - 60px);
-    overflow: hidden;
-  }
-
   .dashboard-container {
     width: 100%;
     color: #ffffff;
@@ -494,31 +435,6 @@
     background: rgba(102, 126, 234, 0.4);
   }
 
-  .stats-overlay {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 1rem;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    text-align: center;
-    pointer-events: all;
-  }
-
-  .stats-title {
-    font-size: 0.8rem;
-    opacity: 0.8;
-    margin-bottom: 0.5rem;
-  }
-
-  .stats-number {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-
-  .stats-subtitle {
-    font-size: 0.7rem;
-    opacity: 0.6;
-  }
-
   .safety-legend {
     position: absolute;
     top: 20px; 
@@ -563,53 +479,6 @@
     font-size: 0.8rem;
     color: white;
     font-weight: 500;
-  }
-
-  .slider-integration {
-    height: calc(100% - 60px);
-    overflow: auto;
-  }
-
-  .slider-integration :global(.slider-section) {
-    background: transparent;
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-    opacity: 1;
-    transform: none;
-  }
-
-  .slider-integration :global(.slider-section h2) {
-    display: none;
-  }
-
-  .slider-integration :global(.description) {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9rem;
-    text-align: left;
-    margin-bottom: 1rem;
-  }
-
-  .slider-integration :global(.controls-section) {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 1rem;
-  }
-
-  .slider-integration :global(.image-container) {
-    max-height: 100px;
-  }
-
-  .slider-integration :global(.main-image) {
-    max-height: 250px;
-  }
-
-  .analytics-section {
-    grid-column: 2; 
-    grid-row: 1; 
-    height: 100%; 
-    flex-direction: column;
   }
 
   :global(.leaflet-container) {
