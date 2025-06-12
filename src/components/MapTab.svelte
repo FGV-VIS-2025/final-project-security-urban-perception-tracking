@@ -290,6 +290,7 @@
       </div>
     </div>
 
+    
     <ScatterPlot data={dataPoints}/>
 
     <div class="card additional-section">
@@ -311,15 +312,15 @@
 
 <style>
   .dashboard-container {
-    width: 100%;
-    height: 100vh;
+    width: 100%; 
+    height: 101vh; /**********************************************/
     color: #ffffff;
   }
 
   .dashboard {
     display: grid;
     grid-template-columns: 1.5fr 1fr; 
-    grid-template-rows: 1fr 0.4fr;
+    grid-template-rows: 1fr 0.55fr;
     gap: 0.5rem;
     height: 100%;
     grid-template-areas: 
