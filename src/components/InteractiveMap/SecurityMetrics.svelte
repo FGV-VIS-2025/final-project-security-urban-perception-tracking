@@ -1,8 +1,8 @@
 <script>
   import { onMount } from "svelte";
-  import { currentImage } from "../stores/appStore.js";
+  import { currentImage } from "../../stores/appStore";
   import { base } from "$app/paths";
-  import { selectedMapPoint } from '../stores/appStore.js';
+  import { selectedMapPoint } from '../../stores/appStore.js';
 
   let surveyData = {};
   let selectedPointData = null;
@@ -90,133 +90,6 @@
     return "#F44336";
   }
 </script>
-
-<div class="metrics-container">
-  <div class="current-point">
-    <h3>Rating Analysis: Point {currentPointId} </h3>
-    {#if selectedPointData}
-      <div class="point-stats">
-        <div class="stat-card primary">
-          <div class="stat-value">{getAverageScore(selectedPointData)}</div>
-          <div class="stat-label">Avg. Score</div>
-          <div
-            class="stat-indicator"
-            style="background: {getScoreColor(
-              getAverageScore(selectedPointData)
-            )}"
-          ></div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-value">{selectedPointData.length}</div>
-          <div class="stat-label">Participants</div>
-        </div>
-      </div>
-
-      <div class="distributions">
-        <div class="distribution-card">
-          <h4>Gender Distribution</h4>
-          <div class="distribution-bars">
-            {#each Object.entries(getGenderDistribution(selectedPointData)) as [gender, count]}
-              <div class="bar-item">
-                <span class="bar-label"
-                  >{gender === "H" ? "Male" : "Female"}</span
-                >
-                <div class="bar-container">
-                  <div
-                    class="bar"
-                    style="width: {(count / selectedPointData.length) * 100}%"
-                  ></div>
-                </div>
-                <span class="bar-value">{count}</span>
-              </div>
-            {/each}
-          </div>
-        </div>
-
-        <div class="distribution-card">
-          <h4>Age Groups</h4>
-          <div class="distribution-bars">
-            {#each Object.entries(getAgeDistribution(selectedPointData)) as [ageGroup, count]}
-              <div class="bar-item">
-                <span class="bar-label">{ageGroup}</span>
-                <div class="bar-container">
-                  <div
-                    class="bar"
-                    style="width: {(count / selectedPointData.length) * 100}%"
-                  ></div>
-                </div>
-                <span class="bar-value">{count}</span>
-              </div>
-            {/each}
-          </div>
-        </div>
-
-        <div class="distribution-card">
-          <h4>Individual Scores</h4>
-          <div class="scores-grid">
-            {#each selectedPointData as participant}
-              <div
-                class="score-chip"
-                style="background: {getScoreColor(participant.score)}"
-              >
-                {participant.score}
-              </div>
-            {/each}
-          </div>
-        </div>
-      </div>
-
-      <div class="participants-list">
-        <h4>Participants Details</h4>
-        <div class="participants-scroll modern-scroll">
-          {#each selectedPointData as participant, i}
-            <div class="participant-card">
-              <div class="participant-header">
-                <span class="participant-id">#{participant.participant}</span>
-                <span
-                  class="participant-score"
-                  style="color: {getScoreColor(participant.score)}"
-                >
-                  {participant.score}/10
-                </span>
-              </div>
-              <div class="participant-info">
-                <span class="info-item">📍 {participant.state}</span>
-                <span class="info-item">👤 {participant.age} years</span>
-                <span class="info-item"
-                  >⚧ {participant.gener === "H" ? "Male" : "Female"}</span
-                >
-              </div>
-            </div>
-          {/each}
-        </div>
-      </div>
-    {:else}
-      <div class="no-data">
-        <div class="no-data-icon">📊</div>
-        <p>No survey data available for Point {currentPointId}</p>
-        <small>This point may not have been evaluated yet</small>
-      </div>
-    {/if}
-  </div>
-
-  <div class="overview-stats">
-    <h4>Dataset Overview</h4>
-    <div class="overview-grid">
-      <div class="overview-item">
-        <span class="overview-number">{Object.keys(surveyData).length}</span>
-        <span class="overview-label">Points with Data</span>
-      </div>
-      <div class="overview-item">
-        <span class="overview-number">
-          {Object.values(surveyData).reduce((sum, arr) => sum + arr.length, 0)}
-        </span>
-        <span class="overview-label">Total Responses</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 <style>
   .metrics-container {

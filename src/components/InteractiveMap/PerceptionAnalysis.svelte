@@ -1,6 +1,7 @@
 <script>
     import ChartIcon from "../../lib/Icons/ChartIcon.svelte";
-    import SecurityMetrics from "../SecurityMetrics.svelte";
+    import SecurityMetrics  from "./SecurityMetrics.svelte";
+
 </script>
 
 <div class="card analytics-section">
@@ -9,9 +10,6 @@
             <ChartIcon />
         </div>
         <div class="card-title">Perception Analytics - Brazil</div>
-    </div>
-    <div class="metrics-content">
-        <SecurityMetrics />
     </div>
 </div>
 

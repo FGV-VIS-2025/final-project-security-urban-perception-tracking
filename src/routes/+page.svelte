@@ -66,8 +66,8 @@
   .content {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.8rem;
-    min-height: calc(100vh - 200px);
+    padding: 0.5rem;
+    min-height: 100vh;
     position: relative;
     overflow: hidden;
     animation: fadeIn 0.5s ease;
