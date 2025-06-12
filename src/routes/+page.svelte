@@ -3,13 +3,12 @@
   import SliderTab from "../components/SliderTab.svelte";
   import MapTab from "../components/MapTab.svelte";
   import TemporalExplorerTab from "../components/TemporalExplorerTab.svelte";
-  import TabNavigation from "../components/TabNavigation.svelte";
   import { currentRoute, initRouter } from "../stores/router.js";
   import { config } from "../stores/appStore.js";
   import InfoTab from '../components/InfoTab.svelte';
   import Profiles from '../components/Profiles.svelte';
   
-  let mapComponent; // Esta variable contiene la referencia al componente MapTab.
+  let mapComponent;
 
   $: currentConfig = $config;
 
@@ -26,8 +25,6 @@
 </script>
 
 <div class="app-container">
-  <TabNavigation />
-  
   <main class="main-content">
     <div class="content">
       {#if $currentRoute === "overview"}
@@ -69,8 +66,8 @@
   .content {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.8rem;
-    min-height: calc(100vh - 200px);
+    padding: 0.5rem;
+    min-height: 100vh;
     position: relative;
     overflow: hidden;
     animation: fadeIn 0.5s ease;

@@ -1,13 +1,9 @@
 <script>
   import { onMount, onDestroy } from "svelte";
-  import { currentImage } from "../stores/appStore.js";
-  import SliderTab from "./SliderTab.svelte";
   import { base } from "$app/paths";
-  import SecurityMetrics from "./SecurityMetrics.svelte";
   import MapIcon from "../lib/Icons/MapIcon.svelte";
-  import ChartIcon from "../lib/Icons/ChartIcon.svelte";
-  import DataBaseIcon from "../lib/Icons/DataBaseIcon.svelte";
   import { selectedMapPoint } from '../stores/appStore.js';
+  import ScatterPlot from "./InteractiveMap/ScatterPlot.svelte";
 
   let mapContainer;
   let map;
@@ -15,10 +11,8 @@
   let mounted = false;
   let selectedPoint = null;
   let dataPoints = [];
-  let jsonData = [];
-  let crossJsonData = {};
+  let jsonData = {};
 
-  //Funcion para evitar bug de Mapa
   export function invalidateMapSize() {
     if (map) {
       map.invalidateSize();
@@ -29,14 +23,9 @@
   onMount(async () => {
     await loadLeaflet();
     await loadDataFromJSON();
-    await loadCrossJsonData();
 
     mounted = true;
     initializeMap();
-    // const unsubscribe = currentImage.subscribe(() => {
-    //   updateMapHighlight();
-    // });
-    // return unsubscribe;
   });
 
   onDestroy(() => {
@@ -70,19 +59,17 @@
 
   async function loadDataFromJSON() {
     try {
-      // const response = await fetch(base +"/image_safety.json");
-      const response = await fetch(base +"/image_safety.json");
+      const response = await fetch(base + "/data_hololens.json");
       if (response.ok) {
         jsonData = await response.json();
-        console.log("Datos cargados:", jsonData.length, "puntos");
 
-        dataPoints = jsonData
-          .map((point, index) => {
+        dataPoints = Object.entries(jsonData)
+          .map(([key, point]) => {
             const lat = point.lat;
             const lng = point.long;
 
             if (isNaN(lat) || isNaN(lng) || lat === null || lng === null) {
-              console.warn(`Punto ${index + 1} tiene coordenadas inválidas:`, {
+              console.warn(`Punto ${key} tiene coordenadas inválidas:`, {
                 lat,
                 lng,
                 point,
@@ -91,39 +78,41 @@
             }
 
             if (lat < -23.5 || lat > -22.0 || lng < -44.0 || lng > -43.0) {
-              console.warn(`Punto ${index + 1} fuera del rango de Río:`, {
+              console.warn(`Punto ${key} fuera del rango de Río:`, {
                 lat,
                 lng,
               });
             }
 
-            const pointId = point.Contador || index + 1;
-            const imageIndex = pointId - 1; // Para mapear a 0.jpg - 149.jpg
+            const pointId = parseInt(key) + 1;
+            const imageIndex = parseInt(key); 
 
             return {
-              id: pointId, // Mantener el ID del punto (1-150)
-              imageIndex: imageIndex, // Índice real de la imagen (0-149)
+              id: pointId, 
+              imageIndex: imageIndex,
               name: `Image Location ${pointId}`, 
               coords: [lng, lat],
               lat: lat,
               lng: lng,
-              safety: point.safety || 0, // <-- cambiar dataset propio
-              image_id: point.image_id,
+              safety_hololens: point.avg_hololens || 0,
+              safety_pp2: point.avg_pp2 || 0,
+              image_id: point.ID,
+              score_participants: point.score_participant || []
             };
           })
           .filter((point) => point !== null);
+
+        console.log("Puntos procesados:", dataPoints.length);
       } else {
+        console.error("Error loading data_hololens.json:", response.statusText);
         dataPoints = [
-          { id: 1, imageIndex: 0, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
-          { id: 2, imageIndex: 1, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
-          { id: 3, imageIndex: 2, name: "Point 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
+          { id: 1, imageIndex: 0, name: "Point 1", lat: -22.9068, lng: -43.1729, safety_hololens: 4.2, safety_pp2: 3.3 },
         ];
       }
     } catch (error) {
+      console.error("Error loading data_hololens.json:", error);
       dataPoints = [
-        { id: 1, imageIndex: 0, name: "Point 1", lat: -22.9068, lng: -43.1729, safety: 4.2 },
-        { id: 2, imageIndex: 1, name: "Point 2", lat: -22.9168, lng: -43.1829, safety: 3.8 },
-        { id: 3, imageIndex: 2, name: "Point 3", lat: -22.8968, lng: -43.1629, safety: 2.5 },
+        { id: 1, imageIndex: 0, name: "Point 1", lat: -22.9068, lng: -43.1729, safety_hololens: 4.2, safety_pp2: 3.3 },
       ];
     }
   }
@@ -144,7 +133,7 @@
       wheelPxPerZoomLevel: 120, 
     });
 
-    map.options.zoomSnap = 0.1; //manejo del zoom
+    map.options.zoomSnap = 0.1;
     map.options.zoomDelta = 0.1;
 
     window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -153,33 +142,8 @@
     }).addTo(map);
 
     addMarkersToMap();
-    fitMapToPoints(); //Para ajustar todos los puntos al inicio del mapa
+    fitMapToPoints();
   }
-
-  async function loadCrossJsonData() {
-    try {
-      const response = await fetch(base + "/cross.json");
-      if (response.ok) {
-        crossJsonData = await response.json();
-        // Opcional: Combina los datos de cross.json con dataPoints aquí si lo prefieres
-        // Por ahora, lo mantenemos separado y lo accedemos cuando sea necesario.
-      } else {
-        console.error("Failed to load cross.json:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error loading cross.json:", error);
-    }
-  }
-
-  //Calculo del Avg. Score de cross.json
-  function getAverageScoreForPoint(pointId) {
-    const jsonKey = (pointId + 1).toString(); // Ajusta según tu lógica de mapeo de ID
-    const data = crossJsonData[jsonKey];
-    if (!data || data.length === 0) return 'N/A';
-    const total = data.reduce((sum, item) => sum + item.score, 0);
-    return (total / data.length).toFixed(1);
-  }
-
 
   function addMarkersToMap() {
     if (!map || dataPoints.length === 0) return;
@@ -188,57 +152,57 @@
     markers = [];
 
     dataPoints.forEach((point, index) => {
-      const color = getSafetyColor(point.safety);
+      const color = getSafetyColor(point.safety_hololens);
       const imagePath = base + `/assets/images/${point.imageIndex}.jpg`;
 
       const customIcon = window.L.divIcon({
-  className: "custom-marker",
-  html: `
-    <div style="
-      background-color: ${color};
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      border: 3px solid white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: black;
-      font-weight: bold;
-      font-size: 11px;
-      line-height: 1;
-    ">
-      ${point.id}
-    </div>
-  `,
-  iconSize: [34, 34],       // tamaño total del icono (28 + 2 * border de 3px)
-  iconAnchor: [17, 17],     // punto central del icono
-});
-
+        className: "custom-marker",
+        html: `
+          <div style="
+            background-color: ${color};
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+          ">
+            ${point.id}
+          </div>
+        `,
+        iconSize: [38, 38],
+        iconAnchor: [19, 19],
+      });
 
       const marker = window.L.marker([point.lat, point.lng], {
         icon: customIcon,
       }).addTo(map);
 
-      const avgScore = getAverageScoreForPoint(point.id);
-      const avgScoreColor = getSafetyColor(parseFloat(avgScore)); // Color para el texto del Avg. Score en el popup
+      const hololensColor = getSafetyColor(point.safety_hololens);
+      const pp2Color = getSafetyColor(point.safety_pp2);
 
       const popupContent = `
-      <div style="min-width: 250px; max-width: 300px;">
-        <h3 style="margin: 0 0 10px 0; color: #000000;">${point.name}</h3>
-        <div style="margin-bottom: 15px; text-align: center;">
-          <img src="${imagePath}"
-          alt="Image ${point.imageIndex}.jpg of point ${point.id}"
-          style="width: 100%; max-width: 250px; height: 150px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid ${color};"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-          <div style="display: none; padding: 20px; background: #f5f5f5; border-radius: 8px; color: #666;">📷 Image ${point.imageIndex}.jpg not available</div>
+        <div style="min-width: 250px; max-width: 300px;">
+          <h3 style="margin: 0 0 10px 0; color: #000000;">${point.name}</h3>
+          <div style="margin-bottom: 15px; text-align: center;">
+            <img src="${imagePath}"
+            alt="Image ${point.imageIndex}.jpg of point ${point.id}"
+            style="width: 100%; max-width: 250px; height: 150px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); border: 2px solid ${color};"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <div style="display: none; padding: 20px; background: #f5f5f5; border-radius: 8px; color: #666;">📷 Image ${point.imageIndex}.jpg not available</div>
+          </div>
+          <p style="color: #000;"><strong style="color: #000;">Coordinates:</strong> ${point.lat.toFixed(4)}, ${point.lng.toFixed(4)}</p>
+          <p><strong style="color: #000;">Safety Score (HoloLens):</strong> <span style="color: ${hololensColor};">${point.safety_hololens?.toFixed(1) || "N/A"}</span></p>
+          <p><strong style="color: #000;">Safety Score (PlacePulse2):</strong> <span style="color: ${pp2Color};">${point.safety_pp2?.toFixed(1) || "N/A"}</span></p>
         </div>
-        <p style="color: #000;"><strong style="color: #000;">Coordinates:</strong> ${point.lat.toFixed(4)}, ${point.lng.toFixed(4)}</p>
-        <p><strong style="color: #000;">Safety value (according to Dataset Urban Perception Tracking):</strong> <span style="color: ${avgScoreColor};">${avgScore}</span></p>
-        <p><strong style="color: #000;">Safety value (according to Dataset PlacePulse2):</strong> <span style="color: ${color};">${point.safety?.toFixed(2) || "N/A"}</span></p>
-      </div>
-    `;
+      `;
 
       marker.bindPopup(popupContent, {
         maxWidth: 320,
@@ -254,7 +218,7 @@
   }
 
   function getSafetyColor(safety) {
-    if (!safety) return "#808080";
+    if (!safety || isNaN(safety)) return "#808080";
     if (safety >= 7) return "#4CAF50"; // Verde
     if (safety >= 5) return "#FFC107"; // Amarillo
     return "#F44336"; // Rojo
@@ -264,27 +228,15 @@
     if (index >= 0 && index < dataPoints.length) {
       selectedPoint = dataPoints[index];
       map.setView([selectedPoint.lat, selectedPoint.lng], 15);
-      //currentImage.set(selectedPoint.id);
       markers.forEach((marker, i) => {
         if (i === index) {
           marker.openPopup();
         }
       });
 
-      //Actualizar el punto seleccionado
       selectedMapPoint.set(selectedPoint);
     }
   }
-
-  // function updateMapHighlight() {
-  //   if (!map || markers.length === 0) return;
-  //   const currentIndex = dataPoints.findIndex(
-  //     (point) => point.id === $currentImage
-  //   );
-  //   if (currentIndex >= 0) {
-  //     selectPoint(currentIndex);
-  //   }
-  // }
 
   function fitMapToPoints() {
     if (!map || dataPoints.length === 0) return;
@@ -316,14 +268,6 @@
           <div class="map-controls">
             <button class="control-btn" on:click={fitMapToPoints}>📍 All Points</button>
           </div>
-          
-          <!-- Este bloque no va -->
-          <!-- <div class="stats-overlay">
-            <div class="stats-title">Loaded Data</div>
-            <div class="stats-number">{dataPoints.length}</div>
-            <div class="stats-subtitle">active points</div>
-          </div> -->
-
         </div>
 
         <div class="safety-legend">
@@ -346,68 +290,69 @@
       </div>
     </div>
 
-    <!-- No se usará el Dataset Explorer -->
-    <!-- <div class="card">
-      <div class="card-header">
-        <div class="card-icon">
-          <DataBaseIcon />
-        </div>
-        <div class="card-title">Dataset Explorer</div>
+    
+    <ScatterPlot data={dataPoints}/>
+
+    <div class="card additional-section">
+      <div class="additional-header">
+        <div class="additional-icon">🔍</div>
+        <div class="additional-title">Additional Analysis</div>
       </div>
       
-      <div class="slider-integration">
-        <SliderTab />
-      </div>
-    </div> -->
-    <!-- Eliminar este bloque -->
-
-    <div class="card analytics-section">
-      <div class="card-header">
-        <div class="card-icon">
-          <ChartIcon />
+      <div class="additional-content">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">⚙️</div>
+          <div class="placeholder-text">Additional Component</div>
+          <div class="placeholder-subtext">This space is for another component</div>
         </div>
-        <div class="card-title">Perception Analytics - Brazil</div>
-      </div>
-      <div class="metrics-content">
-        <SecurityMetrics />
       </div>
     </div>
   </div>
 </div>
 
 <style>
-  .metrics-content {
-    height: calc(100% - 60px);
-    overflow: hidden;
-  }
-
   .dashboard-container {
-    width: 100%;
+    width: 100%; 
+    height: 101vh; /**********************************************/
     color: #ffffff;
   }
 
   .dashboard {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr; 
-    gap: 2rem;
+    grid-template-columns: 1.5fr 1fr; 
+    grid-template-rows: 1fr 0.55fr;
+    gap: 0.5rem;
     height: 100%;
+    grid-template-areas: 
+      "map scatterplot"
+      "map additional";
+  }
+
+  .map-section {
+    grid-area: map;
+  }
+
+  .additional-section {
+    grid-area: additional;
   }
 
   .card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    padding: 0.85rem;
+    padding: 0.5rem;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
   }
 
   .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   }
 
   .card::before {
@@ -416,55 +361,89 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    height: 3px;
   }
 
-  .card-header {
+  .card-header, .additional-header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .card-icon {
-    width: 40px;
-    height: 40px;
+  .card-icon, .additional-icon {
+    width: 48px;
+    height: 48px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
   }
 
-  .card-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+  .card-title, .additional-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2d3748;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 
   .map-section {
-    grid-column: 1;
-    grid-row: 1;
     height: 100%;
-    display: flex;
-    flex-direction: column;
   }
 
   .map-container {
     width: 100%;
-    height: calc(100% - 80px);
+    height: calc(100% - 100px);
     border-radius: 16px;
     position: relative;
     overflow: hidden;
-    background: #2d3748;
+    background: #ffffff;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .additional-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border-radius: 16px;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .placeholder-content {
+    text-align: center;
+    color: #64748b;
+  }
+
+  .placeholder-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+
+  .placeholder-text {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #475569;
+  }
+
+  .placeholder-subtext {
+    font-size: 0.85rem;
+    color: #64748b;
   }
 
   .map-overlay {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
+    top: 16px;
+    left: 16px;
+    right: 16px;
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -479,152 +458,110 @@
   }
 
   .control-btn {
-    padding: 0.6rem 1rem;
-    background: rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    color: white;
+    padding: 0.75rem 1.25rem;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 12px;
+    color: #2d3748;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 600;
     backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .control-btn:hover {
-    background: rgba(102, 126, 234, 0.4);
-  }
-
-  .stats-overlay {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 1rem;
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    text-align: center;
-    pointer-events: all;
-  }
-
-  .stats-title {
-    font-size: 0.8rem;
-    opacity: 0.8;
-    margin-bottom: 0.5rem;
-  }
-
-  .stats-number {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-
-  .stats-subtitle {
-    font-size: 0.7rem;
-    opacity: 0.6;
+    background: rgba(102, 126, 234, 0.9);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
   }
 
   .safety-legend {
     position: absolute;
-    top: 20px; 
-    right: 20px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-    border-radius: 12px;
+    top: 16px; 
+    right: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.25rem;
+    border-radius: 16px;
     backdrop-filter: blur(10px);
     z-index: 1000;
-    min-width: 140px;
+    min-width: 160px;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   }
 
   .legend-title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 1rem;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .legend-items {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
   .legend-item {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.75rem;
   }
 
   .legend-color {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     border: 2px solid white;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
 
   .legend-text {
-    font-size: 0.8rem;
-    color: white;
-    font-weight: 500;
-  }
-
-  .slider-integration {
-    height: calc(100% - 60px);
-    overflow: auto;
-  }
-
-  .slider-integration :global(.slider-section) {
-    background: transparent;
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-    opacity: 1;
-    transform: none;
-  }
-
-  .slider-integration :global(.slider-section h2) {
-    display: none;
-  }
-
-  .slider-integration :global(.description) {
-    color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
-    text-align: left;
-    margin-bottom: 1rem;
-  }
-
-  .slider-integration :global(.controls-section) {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 1rem;
-  }
-
-  .slider-integration :global(.image-container) {
-    max-height: 100px;
-  }
-
-  .slider-integration :global(.main-image) {
-    max-height: 250px;
-  }
-
-  .analytics-section {
-    grid-column: 2; 
-    grid-row: 1; 
-    height: 100%; 
-    flex-direction: column;
+    color: #2d3748;
+    font-weight: 600;
   }
 
   :global(.leaflet-container) {
-    font-family: inherit;
-    height: 100%;
-    width: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 100% !important;
+    width: 100% !important;
+    background: #f8fafc !important;
+    border-radius: 16px;
+  }
+
+  :global(.leaflet-tile-pane) {
+    opacity: 1 !important;
+  }
+
+  :global(.leaflet-map-pane) {
+    z-index: 1 !important;
   }
 
   :global(.leaflet-popup-content) {
-    margin: 8px 12px;
-    line-height: 1.4;
+    margin: 12px 16px;
+    line-height: 1.5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   :global(.leaflet-popup-content h3) {
-    margin: 0 0 8px 0;
+    margin: 0 0 12px 0;
+    font-weight: 700;
+  }
+
+  :global(.leaflet-popup-content-wrapper) {
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  :global(.leaflet-popup-tip) {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   :global(.custom-marker) {
@@ -634,5 +571,18 @@
 
   :global(.leaflet-control-zoom) {
     display: none !important;
+  }
+
+  :global(.leaflet-control-attribution) {
+    display: none !important;
+  }
+
+  :global(.leaflet-container.leaflet-touch-zoom) {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  :global(.leaflet-tile) {
+    opacity: 1 !important;
   }
 </style>
