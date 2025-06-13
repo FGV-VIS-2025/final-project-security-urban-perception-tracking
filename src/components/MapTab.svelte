@@ -4,7 +4,7 @@
   import MapIcon from "../lib/Icons/MapIcon.svelte";
   import { selectedMapPoint } from '../stores/appStore.js';
   import ScatterPlot from "./InteractiveMap/ScatterPlot.svelte";
-  import ChartIcon from "../lib/Icons/ChartIcon.svelte"
+    import InfoUsers from "./InfoUsers/InfoUsers.svelte";
 
   let mapContainer;
   let map;
@@ -295,21 +295,7 @@
     </div>
 
     <ScatterPlot data={dataPoints} {selectedPointId}/>
-
-    <div class="card additional-section">
-      <div class="additional-header">
-        <div class="additional-icon"><ChartIcon/></div>
-        <div class="additional-title">Additional Analysis</div>
-      </div>
-      
-      <div class="additional-content">
-        <div class="placeholder-content">
-          <div class="placeholder-icon">⚙️</div>
-          <div class="placeholder-text">Additional Component</div>
-          <div class="placeholder-subtext">This space is for another component</div>
-        </div>
-      </div>
-    </div>
+    <InfoUsers data={dataPoints} {selectedPointId}/>
   </div>
 </div>
 
@@ -328,15 +314,11 @@
     height: 100%;
     grid-template-areas: 
       "map scatterplot"
-      "map additional";
+      "map infousers";
   }
 
   .map-section {
     grid-area: map;
-  }
-
-  .additional-section {
-    grid-area: additional;
   }
 
   .card {
@@ -367,14 +349,14 @@
     height: 3px;
   }
 
-  .card-header, .additional-header {
+  .card-header {
     display: flex;
     align-items: center;
     gap: 0.4rem;
     margin-bottom: 0.5rem;
   }
 
-  .card-icon, .additional-icon {
+  .card-icon {
     width: 36px;
     height: 36px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -386,7 +368,7 @@
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
   }
 
-  .card-title, .additional-title {
+  .card-title{
     font-size: 1rem;
     font-weight: 500;
     color: #2d3748;
@@ -406,40 +388,6 @@
     background: #ffffff;
     border: 2px solid rgba(102, 126, 234, 0.2);
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .additional-content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f8fafc;
-    border-radius: 16px;
-    border: 2px solid rgba(102, 126, 234, 0.2);
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-  }
-
-  .placeholder-content {
-    text-align: center;
-    color: #64748b;
-  }
-
-  .placeholder-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    opacity: 0.5;
-  }
-
-  .placeholder-text {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #475569;
-  }
-
-  .placeholder-subtext {
-    font-size: 0.85rem;
-    color: #64748b;
   }
 
   .map-overlay {
