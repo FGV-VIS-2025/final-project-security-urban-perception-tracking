@@ -1,5 +1,5 @@
 <script>
-  export let size = 24;
+  export let size = 20;
   export let color = "white";
   export let strokeWidth = 1.5;
 </script>
@@ -15,7 +15,7 @@
   <path
     d="M20 9C19.1434 4.9811 14.9912 2 11.0011 2C7.45834 2 4.08963 4.09916 2.68627 7.37966C0.090763 13.4469 5.41302 17.626 9.38449 21.367C9.81818 21.773 10.3978 22 11.0011 22C11.5513 22 12.0819 21.8112 12.5 21.4699"
     stroke={color}
-    stroke-width={strokeWidth}
+    stroke-width={2}
     stroke-linecap="round"
   />
   <path

@@ -1,21 +1,38 @@
 <script>
   import { onMount, afterUpdate } from "svelte";
-  import ChartIcon from "../../lib/Icons/ChartIcon.svelte"
+  import ScatterIcon from "../../lib/Icons/ScatterIcon.svelte";
   import * as d3 from "d3";
 
   let scatterContainer;
   let mounted = false;
   let svg;
-
-  export let data = [];
-  export let width = 580; 
-  export let height = 510;
+  let g;
+  let xScale, yScale;
+  let validData = [];
+  let plotWidth, plotHeight;
+  let currentHoverSide = null;
+  let countDisplay;
   
-  let slope = 0;
-  let intercept = 0;
-  let rSquared = 0;
-  let mse = 0; // Mean Squared Error
-  let analysisType = "identity"; // "regression" or "identity"
+  export let data = [];
+  export let width = 450; 
+  export let height = 425;
+  export let selectedPointId = null;
+  
+  $: if (mounted && selectedPointId !== null) {
+    highlightSelectedPoint();
+  }
+
+  const colors = {
+    points: {
+      default: '#8B5FBF', 
+      above: '#FF8A80', 
+      below: '#81C784',
+      hover: '#5E35B1',
+      selected: '#FF6B35' 
+    },
+    line: '#4FC3F7',
+    background: 'rgba(248, 250, 252, 0.95)'
+  };
 
   $: if (mounted && data && data.length > 0) {
     updateScatterPlot();
@@ -26,13 +43,6 @@
     initializeScatterPlot();
   });
 
-  function handleAnalysisTypeChange(event) {
-    analysisType = event.target.value;
-    if (mounted && data && data.length > 0) {
-      updateScatterPlot();
-    }
-  }
-
   function initializeScatterPlot() {
     if (!scatterContainer || !data || data.length === 0) {
       console.log("No data available for scatter plot");
@@ -41,21 +51,21 @@
 
     d3.select(scatterContainer).selectAll("*").remove();
 
-    const margin = { top: 20, right: 40, bottom: 60, left: 60 };
-    const plotWidth = width - margin.left - margin.right;
-    const plotHeight = height - margin.bottom - margin.top;
+    const margin = { top: 10, right: 5, bottom: 50, left: 60 };
+    plotWidth = width - margin.left - margin.right;
+    plotHeight = height - margin.bottom - margin.top;
 
     svg = d3.select(scatterContainer)
       .append("svg")
       .attr("width", width)
       .attr("height", height)
-      .style("background", "rgba(30, 32, 54, 0.02)")
+      .style("background", colors.background)
       .style("border-radius", "16px");
 
-    const g = svg.append("g")
+    g = svg.append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const validData = data.filter(d => 
+    validData = data.filter(d => 
       d.safety_hololens != null && 
       d.safety_pp2 != null && 
       !isNaN(d.safety_hololens) && 
@@ -73,15 +83,14 @@
       return;
     }
 
-    const xScale = d3.scaleLinear()
-      .domain([0, 10])
+    xScale = d3.scaleLinear()
+      .domain([0, 9])
       .range([0, plotWidth]);
 
-    const yScale = d3.scaleLinear()
-      .domain([0, 10])
+    yScale = d3.scaleLinear()
+      .domain([0, 9])
       .range([plotHeight, 0]);
 
-    // Grid lines
     g.append("g")
       .attr("class", "grid")
       .attr("transform", `translate(0,${plotHeight})`)
@@ -107,7 +116,6 @@
       .selectAll("line")
       .style("stroke", "#cbd5e0");
 
-    // Axes
     const xAxis = g.append("g")
       .attr("transform", `translate(0,${plotHeight})`)
       .call(d3.axisBottom(xScale).ticks(8))
@@ -127,7 +135,6 @@
       .style("stroke", "#4a5568")
       .style("stroke-width", 2);
 
-    // Labels
     g.append("text")
       .attr("transform", `translate(${plotWidth / 2}, ${plotHeight + 40})`)
       .style("text-anchor", "middle")
@@ -146,7 +153,6 @@
       .style("fill", "#2d3748")
       .text("PlacePulse2 Safety Score");
 
-    // Tooltip
     const tooltip = d3.select("body").append("div")
       .attr("class", "d3-tooltip")
       .style("position", "absolute")
@@ -160,81 +166,104 @@
       .style("z-index", "10000")
       .style("box-shadow", "0 4px 12px rgba(0,0,0,0.3)");
 
-    // Calculate and draw line based on analysis type
     const xDomain = xScale.domain();
-    let lineData;
+    const lineData = [
+      { x: xScale(xDomain[0]), y: yScale(xDomain[0]) },
+      { x: xScale(xDomain[1]), y: yScale(xDomain[1]) }
+    ];
+
+    const line = d3.line()
+      .x(d => d.x)
+      .y(d => d.y);
+
+    g.append("path")
+      .datum(lineData)
+      .attr("class", "identity-line")
+      .attr("d", line)
+      .style("stroke", colors.line)
+      .style("stroke-width", 3)
+      .style("opacity", 0.8)
+      .style("filter", "drop-shadow(0 2px 4px rgba(79, 195, 247, 0.3))");
+
+    const countContainer = g.append("g").attr("class", "count-container");
+    const aboveCountDisplay = countContainer.append("g").attr("class", "above-count");
     
-    if (analysisType === "regression" && validData.length > 1) {
-      const regression = calculateLinearRegression(validData);
-      slope = regression.slope;
-      intercept = regression.intercept;
-      rSquared = calculateRSquared(validData, slope, intercept);
-      mse = calculateMSE(validData, slope, intercept);
-      
-      lineData = [
-        { 
-          x: xScale(xDomain[0]), 
-          y: yScale(slope * xDomain[0] + intercept) 
-        },
-        { 
-          x: xScale(xDomain[1]), 
-          y: yScale(slope * xDomain[1] + intercept) 
-        }
-      ];
-    } else if (analysisType === "identity") {
-      // f(x) = x line
-      slope = 1;
-      intercept = 0;
-      mse = calculateMSE(validData, 1, 0);
-      
-      lineData = [
-        { 
-          x: xScale(xDomain[0]), 
-          y: yScale(xDomain[0]) 
-        },
-        { 
-          x: xScale(xDomain[1]), 
-          y: yScale(xDomain[1]) 
-        }
-      ];
-    }
+    aboveCountDisplay.append("rect")
+      .attr("x", 10)
+      .attr("y", 10)
+      .attr("width", 120)
+      .attr("height", 25)
+      .style("fill", "rgba(255, 136, 128, 0.1)")
+      .style("stroke", "rgba(255, 136, 128, 0.3)")
+      .style("stroke-width", 1)
+      .style("rx", 12)
+      .style("opacity", 0);
+    
+    aboveCountDisplay.append("text")
+      .attr("x", 70)
+      .attr("y", 27)
+      .attr("text-anchor", "middle")
+      .style("font-size", "12px")
+      .style("font-weight", "600")
+      .style("fill", "#E57373")
+      .style("opacity", 0);
+    
+    const belowCountDisplay = countContainer.append("g").attr("class", "below-count");
+    
+    belowCountDisplay.append("rect")
+      .attr("x", plotWidth - 130)
+      .attr("y", plotHeight - 35)
+      .attr("width", 120)
+      .attr("height", 25)
+      .style("fill", "rgba(129, 199, 132, 0.1)")
+      .style("stroke", "rgba(129, 199, 132, 0.3)")
+      .style("stroke-width", 1)
+      .style("rx", 12)
+      .style("opacity", 0);
+    
+    belowCountDisplay.append("text")
+      .attr("x", plotWidth - 70)
+      .attr("y", plotHeight - 18)
+      .attr("text-anchor", "middle")
+      .style("font-size", "12px")
+      .style("font-weight", "600")
+      .style("fill", "#81C784")
+      .style("opacity", 0);
 
-    // Draw line
-    if (lineData) {
-      const line = d3.line()
-        .x(d => d.x)
-        .y(d => d.y);
+    const overlay = g.append("rect")
+      .attr("width", plotWidth)
+      .attr("height", plotHeight)
+      .style("fill", "none")
+      .style("pointer-events", "all")
+      .on("mousemove", handleMouseMove)
+      .on("mouseleave", handleMouseLeave);
 
-      g.append("path")
-        .datum(lineData)
-        .attr("class", "regression-line")
-        .attr("d", line)
-        .style("stroke", "#2563eb") // Blue color
-        .style("stroke-width", 3)
-        .style("stroke-dasharray", analysisType === "identity" ? "none" : "8,4")
-        .style("opacity", 0.8);
-    }
-
-    // Data points - single color for all points
     g.selectAll(".dot")
       .data(validData)
       .enter().append("circle")
       .attr("class", "dot")
       .attr("cx", d => xScale(d.safety_hololens))
       .attr("cy", d => yScale(d.safety_pp2))
-      .attr("r", 5)
-      .style("fill", "#6366f1") // Single color for all points
-      .style("stroke", "#fff")
-      .style("stroke-width", 2)
-      .style("opacity", 0.9)
+      .attr("r", d => d.id === selectedPointId ? 8 : 6) 
+      .style("fill", d => d.id === selectedPointId ? colors.points.selected : colors.points.default)
+      .style("stroke", d => d.id === selectedPointId ? "#fff" : "#fff")
+      .style("stroke-width", d => d.id === selectedPointId ? 3 : 2) 
+      .style("opacity", d => d.id === selectedPointId ? 1 : 0.85)
       .style("cursor", "pointer")
+      .style("filter", d => d.id === selectedPointId ? 
+        "drop-shadow(0 4px 8px rgba(255, 107, 53, 0.4))" : 
+        "drop-shadow(0 2px 4px rgba(0,0,0,0.2))")
+      .style("transition", "all 0.3s ease")
       .on("mouseover", function(event, d) {
-        d3.select(this)
-          .transition()
-          .duration(200)
-          .attr("r", 8)
-          .style("opacity", 1)
-          .style("stroke-width", 3);
+        if (currentHoverSide === null && d.id !== selectedPointId) {
+          d3.select(this)
+            .transition()
+            .duration(200)
+            .attr("r", 9)
+            .style("opacity", 1)
+            .style("stroke-width", 3)
+            .style("fill", colors.points.hover);
+        }
         
         tooltip
           .style("visibility", "visible")
@@ -242,7 +271,8 @@
             <div style="font-weight: bold; margin-bottom: 6px;">${d.name || 'Point'}</div>
             <div>HoloLens: <span style="color: #67e8f9;">${d.safety_hololens.toFixed(2)}</span></div>
             <div>PlacePulse2: <span style="color: #a78bfa;">${d.safety_pp2.toFixed(2)}</span></div>
-            <div style="margin-top: 4px; font-size: 11px; opacity: 0.8;">ID: ${d.id}</div>
+
+            ${d.id === selectedPointId ? '<div style="margin-top: 4px; color: #FF6B35; font-weight: bold;">• Selected</div>' : ''}
           `);
       })
       .on("mousemove", function(event) {
@@ -250,122 +280,193 @@
           .style("top", (event.pageY - 60) + "px")
           .style("left", (event.pageX + 15) + "px");
       })
-      .on("mouseout", function() {
-        d3.select(this)
-          .transition()
-          .duration(200)
-          .attr("r", 5)
-          .style("opacity", 0.9)
-          .style("stroke-width", 2);
+      .on("mouseout", function(event, d) {
+        if (currentHoverSide === null && d.id !== selectedPointId) {
+          d3.select(this)
+            .transition()
+            .duration(200)
+            .attr("r", 6)
+            .style("opacity", 0.85)
+            .style("stroke-width", 2)
+            .style("fill", colors.points.default);
+        }
         
         tooltip.style("visibility", "hidden");
       });
 
-    // Statistics display
-    if (validData.length > 1) {
-      const statsBox = g.append("g")
-        .attr("transform", `translate(${plotWidth - 160}, 15)`);
-      
-      statsBox.append("rect")
-        .attr("width", 150)
-        .attr("height", 60)
-        .attr("rx", 8)
-        .style("fill", "rgba(255, 255, 255, 0.95)")
-        .style("stroke", "#2563eb")
-        .style("stroke-width", 1.5);
-      
-      statsBox.append("text")
-        .attr("x", 75)
-        .attr("y", 18)
-        .attr("text-anchor", "middle")
-        .style("font-size", "12px")
-        .style("font-weight", "600")
-        .style("fill", "#2d3748")
-        .text("Prediction Error");
-        
-      statsBox.append("text")
-        .attr("x", 75)
-        .attr("y", 35)
-        .attr("text-anchor", "middle")
-        .style("font-size", "12px")
-        .style("font-weight", "700")
-        .style("fill", "#2563eb")
-        .text(`MSE = ${mse.toFixed(3)}`);
-        
-      statsBox.append("text")
-        .attr("x", 75)
-        .attr("y", 50)
-        .attr("text-anchor", "middle")
-        .style("font-size", "10px")
-        .style("fill", "#718096")
-        .text(`n = ${validData.length} points`);
+    if (selectedPointId !== null) {
+      highlightSelectedPoint();
     }
+  }
 
-    console.log(`ScatterPlot initialized with ${validData.length} points`);
+  function highlightSelectedPoint() {
+    if (!g || selectedPointId === null) return;
+    
+    g.selectAll(".dot")
+      .transition()
+      .duration(300)
+      .attr("r", d => d.id === selectedPointId ? 8 : 6)
+      .style("fill", d => d.id === selectedPointId ? colors.points.selected : colors.points.default)
+      .style("stroke-width", d => d.id === selectedPointId ? 3 : 2)
+      .style("opacity", d => d.id === selectedPointId ? 1 : 0.85)
+      .style("filter", d => d.id === selectedPointId ? 
+        "drop-shadow(0 4px 8px rgba(255, 107, 53, 0.4))" : 
+        "drop-shadow(0 2px 4px rgba(0,0,0,0.2))");
+  }
+
+  function handleMouseMove(event) {
+    const [mouseX, mouseY] = d3.pointer(event);
+    
+    const mouseXValue = xScale.invert(mouseX);
+    const lineYAtMouseX = yScale(mouseXValue); 
+    
+    const side = mouseY < lineYAtMouseX ? 'above' : 'below';
+    
+    if (side !== currentHoverSide) {
+      currentHoverSide = side;
+      updateAreaColors();
+      updateCountDisplay();
+    }
+  }
+
+  function handleMouseLeave() {
+    currentHoverSide = null;
+    updateAreaColors();
+    hideCountDisplay();
+  }
+
+  function updateAreaColors() {
+    g.selectAll(".area-overlay").remove();
+    
+    if (currentHoverSide !== null) {
+      const areaColor = currentHoverSide === 'above' ? colors.points.above : colors.points.below;
+      
+      let areaData;
+      if (currentHoverSide === 'above') {
+        areaData = [
+          [0, 0],                    
+          [plotWidth, 0],            
+          [0, plotHeight],           
+          [0, 0]                     
+        ];
+      } else {
+        areaData = [
+          [0, plotHeight],            
+          [plotWidth, plotHeight],    
+          [plotWidth, 0],             
+          [0, plotHeight]            
+        ];
+      }
+      
+      const area = d3.line()
+        .x(d => d[0])
+        .y(d => d[1]);
+      
+      g.append("path")
+        .datum(areaData)
+        .attr("class", "area-overlay")
+        .attr("d", area)
+        .style("fill", areaColor)
+        .style("opacity", 0)
+        .style("pointer-events", "none")
+        .transition()
+        .duration(300)
+        .style("opacity", 0.12);
+    }
+  }
+
+  function updateCountDisplay() {
+    if (currentHoverSide === null) return;
+    
+    let aboveCount = 0;
+    let belowCount = 0;
+    
+    validData.forEach(d => {
+      const lineYAtPointX = yScale(d.safety_hololens);
+      const pointY = yScale(d.safety_pp2);
+      const isAbove = pointY < lineYAtPointX;
+      
+      if (isAbove) {
+        aboveCount++;
+      } else {
+        belowCount++;
+      }
+    });
+    
+    const aboveCountGroup = g.select(".above-count");
+    const belowCountGroup = g.select(".below-count");
+    
+    if (currentHoverSide === 'above') {
+      aboveCountGroup.select("rect")
+        .transition()
+        .duration(300)
+        .style("opacity", 1);
+      
+      aboveCountGroup.select("text")
+        .text(`Above: ${aboveCount} points`)
+        .transition()
+        .duration(300)
+        .style("opacity", 1);
+      
+      belowCountGroup.select("rect")
+        .transition()
+        .duration(300)
+        .style("opacity", 0);
+      
+      belowCountGroup.select("text")
+        .transition()
+        .duration(300)
+        .style("opacity", 0);
+        
+    } else if (currentHoverSide === 'below') {
+      belowCountGroup.select("rect")
+        .transition()
+        .duration(300)
+        .style("opacity", 1);
+      
+      belowCountGroup.select("text")
+        .text(`Bellow: ${belowCount} points`)
+        .transition()
+        .duration(300)
+        .style("opacity", 1);
+      
+      aboveCountGroup.select("rect")
+        .transition()
+        .duration(300)
+        .style("opacity", 0);
+      
+      aboveCountGroup.select("text")
+        .transition()
+        .duration(300)
+        .style("opacity", 0);
+    }
+  }
+
+  function hideCountDisplay() {
+    const aboveCountGroup = g.select(".above-count");
+    const belowCountGroup = g.select(".below-count");
+    
+    aboveCountGroup.selectAll("*")
+      .transition()
+      .duration(300)
+      .style("opacity", 0);
+    
+    belowCountGroup.selectAll("*")
+      .transition()
+      .duration(300)
+      .style("opacity", 0);
   }
 
   function updateScatterPlot() {
     if (!mounted) return;
     initializeScatterPlot();
   }
-
-  function calculateMSE(data, slope, intercept) {
-    const n = data.length;
-    let sumSquaredErrors = 0;
-    
-    data.forEach(d => {
-      const predicted = slope * d.safety_hololens + intercept;
-      const error = d.safety_pp2 - predicted;
-      sumSquaredErrors += error * error;
-    });
-    
-    return sumSquaredErrors / n;
-  }
-
-  function calculateRSquared(data, slope, intercept) {
-    const n = data.length;
-    const meanY = d3.mean(data, d => d.safety_pp2);
-    
-    let ssRes = 0;
-    let ssTot = 0;
-    
-    data.forEach(d => {
-      const predicted = slope * d.safety_hololens + intercept;
-      const residual = d.safety_pp2 - predicted;
-      const totalVariation = d.safety_pp2 - meanY;
-      
-      ssRes += residual * residual;
-      ssTot += totalVariation * totalVariation;
-    });
-    
-    const rSquared = ssTot === 0 ? 0 : 1 - (ssRes / ssTot);
-    return Math.max(0, Math.min(1, rSquared));
-  }
-
-  function calculateLinearRegression(data) {
-    const n = data.length;
-    const sumX = d3.sum(data, d => d.safety_hololens);
-    const sumY = d3.sum(data, d => d.safety_pp2);
-    const sumXY = d3.sum(data, d => d.safety_hololens * d.safety_pp2);
-    const sumX2 = d3.sum(data, d => d.safety_hololens * d.safety_hololens);
-
-    const slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
-    const intercept = (sumY - slope * sumX) / n;
-
-    return { slope, intercept };
-  }
 </script>
 
 <div class="scatterplot-container">
   <div class="scatterplot-header">
-    <div class="scatterplot-icon"><ChartIcon/></div>
+    <div class="scatterplot-icon"><ScatterIcon/></div>
     <div class="scatterplot-title">Safety Correlation Analysis</div>
-    <div class="analysis-selector">
-      <select bind:value={analysisType} on:change={handleAnalysisTypeChange}>
-        <option class="color-option" value="identity">Function f(x) = x</option>
-        <option class="color-option" value="regression">Linear Regression</option>
-      </select>
-    </div>
   </div>
 
   <div class="scatterplot-content" bind:this={scatterContainer}>
@@ -382,11 +483,6 @@
 </div>
 
 <style>
-  
-  .color-option {
-    color: "black";
-  }
-
   .scatterplot-container {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
@@ -399,7 +495,6 @@
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    min-height: 600px;
   }
 
   .scatterplot-container:hover {
@@ -410,54 +505,28 @@
   .scatterplot-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
   }
 
   .scatterplot-icon {
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(135deg, #4c51bf 0%, #553c9a 100%);
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #8B5FBF 0%, #5E35B1 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    box-shadow: 0 4px 12px rgba(76, 81, 191, 0.3);
+    box-shadow: 0 4px 12px rgba(139, 95, 191, 0.3);
   }
 
   .scatterplot-title {
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 500;
     color: #2d3748;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     flex: 1;
-  }
-
-  .analysis-selector {
-    margin-left: auto;
-  }
-
-  .analysis-selector select {
-    padding: 8px 12px;
-    border: 2px solid #e2e8f0;
-    border-radius: 8px;
-    background: white;
-    color: #2d3748;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    outline: none;
-  }
-
-  .analysis-selector select:hover {
-    border-color: #4c51bf;
-  }
-
-  .analysis-selector select:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
   }
 
   .scatterplot-content {
@@ -467,7 +536,7 @@
     justify-content: center;
     background: #f8fafc;
     border-radius: 16px;
-    border: 2px solid rgba(102, 126, 234, 0.2);
+    border: 2px solid rgba(139, 95, 191, 0.2);
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
     min-height: 400px;
     padding: 10px;

@@ -4,12 +4,14 @@
   import MapIcon from "../lib/Icons/MapIcon.svelte";
   import { selectedMapPoint } from '../stores/appStore.js';
   import ScatterPlot from "./InteractiveMap/ScatterPlot.svelte";
+  import ChartIcon from "../lib/Icons/ChartIcon.svelte"
 
   let mapContainer;
   let map;
   let markers = [];
   let mounted = false;
   let selectedPoint = null;
+  let selectedPointId = null; // Nueva variable para almacenar el ID seleccionado
   let dataPoints = [];
   let jsonData = {};
 
@@ -227,6 +229,8 @@
   function selectPoint(index) {
     if (index >= 0 && index < dataPoints.length) {
       selectedPoint = dataPoints[index];
+      selectedPointId = selectedPoint.id;
+      
       map.setView([selectedPoint.lat, selectedPoint.lng], 15);
       markers.forEach((marker, i) => {
         if (i === index) {
@@ -290,12 +294,11 @@
       </div>
     </div>
 
-    
-    <ScatterPlot data={dataPoints}/>
+    <ScatterPlot data={dataPoints} {selectedPointId}/>
 
     <div class="card additional-section">
       <div class="additional-header">
-        <div class="additional-icon">🔍</div>
+        <div class="additional-icon"><ChartIcon/></div>
         <div class="additional-title">Additional Analysis</div>
       </div>
       
@@ -313,14 +316,14 @@
 <style>
   .dashboard-container {
     width: 100%; 
-    height: 101vh; /**********************************************/
+    height: 100vh; /**********************************************/
     color: #ffffff;
   }
 
   .dashboard {
     display: grid;
-    grid-template-columns: 1.5fr 1fr; 
-    grid-template-rows: 1fr 0.55fr;
+    grid-template-columns: 1.5fr 0.75fr; 
+    grid-template-rows: 1.2fr 1fr;
     gap: 0.5rem;
     height: 100%;
     grid-template-areas: 
@@ -367,13 +370,13 @@
   .card-header, .additional-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
   }
 
   .card-icon, .additional-icon {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 12px;
     display: flex;
@@ -384,8 +387,8 @@
   }
 
   .card-title, .additional-title {
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 500;
     color: #2d3748;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
