@@ -575,7 +575,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     flex-direction: column;
-    min-height: 275px;
+    min-height: 600px;
   }
 
   .image-container {
@@ -593,7 +593,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 225px;
+    min-height: 500px;
   }
 
   .main-image {
@@ -605,7 +605,7 @@
     opacity: 0;
     transition: opacity 0.5s ease;
     object-fit: cover;
-    min-height: 200px;
+    min-height: 400px;
   }
 
   .main-image.loaded {
