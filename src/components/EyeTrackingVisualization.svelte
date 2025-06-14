@@ -5,10 +5,10 @@
   import * as d3 from "d3";
 
   export let imagePath = "";
-//   export let imageWidth = 800;
-//   export let imageHeight = 600;
-  export let imageWidth = 600;
-  export let imageHeight = 450;
+  export let imageWidth = 800;
+  export let imageHeight = 600;
+  // export let imageWidth = 600;
+  // export let imageHeight = 450;
   let svgContainer;
   let eyeTrackingData = [];
   let participants = [];
@@ -16,7 +16,6 @@
   let mounted = false;
   let imageLoaded = false;
 
-  // Configuración del canvas y escala (igual que tu función Python)
   const canvasPos = [0.0, 1.1];
   const canvasSize = [0.8, 0.6];
   const imagePixels = [800, 600];
@@ -27,7 +26,6 @@
     await loadParticipants();
   });
 
-  // Reactivo: cuando cambia la imagen actual, recargar datos
   $: if (mounted && $currentImage) {
     loadEyeTrackingData();
     selectedParticipant = null;
@@ -35,14 +33,12 @@
 
   async function loadEyeTrackingData() {
     try {
-      // Aquí deberías cargar tu archivo ALL_PROJECT.csv
-      // Por ahora uso datos de ejemplo basados en tu estructura
+
       const response = await fetch(base + "/ALL_PROJECT_con_clase.csv");
       if (response.ok) {
         const csvText = await response.text();
         eyeTrackingData = parseCSV(csvText);
       } else {
-        // Datos de ejemplo si no existe el archivo
         eyeTrackingData = generateExampleData();
       }
     } catch (error) {
@@ -52,7 +48,6 @@
   }
 
   async function loadParticipants() {
-    // Obtener lista única de participantes para la imagen actual
     const imageData = eyeTrackingData.filter(d => d.ImageName == $currentImage);
     participants = [...new Set(imageData.map(d => d.participante))].sort((a, b) => a - b);
   }
@@ -82,7 +77,6 @@
   }
 
   function generateExampleData() {
-    // Usar datos reales del CSV que pegaste
     const realData = [
       { Time: 7.984, X: 0.0052, Y: 1.0046, participante: 1 },
       { Time: 8.017, X: 0.0052, Y: 1.006, participante: 1 },
@@ -165,30 +159,35 @@
   }
 
   function convertWorldToPixel(worldX, worldY) {
-    // Seguir EXACTAMENTE la lógica de Python
-    // 3) World → local
-    const cx = canvasPos[0];  // 0.0
-    const cy = canvasPos[1];  // 1.1
+    const canvasPos = [0.0, 1.1];
+    const canvasSize = [0.8, 0.6];
+    const imagePixels = [800, 600];
+    
+    const cx = canvasPos[0];
+    const cy = canvasPos[1];
     const localX = worldX - cx;
     const localY = worldY - cy;
     
-    // 4) Escala
-    const world_w = canvasSize[0];  // 0.8
-    const world_h = canvasSize[1];  // 0.6
-    const px_w = imagePixels[0];    // 800
-    const px_h = imagePixels[1];    // 600
+    const world_w = canvasSize[0];
+    const world_h = canvasSize[1];
+    const px_w = imagePixels[0];
+    const px_h = imagePixels[1];
+    
     const scale_x = px_w / world_w;
     const scale_y = px_h / world_h;
     
-    // 5) Offset - EXACTO como Python
     const pixelX = localX * scale_x + px_w / 2;
     const pixelY = localY * scale_y + px_h / 2;
     
-    // 8) En Python: ax.scatter(df0["pixelX"], px_h - df0["pixelY"])
-    // Así que en D3 necesitamos: x = pixelX, y = px_h - pixelY
+    const displayWidth = 600;
+    const displayHeight = 450;
+    
+    const scaleToDisplay_x = displayWidth / px_w;
+    const scaleToDisplay_y = displayHeight / px_h;
+    
     return { 
-      x: pixelX, 
-      y: px_h - pixelY  // Esta es la clave: px_h - pixelY
+      x: pixelX * scaleToDisplay_x, 
+      y: (px_h - pixelY) * scaleToDisplay_y  
     };
   }
 
@@ -212,7 +211,7 @@
 
     if (participantData.length === 0) return;
 
-    // Convertir coordenadas del mundo a píxeles usando EXACTAMENTE la lógica Python
+    // Convertir coordenadas
     const gazePoints = participantData.map(d => {
       const pixel = convertWorldToPixel(d.X, d.Y);
       return {
@@ -222,18 +221,33 @@
       };
     });
 
-    console.log(`Participante ${selectedParticipant}:`, gazePoints.slice(0, 3)); // Debug
-
-    if (gazePoints.length === 0) return;
-
-    // Crear escala de color para la secuencia temporal
-    const colorScale = d3.scaleSequential(d3.interpolateViridis)
-      .domain([0, gazePoints.length - 1]);
-
     const svg = d3.select(svgContainer);
     const gazeGroup = svg.select(".gaze-points");
 
-    // Dibujar línea de trayectoria
+    // Colores para diferentes elementos
+    const colors = {
+      path: "#00bfff",        // Azul para la línea
+      normalPoint: "#00bfff", // Azul para puntos normales
+      startPoint: "#00ff00",  // Verde para punto inicial
+      endPoint: "#ff0000",    // Rojo para punto final
+      arrow: "#ffff00"        // Amarillo para flechitas
+    };
+
+    // Definir marcador de flecha para las líneas direccionales
+    svg.append("defs").append("marker")
+      .attr("id", "arrowhead")
+      .attr("viewBox", "0 -5 10 10")
+      .attr("refX", 8)
+      .attr("refY", 0)
+      .attr("markerWidth", 4)
+      .attr("markerHeight", 4)
+      .attr("orient", "auto")
+      .append("path")
+      .attr("d", "M0,-5L10,0L0,5")
+      .attr("fill", colors.arrow)
+      .attr("stroke", colors.arrow);
+
+    // Dibujar línea de trayectoria principal
     const line = d3.line()
       .x(d => d.px)
       .y(d => d.py)
@@ -243,69 +257,131 @@
       .datum(gazePoints)
       .attr("d", line)
       .attr("fill", "none")
-      .attr("stroke", "#00bfff")
-      .attr("stroke-width", 3)
-      .attr("opacity", 0.8);
-
-    // Dibujar puntos de fijación - EXACTO como Python: s=25, alpha=0.7
-    gazeGroup.selectAll(".gaze-point")
-      .data(gazePoints)
-      .enter()
-      .append("circle")
-      .attr("class", "gaze-point")
-      .attr("cx", d => d.px)
-      .attr("cy", d => d.py)
-      .attr("r", 6)  // Equivalente a s=25 en matplotlib
-      .attr("fill", (d, i) => colorScale(i))
-      .attr("stroke", "#fff")
+      .attr("stroke", colors.path)
       .attr("stroke-width", 2)
-      .attr("opacity", 0.7)  // Igual que Python
-      .on("mouseover", function(event, d) {
-        // Tooltip mejorado para debugging
-        const tooltip = d3.select("body").append("div")
-          .attr("class", "eye-tracking-tooltip")
-          .style("position", "absolute")
-          .style("background", "rgba(0, 0, 0, 0.9)")
-          .style("color", "white")
-          .style("padding", "8px 12px")
-          .style("border-radius", "6px")
-          .style("font-size", "12px")
-          .style("pointer-events", "none")
-          .style("z-index", "1000")
-          .style("box-shadow", "0 4px 12px rgba(0,0,0,0.3)");
+      .attr("opacity", 0.6);
 
-        // Calcular valores paso a paso para debugging
-        const cx = 0.0, cy = 1.1;
-        const localX = d.X - cx;
-        const localY = d.Y - cy;
-        const scale_x = 800 / 0.8;
-        const scale_y = 600 / 0.6;
-        const pixelX = localX * scale_x + 400;
-        const pixelY = localY * scale_y + 300;
-        const finalY = 600 - pixelY;
+    // Dibujar flechitas direccionales (cada ciertos puntos para no saturar)
+    const arrowInterval = Math.max(1, Math.floor(gazePoints.length / 8)); // Máximo 8 flechas
+    
+    for (let i = 0; i < gazePoints.length - 1; i += arrowInterval) {
+      const current = gazePoints[i];
+      const next = gazePoints[i + 1];
+      
+      // Calcular la distancia para evitar flechas muy cortas
+      const distance = Math.sqrt(
+        Math.pow(next.px - current.px, 2) + Math.pow(next.py - current.py, 2)
+      );
+      
+      // Solo dibujar flecha si la distancia es suficiente
+      if (distance > 10) {
+        gazeGroup.append("line")
+          .attr("x1", current.px)
+          .attr("y1", current.py)
+          .attr("x2", next.px)
+          .attr("y2", next.py)
+          .attr("stroke", colors.arrow)
+          .attr("stroke-width", 1.5)
+          .attr("opacity", 0.7)
+          .attr("marker-end", "url(#arrowhead)");
+      }
+    }
 
-        tooltip.html(`
-          <strong>Participante:</strong> ${d.participante}<br>
-          <strong>Time:</strong> ${d.Time.toFixed(3)}s<br>
-          <strong>World:</strong> (${d.X.toFixed(4)}, ${d.Y.toFixed(4)})<br>
-          <strong>Local:</strong> (${localX.toFixed(4)}, ${localY.toFixed(4)})<br>
-          <strong>Scale:</strong> (${scale_x.toFixed(1)}, ${scale_y.toFixed(1)})<br>
-          <strong>Raw Pixel:</strong> (${pixelX.toFixed(1)}, ${pixelY.toFixed(1)})<br>
-          <strong>Final:</strong> (${d.px.toFixed(1)}, ${d.py.toFixed(1)})
-        `)
-        .style("left", (event.pageX + 10) + "px")
-        .style("top", (event.pageY - 10) + "px");
+    // Dibujar puntos normales (excluyendo primero y último)
+    if (gazePoints.length > 2) {
+      gazeGroup.selectAll(".gaze-point-normal")
+        .data(gazePoints.slice(1, -1)) // Excluir primer y último punto
+        .enter()
+        .append("circle")
+        .attr("class", "gaze-point-normal")
+        .attr("cx", d => d.px)
+        .attr("cy", d => d.py)
+        .attr("r", 3)
+        .attr("fill", colors.normalPoint)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 1)
+        .attr("opacity", 0.8)
+        .on("mouseover", function(event, d) {
+          showTooltip(event, d, "Punto intermedio");
+          d3.select(this).attr("r", 5);
+        })
+        .on("mouseout", function() {
+          hideTooltip();
+          d3.select(this).attr("r", 3);
+        });
+    }
 
-        d3.select(this)
-          .attr("r", 9)
-          .attr("stroke-width", 3);
-      })
-      .on("mouseout", function() {
-        d3.selectAll(".eye-tracking-tooltip").remove();
-        d3.select(this)
-          .attr("r", 6)
-          .attr("stroke-width", 2);
-      });
+    // Dibujar punto inicial (verde) - SIN TEXTO
+    if (gazePoints.length > 0) {
+      gazeGroup.append("circle")
+        .datum(gazePoints[0])
+        .attr("class", "start-point")
+        .attr("cx", d => d.px)
+        .attr("cy", d => d.py)
+        .attr("r", 6)
+        .attr("fill", colors.startPoint)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 2)
+        .attr("opacity", 1)
+        .on("mouseover", function(event, d) {
+          showTooltip(event, d, "Punto inicial");
+          d3.select(this).attr("r", 8);
+        })
+        .on("mouseout", function() {
+          hideTooltip();
+          d3.select(this).attr("r", 6);
+        });
+    }
+
+    // Dibujar punto final (rojo) - SIN TEXTO
+    if (gazePoints.length > 1) {
+      gazeGroup.append("circle")
+        .datum(gazePoints[gazePoints.length - 1])
+        .attr("class", "end-point")
+        .attr("cx", d => d.px)
+        .attr("cy", d => d.py)
+        .attr("r", 6)
+        .attr("fill", colors.endPoint)
+        .attr("stroke", "#fff")
+        .attr("stroke-width", 2)
+        .attr("opacity", 1)
+        .on("mouseover", function(event, d) {
+          showTooltip(event, d, "Punto final");
+          d3.select(this).attr("r", 8);
+        })
+        .on("mouseout", function() {
+          hideTooltip();
+          d3.select(this).attr("r", 6);
+        });
+    }
+
+    // Funciones auxiliares para tooltips
+    function showTooltip(event, d, type) {
+      const tooltip = d3.select("body").append("div")
+        .attr("class", "eye-tracking-tooltip")
+        .style("position", "absolute")
+        .style("background", "rgba(0, 0, 0, 0.9)")
+        .style("color", "white")
+        .style("padding", "8px 12px")
+        .style("border-radius", "6px")
+        .style("font-size", "12px")
+        .style("pointer-events", "none")
+        .style("z-index", "1000")
+        .style("box-shadow", "0 4px 12px rgba(0,0,0,0.3)");
+
+      tooltip.html(`
+        <strong>${type}</strong><br>
+        <strong>Participante:</strong> ${d.participante}<br>
+        <strong>Tiempo:</strong> ${d.Time.toFixed(3)}s<br>
+        <strong>Posición:</strong> (${d.px.toFixed(1)}, ${d.py.toFixed(1)})
+      `)
+      .style("left", (event.pageX + 10) + "px")
+      .style("top", (event.pageY - 10) + "px");
+    }
+
+    function hideTooltip() {
+      d3.selectAll(".eye-tracking-tooltip").remove();
+    }
   }
 
   function onImageLoad() {
@@ -315,18 +391,16 @@
     }
   }
 
-  // Actualizar cuando cambian los participantes
   $: if (mounted && eyeTrackingData.length > 0) {
     loadParticipants();
   }
 
-  // Renderizar cuando se selecciona un participante
   $: if (selectedParticipant && imageLoaded) {
     setTimeout(renderEyeTracking, 100);
   }
 </script>
 
-<div class="eye-tracking-container">  
+ <div class="eye-tracking-container">  
   <!-- Panel de participantes -->
   <div class="participants-panel">
     <h3>👥 Participants</h3>
@@ -343,7 +417,7 @@
           <div class="participant-label">Participant {participant}</div>
         </button>
       {/each}
-     </div> 
+    </div> 
 
     {#if selectedParticipant}
       <div class="selected-info">
@@ -373,6 +447,23 @@
       >
         <g class="gaze-points"></g>
       </svg>
+
+      <!-- LEYENDA SUPERPUESTA EN LA IMAGEN -->
+      {#if selectedParticipant}
+        <div class="floating-legend">
+          <h4>📍 Leyenda</h4>
+          <div class="legend-items-floating">
+            <div class="legend-item-floating">
+              <span style="color: #00ff00; font-size: 16px;">🟢</span>
+              <span class="legend-label">Punto Inicial</span>
+            </div>
+            <div class="legend-item-floating">
+              <span style="color: #ff0000; font-size: 16px;">🔴</span>
+              <span class="legend-label">Punto Final</span>
+            </div>
+          </div>
+        </div>
+      {/if}
     </div>
 
     {#if !selectedParticipant}
@@ -385,7 +476,7 @@
       </div>
     {/if}
   </div>
- </div> 
+</div>
 
 <style>
   .eye-tracking-container {

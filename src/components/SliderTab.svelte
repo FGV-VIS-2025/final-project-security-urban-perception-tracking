@@ -394,8 +394,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 200px;
-    max-height: 150px;
+    min-height: 400px;
+    max-height: 500px;
     margin-top: 1rem;
   }
 

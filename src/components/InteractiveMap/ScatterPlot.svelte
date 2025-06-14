@@ -79,7 +79,6 @@
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("fill", "#64748b")
-        .text("No valid data points");
       return;
     }
 
