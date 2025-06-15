@@ -3,12 +3,14 @@
   import { onMount } from "svelte";
   import { base } from "$app/paths";
   import EyeTrackingVisualization from "./EyeTrackingVisualization.svelte";
+  import FixationVisualization from "./FixationVisualization.svelte"; 
 
   let imageElement;
   let imageLoaded = false;
   let imageError = false;
   let mounted = false;
   let showEyeTracking = false;
+  let showFixations = false;
 
   $: currentConfig = $config;
   $: imagePath = `${currentConfig.imageBasePath}${currentConfig.imagePrefix}${$currentImage}${currentConfig.imageExtension}`;
@@ -99,6 +101,20 @@
   function jumpToThreeQuarters() {
     jumpToImage(Math.floor((currentConfig.imageCount * 3) / 4));
   }
+
+  function toggleEyeTracking() {
+    showEyeTracking = !showEyeTracking;
+    if (showEyeTracking) {
+      showFixations = false; // Solo uno activo a la vez
+    }
+  }
+
+  function toggleFixations() {
+    showFixations = !showFixations;
+    if (showFixations) {
+      showEyeTracking = false; // Solo uno activo a la vez
+    }
+  }
 </script>
 
 <svelte:window on:keydown={handleKeydown} />
@@ -172,11 +188,22 @@
       <button 
         class="jump-btn eye-tracking-toggle" 
         class:active={showEyeTracking}
-        on:click={() => showEyeTracking = !showEyeTracking} 
+        on:click={toggleEyeTracking}
         title="Toggle Eye Tracking"
       >
         👁️ Eye Tracking
       </button>
+
+    <button 
+      class="jump-btn fixation-toggle" 
+      class:active={showFixations}
+      on:click={toggleFixations}
+      title="Toggle Fixation Points"
+    >
+      🎯 Fixation Points
+    </button>
+
+
     </div>
 
     <!-- Slider Section -->
@@ -230,6 +257,46 @@
           imageHeight={450}
         />
       </div> 
+    {:else if showFixations}
+      <!-- Fixation Points Visualization -->
+      <div class="fixation-section">
+        <div class="section-header">
+          <h3>🎯 Fixation Points Analysis</h3>
+          <button 
+            class="close-btn" 
+            on:click={() => showFixations = false}
+            title="Close Fixation Points"
+          >
+            ✕
+          </button>
+        </div>
+
+        <FixationVisualization 
+          imagePath={imagePath}
+          imageWidth={600}
+          imageHeight={450}
+        />
+      </div>
+    {:else if showEyeTracking}
+      <!-- Eye Tracking Visualization -->
+      <div class="eye-tracking-section">
+        <div class="section-header">
+          <h3>👁️ Eye Tracking Analysis</h3>
+          <button 
+            class="close-btn" 
+            on:click={() => showEyeTracking = false}
+            title="Close Fixations"
+          >
+            ✕
+          </button>
+        </div>
+
+        <EyeTrackingVisualization 
+          imagePath={imagePath}
+          imageWidth={600}
+          imageHeight={450}
+        />
+      </div>
     {:else}
       <!-- Regular Image Display -->
       <div class="image-container">
@@ -824,5 +891,27 @@
   .close-btn:hover {
     background: rgba(255, 107, 107, 0.3);
     border-color: #ff6b6b;
+  }
+
+  .fixation-toggle {
+  background: rgba(255, 107, 53, 0.1);
+  border-color: rgba(255, 107, 53, 0.3);
+  }
+
+  .fixation-toggle:hover {
+    background: rgba(255, 107, 53, 0.2);
+  }
+
+  .fixation-toggle.active {
+    background: rgba(255, 107, 53, 0.3);
+    border-color: #ff6b35;
+  }
+
+  .fixation-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 100%;
   }
 </style>
