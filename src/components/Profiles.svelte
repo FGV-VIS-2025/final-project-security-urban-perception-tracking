@@ -185,7 +185,7 @@
                     </div>
                     <div class="link-content">
                       <span class="link-label">LinkedIn</span>
-                      <span class="link-url">Ver perfil profesional</span>
+                      <span class="link-url">View professional profile</span>
                     </div>
                     <div class="link-arrow">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
