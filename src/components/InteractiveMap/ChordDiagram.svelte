@@ -236,7 +236,8 @@
             .style("pointer-events", "none")
             .style("left", (event.pageX + 10) + "px")
             .style("top", (event.pageY - 10) + "px")
-            .text(`P${participants[d.source.index]} ↔ P${participants[d.target.index]}: ${similarity} similitud`);
+            .text(`P${participants[d.source.index]} ↔ P${participants[d.target.index]}`);
+            //.text(`P${participants[d.source.index]} ↔ P${participants[d.target.index]}: ${similarity} similitud`);
           
           setTimeout(() => tooltip.remove(), 150);
         })
