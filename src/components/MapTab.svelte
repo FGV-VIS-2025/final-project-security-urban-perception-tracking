@@ -4,7 +4,7 @@
   import MapIcon from "../lib/Icons/MapIcon.svelte";
   import { selectedMapPoint } from '../stores/appStore.js';
   import ScatterPlot from "./InteractiveMap/ScatterPlot.svelte";
-    import InfoUsers from "./InfoUsers/InfoUsers.svelte";
+    import InfoUsers from "./InteractiveMap/InfoUsers.svelte";
 
   let mapContainer;
   let map;
@@ -309,7 +309,7 @@
   .dashboard {
     display: grid;
     grid-template-columns: 1.5fr 0.75fr; 
-    grid-template-rows: 1.2fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 0.5rem;
     height: 100%;
     grid-template-areas: 
@@ -359,13 +359,13 @@
   .card-icon {
     width: 36px;
     height: 36px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
   }
 
   .card-title{

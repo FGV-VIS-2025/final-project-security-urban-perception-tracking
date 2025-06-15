@@ -512,13 +512,13 @@
   .scatterplot-icon {
     width: 36px;
     height: 36px;
-    background: linear-gradient(135deg, #8B5FBF 0%, #5E35B1 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    box-shadow: 0 4px 12px rgba(139, 95, 191, 0.3);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
   }
 
   .scatterplot-title {
