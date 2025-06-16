@@ -2,26 +2,29 @@
   import WorldsIcon from "../../lib/Icons/WorldsIcon.svelte";
 </script>
 
-<div class="hero-visual">
-  <div class="scanning-frame">
-    <div class="scan-line"></div>
-    <div class="corner-brackets">
-      <div class="bracket top-left"></div>
-      <div class="bracket top-right"></div>
-      <div class="bracket bottom-left"></div>
-      <div class="bracket bottom-right"></div>
+<a href="/#map" class="tooltip-container">
+  <div class="hero-visual">
+    <div class="scanning-frame">
+      <div class="scan-line"></div>
+      <div class="corner-brackets">
+        <div class="bracket top-left"></div>
+        <div class="bracket top-right"></div>
+        <div class="bracket bottom-left"></div>
+        <div class="bracket bottom-right"></div>
+      </div>
+    </div>
+  
+    <div class="pulsing-circle">
+      <div class="radar-sweep"></div>
+      <div class="inner-circle">
+        <WorldsIcon color={"#00d4ff"} size={70} />
+      </div>
+      <div class="orbit-ring ring-1"></div>
+      <div class="orbit-ring ring-2"></div>
     </div>
   </div>
-
-  <div class="pulsing-circle">
-    <div class="radar-sweep"></div>
-    <div class="inner-circle">
-      <WorldsIcon color={"#00d4ff"} size={70} />
-    </div>
-    <div class="orbit-ring ring-1"></div>
-    <div class="orbit-ring ring-2"></div>
-  </div>
-</div>
+  <span class="tooltip">Direct to MapInteractive</span>
+</a>
 
 <style>
   .hero-visual {
@@ -31,6 +34,38 @@
     align-items: center;
     position: relative;
     z-index: 2;
+    cursor: pointer;
+  }
+  
+  .tooltip-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tooltip {
+    visibility: hidden;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #00d4ff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 10;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.5);
+  }
+
+  .tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
   }
 
   .scanning-frame {

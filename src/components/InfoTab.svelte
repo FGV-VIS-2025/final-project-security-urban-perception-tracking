@@ -9,8 +9,8 @@
 <div class="spectacular-container">
   <Cover/>
   <Objectives/>
-  <Participants/>
   <Methodology/>
+  <Participants/>
   <Dataset/>
 </div>
 

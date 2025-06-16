@@ -6,8 +6,6 @@
 </script>
 
 <section class="objectives-section" id="objectives-section">
-  <div class="transition-gradient"></div>
-  
   <div class="cyber-grid"></div>
   <div class="floating-particles">
     <div class="particle"></div>
@@ -16,7 +14,7 @@
     <div class="particle"></div>
     <div class="particle"></div>
   </div>
-  
+
   <div class="section-header">
     <div class="header-pulse"></div>
     <div class="icon-hexagon">
@@ -31,45 +29,49 @@
 
   <div class="objectives-grid">
     <div class="objective-card temporal">
-      <div class="card-frame">
-        <div class="corner top-left"></div>
-        <div class="corner top-right"></div>
-        <div class="corner bottom-left"></div>
-        <div class="corner bottom-right"></div>
-      </div>
-      <div class="icon-chamber">
-        <div class="energy-ring"></div>
-        <ClockIcon size={48} />
-      </div>
-      <div class="data-block">
-        <h3 class="objective-title">Temporal Exploration</h3>
-        <div class="title-underline"></div>
-        <p class="objective-desc">
-          Seamless navigation through time using interactive controls that reveal
-          temporal patterns in eye-tracking data.
-        </p>
-      </div>
+      <a href="/#temporal" class="label-a-temporal">
+        <div class="card-frame">
+          <div class="corner top-left"></div>
+          <div class="corner top-right"></div>
+          <div class="corner bottom-left"></div>
+          <div class="corner bottom-right"></div>
+        </div>
+        <div class="icon-chamber">
+          <div class="energy-ring"></div>
+          <ClockIcon size={48} />
+        </div>
+        <div class="data-block">
+          <h3 class="objective-title">Temporal Exploration</h3>
+          <div class="title-underline"></div>
+          <p class="objective-desc">
+            Seamless navigation through time using interactive controls that
+            reveal temporal patterns in eye-tracking data.
+          </p>
+        </div>
+      </a>
     </div>
 
     <div class="objective-card geospatial">
-      <div class="card-frame">
-        <div class="corner top-left"></div>
-        <div class="corner top-right"></div>
-        <div class="corner bottom-left"></div>
-        <div class="corner bottom-right"></div>
-      </div>
-      <div class="icon-chamber">
-        <div class="energy-ring"></div>
-        <WorldsIcon size={48} />
-      </div>
-      <div class="data-block">
-        <h3 class="objective-title">Geospatial Analysis</h3>
-        <div class="title-underline"></div>
-        <p class="objective-desc">
-          Interactive maps that reveal the spatial distribution of the perception
-          of safety in different locations in Rio de Janeiro.
-        </p>
-      </div>
+      <a href="/#map" class="label-a-temporal">
+        <div class="card-frame">
+          <div class="corner top-left"></div>
+          <div class="corner top-right"></div>
+          <div class="corner bottom-left"></div>
+          <div class="corner bottom-right"></div>
+        </div>
+        <div class="icon-chamber">
+          <div class="energy-ring"></div>
+          <WorldsIcon size={48} />
+        </div>
+        <div class="data-block">
+          <h3 class="objective-title">Geospatial Analysis</h3>
+          <div class="title-underline"></div>
+          <p class="objective-desc">
+            Interactive maps that reveal the spatial distribution of the
+            perception of safety in different locations in Rio de Janeiro.
+          </p>
+        </div>
+      </a>
     </div>
 
     <div class="objective-card comprehensive">
@@ -96,32 +98,22 @@
 </section>
 
 <style>
+  .label-a-temporal {
+    text-decoration: none;
+  }
+
   .objectives-section {
     padding: 140px 80px;
     position: relative;
-    background: 
-      radial-gradient(ellipse at 30% 20%, rgba(0, 212, 255, 0.04) 0%, transparent 45%),
-      radial-gradient(ellipse at 70% 80%, rgba(255, 107, 0, 0.03) 0%, transparent 45%),
-      linear-gradient(180deg, #16213e 0%, #1a1a2e 25%, #15192a 60%, #0f1218 100%);
-    overflow: hidden;
-    min-height: 100vh;
-  }
-
-  .transition-gradient {
-    position: absolute;
-    top: -120px;
-    left: 0;
-    right: 0;
-    height: 240px;
     background: linear-gradient(
-      170deg,
-      rgba(22, 33, 62, 0.9) 0%,
-      rgba(26, 26, 46, 0.7) 25%,
-      rgba(21, 25, 42, 0.5) 50%,
-      rgba(15, 18, 24, 0.3) 75%,
-      transparent 100%
+      135deg,
+      rgba(15, 23, 42, 0.95) 0%,
+      rgba(30, 41, 59, 0.92) 50%,
+      rgba(51, 65, 85, 0.9) 100%
     );
-    z-index: 1;
+    box-shadow:
+      0 0 50px rgba(0, 212, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .cyber-grid {
@@ -130,8 +122,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.02) 1px,
+        transparent 1px
+      ),
       linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     background-size: 80px 80px;
     animation: grid-shift 25s linear infinite;
@@ -157,11 +151,26 @@
     animation: particle-float 12s infinite linear;
   }
 
-  .particle:nth-child(1) { left: 15%; animation-delay: 0s; }
-  .particle:nth-child(2) { left: 35%; animation-delay: 3s; }
-  .particle:nth-child(3) { left: 55%; animation-delay: 6s; }
-  .particle:nth-child(4) { left: 75%; animation-delay: 9s; }
-  .particle:nth-child(5) { left: 85%; animation-delay: 1.5s; }
+  .particle:nth-child(1) {
+    left: 15%;
+    animation-delay: 0s;
+  }
+  .particle:nth-child(2) {
+    left: 35%;
+    animation-delay: 3s;
+  }
+  .particle:nth-child(3) {
+    left: 55%;
+    animation-delay: 6s;
+  }
+  .particle:nth-child(4) {
+    left: 75%;
+    animation-delay: 9s;
+  }
+  .particle:nth-child(5) {
+    left: 85%;
+    animation-delay: 1.5s;
+  }
 
   .section-header {
     text-align: center;
@@ -186,8 +195,11 @@
     width: 110px;
     height: 110px;
     margin: 0 auto 40px;
-    background: 
-      linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.03)),
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.4),
+        rgba(255, 255, 255, 0.03)
+      ),
       radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
     backdrop-filter: blur(20px);
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -232,19 +244,29 @@
     width: 120px;
     height: 2px;
     margin: 40px auto;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
     animation: data-flow 3s linear infinite;
     position: relative;
   }
 
   .data-stream::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -1px;
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.15),
+      transparent
+    );
     animation: data-flow 3s linear infinite reverse;
   }
 
@@ -259,9 +281,16 @@
   }
 
   .objective-card {
-    background: 
-      linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.02)),
-      radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.3),
+        rgba(255, 255, 255, 0.02)
+      ),
+      radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.03) 0%,
+        transparent 70%
+      );
     backdrop-filter: blur(15px);
     padding: 40px 30px;
     border-radius: 0;
@@ -269,18 +298,32 @@
     overflow: hidden;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+    clip-path: polygon(
+      0 0,
+      calc(100% - 15px) 0,
+      100% 15px,
+      100% 100%,
+      15px 100%,
+      0 calc(100% - 15px)
+    );
   }
 
   .objective-card:hover {
     transform: scale(1.02) translateY(-5px);
     border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 
+    box-shadow:
       0 20px 40px rgba(0, 0, 0, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
-    background: 
-      linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(255, 255, 255, 0.04)),
-      radial-gradient(circle at center, rgba(0, 212, 255, 0.04) 0%, transparent 70%);
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.4),
+        rgba(255, 255, 255, 0.04)
+      ),
+      radial-gradient(
+        circle at center,
+        rgba(0, 212, 255, 0.04) 0%,
+        transparent 70%
+      );
   }
 
   .card-frame {
@@ -338,8 +381,11 @@
     width: 80px;
     height: 80px;
     margin: 0 auto 30px;
-    background: 
-      radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%),
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.04) 0%,
+        transparent 70%
+      ),
       linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(255, 255, 255, 0.02));
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 50%;
@@ -352,16 +398,22 @@
   }
 
   .geospatial .icon-chamber {
-    background: 
-      radial-gradient(circle, rgba(0, 212, 255, 0.06) 0%, transparent 70%),
+    background: radial-gradient(
+        circle,
+        rgba(0, 212, 255, 0.06) 0%,
+        transparent 70%
+      ),
       linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 212, 255, 0.02));
     border-color: rgba(0, 212, 255, 0.15);
     color: rgba(0, 212, 255, 0.9);
   }
 
   .comprehensive .icon-chamber {
-    background: 
-      radial-gradient(circle, rgba(255, 107, 0, 0.05) 0%, transparent 70%),
+    background: radial-gradient(
+        circle,
+        rgba(255, 107, 0, 0.05) 0%,
+        transparent 70%
+      ),
       linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(255, 107, 0, 0.02));
     border-color: rgba(255, 107, 0, 0.15);
     color: rgba(255, 107, 0, 0.85);
@@ -399,7 +451,11 @@
   .title-underline {
     width: 40px;
     height: 2px;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(0, 212, 255, 0.4));
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(0, 212, 255, 0.4)
+    );
     margin: 15px auto 25px;
     animation: underline-glow 4s ease-in-out infinite;
   }
@@ -413,44 +469,89 @@
   }
 
   @keyframes grid-shift {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(80px, 80px); }
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(80px, 80px);
+    }
   }
 
   @keyframes particle-float {
-    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-    15% { opacity: 1; }
-    85% { opacity: 1; }
-    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100px) rotate(360deg);
+      opacity: 0;
+    }
   }
 
   @keyframes pulse-ring {
-    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
-    100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
+    0% {
+      transform: translate(-50%, -50%) scale(0.9);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.3);
+      opacity: 0;
+    }
   }
 
   @keyframes hexagon-rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
   @keyframes cyber-glow {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 
   @keyframes data-flow {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
   }
 
   @keyframes energy-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.3; }
-    50% { transform: scale(1.03); opacity: 0.6; }
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.03);
+      opacity: 0.6;
+    }
   }
 
   @keyframes underline-glow {
-    0%, 100% { box-shadow: 0 0 3px rgba(255, 255, 255, 0.1); }
-    50% { box-shadow: 0 0 8px rgba(0, 212, 255, 0.3); }
+    0%,
+    100% {
+      box-shadow: 0 0 3px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+    }
   }
 </style>
