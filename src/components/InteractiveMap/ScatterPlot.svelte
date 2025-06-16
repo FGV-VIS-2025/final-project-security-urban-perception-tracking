@@ -24,15 +24,15 @@
 
   const colors = {
     points: {
-      default: '#8B5FBF', 
+      default: '#3b82f6', 
       above: '#FF8A80', 
       below: '#81C784',
       hover: '#5E35B1',
       selected: '#FF6B35' 
     },
-    line: '#4FC3F7',
+    line: '#FF7A7A',
     background: 'rgba(248, 250, 252, 0.95)',
-    histogram: '#6B95C4'
+    histogram: '#3b82f6'
   };
 
   $: if (mounted && data && data.length > 0) {
@@ -167,16 +167,6 @@
       .style("font-weight", "600")
       .style("fill", "#2d3748")
       .text("PlacePulse2 Safety Score");
-
-    // Title
-    svg.append("text")
-      .attr("x", width / 2)
-      .attr("y", 25)
-      .attr("text-anchor", "middle")
-      .style("font-size", "18px")
-      .style("font-weight", "600")
-      .style("fill", "#2d3748")
-      .text("Distribution of samples");
 
     // Tooltip
     const tooltip = d3.select("body").append("div")
