@@ -4,8 +4,8 @@
   import { onMount } from 'svelte';
 
   onMount(() => {
-    // Redirect inmediato a overview
-    goto(base + '/overview', { replaceState: true });
+    const targetPath = base ? `${base}/overview` : '/overview';
+    goto(targetPath, { replaceState: true });
   });
 </script>
 
