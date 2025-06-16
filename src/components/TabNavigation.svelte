@@ -3,29 +3,75 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import Icon from "../lib/Icon.svelte";
-  
+  import { onMount } from 'svelte';
+
   const navSections = [
     {
       title: "Main",
       items: [
-        { id: "", label: "Overview", icon: "home" },
+        { id: "overview", label: "Overview", icon: "home" }, // Cambiado de "" a "overview"
         { id: "temporal", label: "Eye Tracking Vis", icon: "eye" },
         { id: "map", label: "Interactive Map", icon: "map", badge: "" },
       ],
     },
     {
-      title: "Developers",
+      title: "Developers", 
       items: [{ id: "profiles", label: "Profiles", icon: "develop" }],
     },
   ];
 
   let sidebarOpen = false;
+  let isNavigating = false;
 
-  $: currentRoute = $page.url.pathname.replace(base, '').slice(1) || '';
+  function getCurrentRoute(pathname) {
+    const cleanPath = pathname.replace(base, '').replace(/^\/+/, '').replace(/\/+$/, '');
+    return cleanPath || 'overview'; // Si está vacío, es overview
+  }
 
-  function selectTab(tabId) {
-    const route = tabId ? `${base}/${tabId}` : base || '/';
-    goto(route);
+  $: currentRoute = getCurrentRoute($page.url.pathname);
+
+  onMount(() => {
+    const currentPath = $page.url.pathname;
+    if (currentPath === '/' || currentPath === base + '/' || currentPath === base) {
+      console.log('Redirecting from root to /overview');
+      goto('/overview', { replaceState: true });
+    }
+  });
+
+  async function selectTab(tabId) {
+    if (isNavigating) {
+      console.log('Navigation already in progress, skipping...');
+      return;
+    }
+
+    try {
+      isNavigating = true;
+      
+      const targetRoute = `/${tabId}`;
+      
+      console.log('Navigating to:', targetRoute);
+      console.log('Current route:', currentRoute, 'Target ID:', tabId);
+      
+      if (window.innerWidth <= 768) {
+        sidebarOpen = false;
+      }
+      
+      if (currentRoute === tabId) {
+        console.log('Already on target route, skipping navigation');
+        return;
+      }
+      
+      await goto(targetRoute);
+      
+      console.log('Navigation completed successfully');
+      
+    } catch (error) {
+      console.error('Navigation error:', error);
+    } finally {
+      setTimeout(() => {
+        isNavigating = false;
+      }, 100);
+    }
   }
 
   function toggleSidebar() {
@@ -36,15 +82,23 @@
     if (window.innerWidth <= 768 && sidebarOpen) {
       const sidebar = document.getElementById("sidebar");
       const toggle = document.querySelector(".sidebar-toggle");
-
       if (!sidebar?.contains(event.target) && !toggle?.contains(event.target)) {
         sidebarOpen = false;
       }
     }
   }
+
+  // Debug
+  $: {
+    console.log('=== DEBUG INFO ===');
+    console.log('Page pathname:', $page.url.pathname);
+    console.log('Current route:', currentRoute);
+    console.log('==================');
+  }
 </script>
 
 <svelte:window on:click={handleOutsideClick} />
+
 <button class="sidebar-toggle" on:click={toggleSidebar}>
   <span class="toggle-icon">⚡</span>
 </button>
@@ -71,23 +125,26 @@
           <div class="section-title">{section.title}</div>
           <div class="section-line"></div>
         </div>
+        
         <div class="nav-items">
           {#each section.items as item}
-            <div
-              class="nav-item"
+            <div 
+              class="nav-item" 
               class:active={currentRoute === item.id}
+              class:navigating={isNavigating}
               on:click={() => selectTab(item.id)}
               on:keydown={(e) => e.key === "Enter" && selectTab(item.id)}
               role="button"
               tabindex="0"
+              style="pointer-events: {isNavigating ? 'none' : 'auto'}"
             >
               <div class="nav-item-glow"></div>
               <div class="nav-content">
                 <div class="nav-icon-wrapper">
                   <div class="nav-icon">
-                    <Icon
-                      name={item.icon}
-                      size={20}
+                    <Icon 
+                      name={item.icon} 
+                      size={20} 
                       color={currentRoute === item.id ? "#f8fafc" : "#94a3b8"}
                       strokeWidth={currentRoute === item.id ? 2.2 : 1.8}
                     />
