@@ -10,7 +10,7 @@
   }
 </script>
 
-<section class="methodology-section">
+<section class="methodology-section" id="methodology-section">
   <div class="methodology-container">
     <div class="methodology-hero">
       <div class="hero-badge">
@@ -170,15 +170,6 @@
 
 <style>
   .methodology-section {
-    background: linear-gradient(
-      45deg,
-      rgba(15, 23, 42, 0.95) 0%,
-      rgba(30, 41, 59, 0.92) 50%,
-      rgba(51, 65, 85, 0.9) 100%
-    );
-    box-shadow:
-      0 0 50px rgba(0, 212, 255, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
     padding: 60px 40px;
     color: white;
     position: relative;

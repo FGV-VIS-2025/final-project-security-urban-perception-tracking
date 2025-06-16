@@ -3,7 +3,18 @@
   import ClockIcon from "../../lib/Icons/ClockIcon.svelte";
   import FeatureIcon from "../../lib/Icons/FeatureIcon.svelte";
   import WorldsIcon from "../../lib/Icons/WorldsIcon.svelte";
+
+  function scrollToObjectives() {
+    const objectivesElement = document.getElementById('methodology-section');
+    if (objectivesElement) {
+      objectivesElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
 </script>
+
 
 <section class="objectives-section" id="objectives-section">
   <div class="cyber-grid"></div>
@@ -74,7 +85,7 @@
       </a>
     </div>
 
-    <div class="objective-card comprehensive">
+    <div class="objective-card comprehensive" on:click={scrollToObjectives}>
       <div class="card-frame">
         <div class="corner top-left"></div>
         <div class="corner top-right"></div>
@@ -105,15 +116,6 @@
   .objectives-section {
     padding: 140px 80px;
     position: relative;
-    background: linear-gradient(
-      135deg,
-      rgba(15, 23, 42, 0.95) 0%,
-      rgba(30, 41, 59, 0.92) 50%,
-      rgba(51, 65, 85, 0.9) 100%
-    );
-    box-shadow:
-      0 0 50px rgba(0, 212, 255, 0.1),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .cyber-grid {
@@ -281,6 +283,7 @@
   }
 
   .objective-card {
+    cursor: pointer;
     background: linear-gradient(
         135deg,
         rgba(0, 0, 0, 0.3),

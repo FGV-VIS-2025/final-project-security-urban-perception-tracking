@@ -52,7 +52,6 @@
     gap: 40px;
   }
 
-  /* Dataset Section */
   .dataset-section {
     padding: 80px 40px;
     position: relative;
