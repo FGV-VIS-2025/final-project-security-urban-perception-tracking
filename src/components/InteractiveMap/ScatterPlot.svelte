@@ -31,7 +31,8 @@
       selected: '#FF6B35' 
     },
     line: '#4FC3F7',
-    background: 'rgba(248, 250, 252, 0.95)'
+    background: 'rgba(248, 250, 252, 0.95)',
+    histogram: '#6B95C4'
   };
 
   $: if (mounted && data && data.length > 0) {
@@ -51,7 +52,8 @@
 
     d3.select(scatterContainer).selectAll("*").remove();
 
-    const margin = { top: 10, right: 5, bottom: 50, left: 60 };
+    // Adjusted margins to accommodate histograms
+    const margin = { top: 80, right: 80, bottom: 90, left: 60 };
     plotWidth = width - margin.left - margin.right;
     plotHeight = height - margin.bottom - margin.top;
 
@@ -90,6 +92,18 @@
       .domain([0, 9])
       .range([plotHeight, 0]);
 
+    // Create histogram groups
+    const topHistogramGroup = svg.append("g")
+      .attr("transform", `translate(${margin.left}, 10)`);
+    
+    const rightHistogramGroup = svg.append("g")
+      .attr("transform", `translate(${margin.left + plotWidth + 10}, ${margin.top})`);
+
+    // Draw histograms
+    drawTopHistogram(topHistogramGroup);
+    drawRightHistogram(rightHistogramGroup);
+
+    // Grid lines
     g.append("g")
       .attr("class", "grid")
       .attr("transform", `translate(0,${plotHeight})`)
@@ -115,6 +129,7 @@
       .selectAll("line")
       .style("stroke", "#cbd5e0");
 
+    // Axes
     const xAxis = g.append("g")
       .attr("transform", `translate(0,${plotHeight})`)
       .call(d3.axisBottom(xScale).ticks(8))
@@ -134,6 +149,7 @@
       .style("stroke", "#4a5568")
       .style("stroke-width", 2);
 
+    // Axis labels
     g.append("text")
       .attr("transform", `translate(${plotWidth / 2}, ${plotHeight + 40})`)
       .style("text-anchor", "middle")
@@ -152,6 +168,17 @@
       .style("fill", "#2d3748")
       .text("PlacePulse2 Safety Score");
 
+    // Title
+    svg.append("text")
+      .attr("x", width / 2)
+      .attr("y", 25)
+      .attr("text-anchor", "middle")
+      .style("font-size", "18px")
+      .style("font-weight", "600")
+      .style("fill", "#2d3748")
+      .text("Distribution of samples");
+
+    // Tooltip
     const tooltip = d3.select("body").append("div")
       .attr("class", "d3-tooltip")
       .style("position", "absolute")
@@ -165,6 +192,7 @@
       .style("z-index", "10000")
       .style("box-shadow", "0 4px 12px rgba(0,0,0,0.3)");
 
+    // Identity line
     const xDomain = xScale.domain();
     const lineData = [
       { x: xScale(xDomain[0]), y: yScale(xDomain[0]) },
@@ -184,6 +212,7 @@
       .style("opacity", 0.8)
       .style("filter", "drop-shadow(0 2px 4px rgba(79, 195, 247, 0.3))");
 
+    // Count displays
     const countContainer = g.append("g").attr("class", "count-container");
     const aboveCountDisplay = countContainer.append("g").attr("class", "above-count");
     
@@ -229,6 +258,7 @@
       .style("fill", "#81C784")
       .style("opacity", 0);
 
+    // Mouse interaction overlay
     const overlay = g.append("rect")
       .attr("width", plotWidth)
       .attr("height", plotHeight)
@@ -237,6 +267,7 @@
       .on("mousemove", handleMouseMove)
       .on("mouseleave", handleMouseLeave);
 
+    // Scatter points
     g.selectAll(".dot")
       .data(validData)
       .enter().append("circle")
@@ -296,6 +327,68 @@
     if (selectedPointId !== null) {
       highlightSelectedPoint();
     }
+  }
+
+  function drawTopHistogram(group) {
+    const histogramHeight = 60;
+    const xValues = validData.map(d => d.safety_hololens);
+    
+    // Create histogram bins
+    const histogram = d3.histogram()
+      .domain(xScale.domain())
+      .thresholds(15);
+    
+    const bins = histogram(xValues);
+    
+    const maxCount = d3.max(bins, d => d.length);
+    const histScale = d3.scaleLinear()
+      .domain([0, maxCount])
+      .range([histogramHeight, 0]);
+    
+    group.selectAll(".hist-bar-top")
+      .data(bins)
+      .enter().append("rect")
+      .attr("class", "hist-bar-top")
+      .attr("x", d => xScale(d.x0))
+      .attr("y", d => histScale(d.length))
+      .attr("width", d => Math.max(0, xScale(d.x1) - xScale(d.x0) - 1))
+      .attr("height", d => histogramHeight - histScale(d.length))
+      .style("fill", colors.histogram)
+      .style("stroke", "#ffffff")
+      .style("stroke-width", 1)
+      .style("opacity", 0.7);
+  }
+
+  function drawRightHistogram(group) {
+    const histogramWidth = 60;
+    const yValues = validData.map(d => d.safety_pp2);
+    
+    // Create histogram bins
+    const histogram = d3.histogram()
+      .domain(yScale.domain())
+      .thresholds(15);
+    
+    const bins = histogram(yValues);
+    
+    // Create scale for histogram width
+    const maxCount = d3.max(bins, d => d.length);
+    const histScale = d3.scaleLinear()
+      .domain([0, maxCount])
+      .range([0, histogramWidth]);
+    
+    // Draw histogram bars
+    group.selectAll(".hist-bar-right")
+      .data(bins)
+      .enter().append("rect")
+      .attr("class", "hist-bar-right")
+      .attr("x", 0)
+      .attr("y", d => yScale(d.x1))
+      .attr("width", d => histScale(d.length))
+      .attr("height", d => Math.max(0, yScale(d.x0) - yScale(d.x1) - 1))
+      .style("fill", colors.histogram)
+      .style("stroke", "#ffffff")
+      .style("stroke-width", 1)
+      .style("opacity", 0.7);
   }
 
   function highlightSelectedPoint() {
@@ -424,7 +517,7 @@
         .style("opacity", 1);
       
       belowCountGroup.select("text")
-        .text(`Bellow: ${belowCount} points`)
+        .text(`Below: ${belowCount} points`)
         .transition()
         .duration(300)
         .style("opacity", 1);
@@ -594,5 +687,13 @@
   :global(.scatterplot-content .tick text) {
     fill: #2d3748;
     font-weight: 500;
+  }
+
+  :global(.hist-bar-top, .hist-bar-right) {
+    transition: opacity 0.3s ease;
+  }
+
+  :global(.hist-bar-top:hover, .hist-bar-right:hover) {
+    opacity: 1 !important;
   }
 </style>

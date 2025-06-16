@@ -67,13 +67,6 @@
       }
     }
   }
-
-  // Debug: para verificar las rutas
-  $: {
-    console.log('Current pathname:', $page.url.pathname);
-    console.log('Base:', base);
-    console.log('Current route:', currentRoute);
-  }
 </script>
 
 <svelte:window on:click={handleOutsideClick} />

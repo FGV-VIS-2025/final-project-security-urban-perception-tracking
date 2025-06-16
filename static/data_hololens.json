@@ -4425,10 +4425,10 @@
   },
   "56": {
     "ID": "50f5eaf0fdc9f065f0007e7e",
-    "lat": -22.8428493,
-    "long": -43.2787135,
+    "lat": -22.895604 ,
+    "long": -43.270445,
     "avg_hololens": 4.5,
-    "avg_pp2": 0.0,
+    "avg_pp2": 4.3,
     "score_participant": [
       {
         "score": 3,
@@ -9244,10 +9244,10 @@
   },
   "117": {
     "ID": "50f5eb66fdc9f065f000828e",
-    "lat": -22.8314584,
-    "long": -43.336337,
+    "lat": -22.835238,
+    "long": -43.336014,
     "avg_hololens": 3.2,
-    "avg_pp2": 0.0,
+    "avg_pp2": 4.38,
     "score_participant": [
       {
         "score": 6,
