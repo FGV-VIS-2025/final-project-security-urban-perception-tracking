@@ -38,8 +38,8 @@
 
     onMount(async () => {
         try {
-            const participantsPath = `${base}/Participants.json`;
-            const southAmericaGeoJSONPath = `${base}/country_participants.geojson`;
+            const participantsPath = base + '/Participants.json';
+            const southAmericaGeoJSONPath = base + '/country_participants.geojson';
 
             // 1. Load Participant Data
             participants = await d3.json(participantsPath);
