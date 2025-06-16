@@ -41,8 +41,8 @@
       skills: ["Javacript", "Node", "Python", "D3"],
       github: "https://github.com/Leandr0ER",
       linkedin: "https://www.linkedin.com/in/leighton-estrada/",
-      portfolio: "https://leandr0er.github.io/LaboVis09/",
-      experience: "+12 años",
+      portfolio: "https://github.com/Leandr0ER",
+      experience: "+1 año",
       status: "Coding",
     },
   ];

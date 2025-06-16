@@ -1,16 +1,25 @@
-# Projeto final
+# Security Urban Perception Tracking
 
-## **Security urban perception tracking**
+Final project developed for the Data Visualization course by students [Andres De La Puente](https://github.com/andresdlp05), [Luis Sante](https://github.com/LuisSante), y [Leighton Estrada](https://github.com/Leandr0ER).
 
-### **Introdução:**
-O objetivo deste trabalho é apresentar uma visualização que explore os padrões de elementos observados por indivíduos ao analisar diversas imagens urbanas, utilizando as técnicas e métodos aprendidos em aula. A problemática é identificar que elementos visuais uma pessoa observa ao classificar uma imagem de rua como segura ou insegura.
+Project Page: [https://fgv-vis-2025.github.io/final-project-security-urban-perception-tracking/overview/](https://fgv-vis-2025.github.io/final-project-security-urban-perception-tracking/overview/)
 
-### **Metodología:**
-Para o projeto, estamos utilizando um dataset principal: Registros dos resultados de um experimento em que 30 participantes observaram 50 imagens de um dataset composto por 150 imagens urbanas.
+## Abstract
+This project introduces a visual prototype centered on Urban Security Perception: a profound exploration into the results of an experiment on how participants of diverse nationalities perceive safety based on various urban images from the city of Rio de Janeiro. This application leverages visualization techniques, utilizing a range of intuitive interactive graphical objects, thereby enabling users to explore all possible characteristics derived from this experiment.
 
-### **Sobre a visualização:**
-A visualização interativa pode ser acessada no [link](https://fgv-vis-2025.github.io/final-project-security-urban-perception-tracking/) do projeto.
+## Project's Process
+Project's Process
 
-### **Processo de desenvolvimento:**
+## Project' Design
+Project' Design
 
-### **Sobre a avaliação por pares:**
+## Peer Critique Feedbacks
+The feedback provided by the review was incorporated, leading to improvements in the organization and the visual representation of concepts in this project.
+
+## Sources and References
+* Place pulse Dataset: [MIT Place Pulse | Kaggle](https://www.kaggle.com/datasets/shubham6147/mit-place-pulse)
+* Place pulse Overview: [MIT media lab](https://www.media.mit.edu/projects/place-pulse-1/overview/)
+* Rio de Janeiro city GeoDataset: [Geodata BR | Github](https://github.com/tbrugz/geodata-br)
+* D3 [D3.js](https://d3js.org/)
+* Svelte Documentation: [Svelte Documentation] (https://svelte.dev/docs)
+* GeoPandas 1.1.0 [Geopandas](https://geopandas.org/en/stable/)
