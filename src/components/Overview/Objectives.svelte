@@ -3,6 +3,7 @@
   import ClockIcon from "../../lib/Icons/ClockIcon.svelte";
   import FeatureIcon from "../../lib/Icons/FeatureIcon.svelte";
   import WorldsIcon from "../../lib/Icons/WorldsIcon.svelte";
+  import { base } from '$app/paths';
 
   function scrollToObjectives() {
     const objectivesElement = document.getElementById('methodology-section');
@@ -40,7 +41,7 @@
 
   <div class="objectives-grid">
     <div class="objective-card temporal">
-      <a href="/#temporal" class="label-a-temporal">
+      <a href={`${base}/temporal`} class="label-a-temporal">
         <div class="card-frame">
           <div class="corner top-left"></div>
           <div class="corner top-right"></div>
@@ -63,7 +64,7 @@
     </div>
 
     <div class="objective-card geospatial">
-      <a href="/#map" class="label-a-temporal">
+      <a href={`${base}/map`} class="label-a-temporal">
         <div class="card-frame">
           <div class="corner top-left"></div>
           <div class="corner top-right"></div>

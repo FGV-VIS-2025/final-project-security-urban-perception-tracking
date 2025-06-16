@@ -1,9 +1,9 @@
-    <script>
-  import { currentImage, config } from "../stores/appStore.js";
+<script>
+  import { currentImage, config } from "../../stores/appStore.js";
   import { onMount } from "svelte";
   import { base } from "$app/paths";
-  import EyeTrackingVisualization from "./EyeTrackingVisualization.svelte";
-  import FixationVisualization from "./FixationVisualization.svelte"; 
+  import EyeTrackingVisualization from "../../components/EyeTracking/EyeTrackingVisualization.svelte";
+  import FixationVisualization from "../../components/EyeTracking/FixationVisualization.svelte";
 
   let imageElement;
   let imageLoaded = false;
@@ -124,9 +124,12 @@
   <div class="header-section">
     <div class="title-container">
       <h1>⏱️ Eye Tracking Visualization</h1>
-      <p class="subtitle">Navigate through images (1-{currentConfig.imageCount}) using controls or arrow keys.</p>
+      <p class="subtitle">
+        Navigate through images (1-{currentConfig.imageCount}) using controls or
+        arrow keys.
+      </p>
     </div>
-    
+
     <div class="quick-stats">
       <div class="stat-item">
         <div class="stat-number">{$currentImage}</div>
@@ -137,7 +140,9 @@
         <div class="stat-label">Total</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">{Math.round(($currentImage / currentConfig.imageCount) * 100)}%</div>
+        <div class="stat-number">
+          {Math.round(($currentImage / currentConfig.imageCount) * 100)}%
+        </div>
         <div class="stat-label">Progress</div>
       </div>
     </div>
@@ -182,11 +187,9 @@
 
     <!-- Quick Jump Buttons -->
     <div class="quick-jump-section">
-    
-      
       <!-- Toggle Eye Tracking -->
-      <button 
-        class="jump-btn eye-tracking-toggle" 
+      <button
+        class="jump-btn eye-tracking-toggle"
         class:active={showEyeTracking}
         on:click={toggleEyeTracking}
         title="Toggle Eye Tracking"
@@ -194,16 +197,14 @@
         👁️ Eye Tracking
       </button>
 
-    <button 
-      class="jump-btn fixation-toggle" 
-      class:active={showFixations}
-      on:click={toggleFixations}
-      title="Toggle Fixation Points"
-    >
-      🎯 Fixation Points
-    </button>
-
-
+      <button
+        class="jump-btn fixation-toggle"
+        class:active={showFixations}
+        on:click={toggleFixations}
+        title="Toggle Fixation Points"
+      >
+        🎯 Fixation Points
+      </button>
     </div>
 
     <!-- Slider Section -->
@@ -221,11 +222,14 @@
       <div class="slider-markers">
         {#each Array(Math.min(6, currentConfig.imageCount)) as _, i}
           {@const markerValue = Math.floor(
-            1 + ((currentConfig.imageCount - 1) * i) / Math.min(5, currentConfig.imageCount - 1)
+            1 +
+              ((currentConfig.imageCount - 1) * i) /
+                Math.min(5, currentConfig.imageCount - 1)
           )}
           <div
             class="marker"
-            style="left: {(i / Math.min(5, currentConfig.imageCount - 1)) * 100}%"
+            style="left: {(i / Math.min(5, currentConfig.imageCount - 1)) *
+              100}%"
             class:active={Math.abs($currentImage - markerValue) < 5}
           >
             {markerValue}
@@ -242,57 +246,53 @@
       <div class="eye-tracking-section">
         <div class="section-header">
           <h3>👁️ Eye Tracking Analysis</h3>
-          <button 
-            class="close-btn" 
-            on:click={() => showEyeTracking = false}
+          <button
+            class="close-btn"
+            on:click={() => (showEyeTracking = false)}
             title="Close Eye Tracking"
           >
             ✕
           </button>
         </div>
 
-        <EyeTrackingVisualization 
-          imagePath={imagePath}
+        <EyeTrackingVisualization
+          {imagePath}
           imageWidth={600}
           imageHeight={450}
         />
-      </div> 
+      </div>
     {:else if showFixations}
       <!-- Fixation Points Visualization -->
       <div class="fixation-section">
         <div class="section-header">
           <h3>🎯 Fixation Points Analysis</h3>
-          <button 
-            class="close-btn" 
-            on:click={() => showFixations = false}
+          <button
+            class="close-btn"
+            on:click={() => (showFixations = false)}
             title="Close Fixation Points"
           >
             ✕
           </button>
         </div>
 
-        <FixationVisualization 
-          imagePath={imagePath}
-          imageWidth={600}
-          imageHeight={450}
-        />
+        <FixationVisualization {imagePath} imageWidth={600} imageHeight={450} />
       </div>
     {:else if showEyeTracking}
       <!-- Eye Tracking Visualization -->
       <div class="eye-tracking-section">
         <div class="section-header">
           <h3>👁️ Eye Tracking Analysis</h3>
-          <button 
-            class="close-btn" 
-            on:click={() => showEyeTracking = false}
+          <button
+            class="close-btn"
+            on:click={() => (showEyeTracking = false)}
             title="Close Fixations"
           >
             ✕
           </button>
         </div>
 
-        <EyeTrackingVisualization 
-          imagePath={imagePath}
+        <EyeTrackingVisualization
+          {imagePath}
           imageWidth={600}
           imageHeight={450}
         />
@@ -307,12 +307,18 @@
               <p>Loading image {$currentImage}...</p>
             </div>
           {/if}
-          
+
           {#if imageError}
             <div class="error-placeholder">
               <div class="error-icon">📷</div>
               <p>Image {$currentImage} not available</p>
-              <button class="retry-btn" on:click={() => { imageError = false; imageLoaded = false; }}>
+              <button
+                class="retry-btn"
+                on:click={() => {
+                  imageError = false;
+                  imageLoaded = false;
+                }}
+              >
                 Retry
               </button>
             </div>
@@ -329,7 +335,7 @@
             on:error={handleImageError}
           />
         </div>
-        
+
         <div class="image-info">
           <div class="info-row">
             <span class="info-label">Image ID:</span>
@@ -337,18 +343,22 @@
           </div>
           <div class="info-row">
             <span class="info-label">Path:</span>
-            <span class="info-value">{imagePath.split('/').pop()}</span>
+            <span class="info-value">{imagePath.split("/").pop()}</span>
           </div>
           <div class="info-row">
             <span class="info-label">Status:</span>
-            <span class="info-value status" class:loaded={imageLoaded} class:error={imageError}>
-              {imageLoaded ? 'Loaded' : imageError ? 'Error' : 'Loading...'}
+            <span
+              class="info-value status"
+              class:loaded={imageLoaded}
+              class:error={imageError}
+            >
+              {imageLoaded ? "Loaded" : imageError ? "Error" : "Loading..."}
             </span>
           </div>
           <div class="info-row">
-            <button 
-              class="eye-tracking-btn" 
-              on:click={() => showEyeTracking = true}
+            <button
+              class="eye-tracking-btn"
+              on:click={() => (showEyeTracking = true)}
               disabled={!imageLoaded}
             >
               👁️ View Eye Tracking
@@ -753,16 +763,20 @@
   }
 
   .status.loaded {
-    color: #4CAF50;
+    color: #4caf50;
   }
 
   .status.error {
-    color: #F44336;
+    color: #f44336;
   }
 
   @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
   /* Responsive Design */
@@ -780,7 +794,7 @@
       max-width: 70%;
       min-height: 150px;
     }
-    
+
     .quick-stats {
       flex-direction: column;
       gap: 1rem;
@@ -821,8 +835,8 @@
       max-width: 80%;
     }
   }
-    .status.error {
-    color: #F44336;
+  .status.error {
+    color: #f44336;
   }
 
   .eye-tracking-btn {
@@ -894,8 +908,8 @@
   }
 
   .fixation-toggle {
-  background: rgba(255, 107, 53, 0.1);
-  border-color: rgba(255, 107, 53, 0.3);
+    background: rgba(255, 107, 53, 0.1);
+    border-color: rgba(255, 107, 53, 0.3);
   }
 
   .fixation-toggle:hover {

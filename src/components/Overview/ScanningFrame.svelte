@@ -1,8 +1,10 @@
 <script>
   import WorldsIcon from "../../lib/Icons/WorldsIcon.svelte";
+  import { base } from '$app/paths';
+
 </script>
 
-<a href="/#map" class="tooltip-container">
+<a href={`${base}/map`}  class="tooltip-container">
   <div class="hero-visual">
     <div class="scanning-frame">
       <div class="scan-line"></div>

@@ -1,107 +1,54 @@
 <script>
-  import { onMount } from 'svelte';
-  import SliderTab from "../components/SliderTab.svelte";
-  import MapTab from "../components/MapTab.svelte";
-  import TemporalExplorerTab from "../components/TemporalExplorerTab.svelte";
-  import { currentRoute, initRouter } from "../stores/router.js";
-  import { config } from "../stores/appStore.js";
-  import InfoTab from '../components/InfoTab.svelte';
-  import Profiles from '../components/Profiles.svelte';
-  
-  let mapComponent;
-
-  $: currentConfig = $config;
-
-  onMount(() => {
-    initRouter();
-  });
-
-  $: if ($currentRoute === 'map' && mapComponent) {
-    setTimeout(() => {
-      mapComponent.invalidateMapSize();
-    }, 150); // Ajustando milisegundos (si es necesario)
-  }
-
+  import Cover from "../components/Overview/Cover.svelte";
+  import Objectives from "../components/Overview/Objectives.svelte";
+  import Methodology from "../components/Overview/Methodology.svelte";
+  import Dataset from "../components/Overview/Dataset.svelte";
+  import Participants from "../components/Overview/Participants.svelte";
 </script>
 
-<div class="app-container">
-  <main class="main-content">
-    <div class="content">
-      {#if $currentRoute === "overview"}
-        <InfoTab />
-      {:else if $currentRoute === "temporal"}
-        <TemporalExplorerTab />
-      {:else if $currentRoute === "slider"}
-        <SliderTab />
-      {:else if $currentRoute === "map"}
-        <MapTab bind:this={mapComponent}/>
-      {:else if $currentRoute === "profile"}
-        <Profiles />
-      {:else if $currentRoute === "profile"}
-        <div class="placeholder">
-          <h2>Profiles Section</h2>
-          <p>Developer profiles will be displayed here.</p>
-        </div>
-      {:else}
-        <InfoTab />
-      {/if}
-    </div>
-  </main>
+<div class="spectacular-container">
+  <Cover />
+  <Objectives />
+  <Methodology />
+  <Participants/>
+  <Dataset />
 </div>
 
 <style>
-  .app-container {
-    display: flex;
-    min-height: 100vh;
+  .spectacular-container {
     position: relative;
-  }
-
-  .main-content {
-    margin-left: 320px;
-    flex: 1;
-    position: relative;
-    min-height: 100vh;
-  }
-
-  .content {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.5rem;
-    min-height: 100vh;
-    position: relative;
+    background: radial-gradient(
+        circle at 20% 100%,
+        rgba(0, 212, 255, 0.1) 0%,
+        rgba(0, 212, 255, 0.08) 30%,
+        rgba(0, 212, 255, 0.05) 50%,
+        rgba(0, 212, 255, 0.02) 70%,
+        transparent 90%
+      ),
+      radial-gradient(
+        circle at 80% 8%,
+        rgba(255, 107, 0, 0.08) 0%,
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at 45% 45%,
+        rgba(255, 107, 0, 0.08) 0%,
+        transparent 30%
+      ),
+      linear-gradient(135deg, #0a0a15 0%, #1a1a2e 50%, #16213e 100%);
+    box-shadow:
+      0 0 50px rgba(0, 212, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
     overflow: hidden;
-    animation: fadeIn 0.5s ease;
   }
 
-  .content::before {
-    content: "";
-    position: absolute;
+  .spectacular-container::before {
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    height: 2px;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
   }
-
-  .placeholder {
-    padding: 2rem;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .placeholder h2 {
-    margin-bottom: 1rem;
-    color: #667eea;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
 </style>

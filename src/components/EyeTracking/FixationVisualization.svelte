@@ -1,6 +1,6 @@
 <script>
   import { onMount, afterUpdate } from "svelte";
-  import { currentImage } from "../stores/appStore.js";
+  import { currentImage } from "../../stores/appStore.js";
   import { base } from "$app/paths";
   import * as d3 from "d3";
 
@@ -474,25 +474,6 @@
     letter-spacing: 1px;
   }
 
-  .algorithm-info {
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 8px;
-    padding: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .algorithm-info h4 {
-    margin: 0 0 0.8rem 0;
-    color: #ff6b35;
-    font-size: 1rem;
-  }
-
-  .algorithm-info p {
-    margin: 0.4rem 0;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
-  }
-
   .visualization-area {
     flex: 1;
     position: relative;
@@ -518,46 +499,6 @@
     top: 0;
     left: 0;
     pointer-events: none;
-  }
-
-
-  .fixation-point {
-    pointer-events: all;
-    cursor: crosshair;
-  }
-
-  .floating-legend {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    min-width: 140px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-  }
-
-  .floating-legend h4 {
-    margin: 0 0 0.8rem 0;
-    color: #ffffff;
-    font-size: 0.9rem;
-    text-align: center;
-    font-weight: 600;
-  }
-
-  .legend-items-floating {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-
-  .legend-item-floating {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
   }
 
   .legend-label {

@@ -1,6 +1,6 @@
 <script>
   import { onMount, afterUpdate } from "svelte";
-  import { currentImage } from "../stores/appStore.js";
+  import { currentImage } from "../../stores/appStore.js";
   import { base } from "$app/paths";
   import * as d3 from "d3";
 
@@ -603,11 +603,6 @@
     top: 0;
     left: 0;
     pointer-events: none;
-  }
-
-  .eye-tracking-overlay .gaze-point {
-    pointer-events: all;
-    cursor: crosshair;
   }
 
   .no-selection {

@@ -1,26 +1,31 @@
 <script>
-  import { currentRoute, navigateTo } from "../stores/router.js";
+  import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import Icon from "../lib/Icon.svelte";
   
   const navSections = [
     {
       title: "Main",
       items: [
-        { id: "overview", label: "Overview", icon: "home" },
+        { id: "", label: "Overview", icon: "home" },
         { id: "temporal", label: "Eye Tracking Vis", icon: "eye" },
         { id: "map", label: "Interactive Map", icon: "map", badge: "" },
       ],
     },
     {
       title: "Developers",
-      items: [{ id: "profile", label: "Profiles", icon: "develop" }],
+      items: [{ id: "profiles", label: "Profiles", icon: "develop" }],
     },
   ];
 
   let sidebarOpen = false;
 
+  $: currentRoute = $page.url.pathname.replace(base, '').slice(1) || '';
+
   function selectTab(tabId) {
-    navigateTo(tabId);
+    const route = tabId ? `${base}/${tabId}` : base || '/';
+    goto(route);
   }
 
   function toggleSidebar() {
@@ -70,7 +75,7 @@
           {#each section.items as item}
             <div
               class="nav-item"
-              class:active={$currentRoute === item.id}
+              class:active={currentRoute === item.id}
               on:click={() => selectTab(item.id)}
               on:keydown={(e) => e.key === "Enter" && selectTab(item.id)}
               role="button"
@@ -83,8 +88,8 @@
                     <Icon
                       name={item.icon}
                       size={20}
-                      color={$currentRoute === item.id ? "#f8fafc" : "#94a3b8"}
-                      strokeWidth={$currentRoute === item.id ? 2.2 : 1.8}
+                      color={currentRoute === item.id ? "#f8fafc" : "#94a3b8"}
+                      strokeWidth={currentRoute === item.id ? 2.2 : 1.8}
                     />
                   </div>
                 </div>

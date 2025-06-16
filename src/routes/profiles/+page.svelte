@@ -1,82 +1,86 @@
 <script>
-  import ArrowTeam from "../lib/Icons/ArrowTeam.svelte";
-  import Github from "../lib/Icons/Github.svelte";
-  import StackTech from "../lib/Icons/StackTech.svelte";
-  import Team from "../lib/Icons/Team.svelte";
+  import ArrowTeam from "../../lib/Icons/ArrowTeam.svelte";
+  import Github from "../../lib/Icons/Github.svelte";
+  import StackTech from "../../lib/Icons/StackTech.svelte";
+  import Team from "../../lib/Icons/Team.svelte";
 
   const teamMembers = [
-      {
-        id: 1,
-        name: "Andres De La Puente Ancco",
-        role: "Author",
-        avatar: "https://media.licdn.com/dms/image/v2/C4D03AQEI9DzmOgSyfQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516683755961?e=1755734400&v=beta&t=9nvqeoKYj3gUWcWY9qVLgw1ufSsZFTU1ZN484wS9i4E",
-        skills: ["Javacript", "Node", "Python", "D3"],
-        github: "https://github.com/andresdlp05",
-        linkedin: "https://www.linkedin.com/in/vdelapuentea/",
-        portfolio: "https://andresdlp05.github.io/portfolio-svelte/",
-        experience: "+5 años",
-        status: "Coding"
-      },
-      {
-        id: 2,
-        name: "Luis Felipe Sante Taipe",
-        role: "Collaborator",
-        avatar: "https://media.licdn.com/dms/image/v2/D4E03AQENrbE9PxyiTg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1712638895009?e=1755734400&v=beta&t=axIAGt7H-9BPxBWzrwNMxjpcHlx8TD2IN3vgw3pdLpc",
-        skills: ["Javacript", "Node", "Python", "D3"],
-        github: "https://github.com/LuisSante",
-        linkedin: "https://www.linkedin.com/in/luis-felipe-sante-taipe-0ba00723b/",
-        portfolio: "https://portofolio-artificial-intelligence.vercel.app/",
-        experience: "+1 año",
-        status: "Coding"
-      },
-      {
-        id: 3,
-        name: "Leighton L. Estrada Rayme",
-        role: "Collaborator",
-        avatar: "https://media.licdn.com/dms/image/v2/D4E03AQFzmOCDFoCmUg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1679869649219?e=1755734400&v=beta&t=LU-NaRYs8rytfl1LZgQm9B6LfibDSrLDpEyq9JkW0lY",
-        skills: ["Javacript", "Node", "Python", "D3"],
-        github: "https://github.com/Leandr0ER",
-        linkedin: "https://www.linkedin.com/in/leighton-estrada/",
-        portfolio: "https://leandr0er.github.io/LaboVis09/",
-        experience: "+12 años",
-        status: "Coding"
-      }
-    ];
-  
-    let selectedMember = null;
-    let hoveredMember = null;
-  
-    function selectMember(member) {
-      selectedMember = selectedMember?.id === member.id ? null : member;
-    }
+    {
+      id: 1,
+      name: "Andres De La Puente Ancco",
+      role: "Author",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/C4D03AQEI9DzmOgSyfQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516683755961?e=1755734400&v=beta&t=9nvqeoKYj3gUWcWY9qVLgw1ufSsZFTU1ZN484wS9i4E",
+      skills: ["Javacript", "Node", "Python", "D3"],
+      github: "https://github.com/andresdlp05",
+      linkedin: "https://www.linkedin.com/in/vdelapuentea/",
+      portfolio: "https://andresdlp05.github.io/portfolio-svelte/",
+      experience: "+5 años",
+      status: "Coding",
+    },
+    {
+      id: 2,
+      name: "Luis Felipe Sante Taipe",
+      role: "Collaborator",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/D4E03AQENrbE9PxyiTg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1712638895009?e=1755734400&v=beta&t=axIAGt7H-9BPxBWzrwNMxjpcHlx8TD2IN3vgw3pdLpc",
+      skills: ["Javacript", "Node", "Python", "D3"],
+      github: "https://github.com/LuisSante",
+      linkedin:
+        "https://www.linkedin.com/in/luis-felipe-sante-taipe-0ba00723b/",
+      portfolio: "https://portofolio-artificial-intelligence.vercel.app/",
+      experience: "+1 año",
+      status: "Coding",
+    },
+    {
+      id: 3,
+      name: "Leighton L. Estrada Rayme",
+      role: "Collaborator",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/D4E03AQFzmOCDFoCmUg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1679869649219?e=1755734400&v=beta&t=LU-NaRYs8rytfl1LZgQm9B6LfibDSrLDpEyq9JkW0lY",
+      skills: ["Javacript", "Node", "Python", "D3"],
+      github: "https://github.com/Leandr0ER",
+      linkedin: "https://www.linkedin.com/in/leighton-estrada/",
+      portfolio: "https://leandr0er.github.io/LaboVis09/",
+      experience: "+12 años",
+      status: "Coding",
+    },
+  ];
 
-    function openLink(url, event) {
-      event.stopPropagation();
-      window.open(url, '_blank', 'noopener,noreferrer');
-    }
-  
-    function getStatusColor(status) {
-      const colors = {
-        coding: "#10b981",
-      };
-      return colors[status] || "#10b981";
-    }
-  
-    function getStatusText(status) {
-      const texts = {
-        coding: "Coding",
-      };
-      return texts[status] || "Active";
-    }
+  let selectedMember = null;
+  let hoveredMember = null;
+
+  function selectMember(member) {
+    selectedMember = selectedMember?.id === member.id ? null : member;
+  }
+
+  function openLink(url, event) {
+    event.stopPropagation();
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
+  function getStatusColor(status) {
+    const colors = {
+      coding: "#10b981",
+    };
+    return colors[status] || "#10b981";
+  }
+
+  function getStatusText(status) {
+    const texts = {
+      coding: "Coding",
+    };
+    return texts[status] || "Active";
+  }
 </script>
 
 <div class="team-container">
   <div class="team-grid"></div>
   <div class="team-scanner"></div>
-  
+
   <div class="team-header">
     <div class="header-content">
-      <div class="header-icon"><Team/></div>
+      <div class="header-icon"><Team /></div>
       <div class="header-text">
         <h2 class="team-title">Our Team</h2>
         <p class="team-subtitle">The developers behind SUPT - Platform</p>
@@ -85,49 +89,54 @@
   </div>
 
   <div class="main-layout">
-    
     <div class="members-column">
       {#each teamMembers as member, index}
-        <div 
-          class="member-card" 
+        <div
+          class="member-card"
           class:expanded={selectedMember?.id === member.id}
           class:featured={index === 0}
           on:click={() => selectMember(member)}
-          on:mouseenter={() => hoveredMember = member}
-          on:mouseleave={() => hoveredMember = null}
-          on:keydown={(e) => e.key === 'Enter' && selectMember(member)}
+          on:mouseenter={() => (hoveredMember = member)}
+          on:mouseleave={() => (hoveredMember = null)}
+          on:keydown={(e) => e.key === "Enter" && selectMember(member)}
           role="button"
           tabindex="0"
-          style="--delay: {index * 0.15}s; --member-color: {getStatusColor(member.status)}"
+          style="--delay: {index * 0.15}s; --member-color: {getStatusColor(
+            member.status
+          )}"
         >
           <div class="card-glow"></div>
-          <div class="status-indicator" style="background: {getStatusColor(member.status)}"></div>
-          
+          <div
+            class="status-indicator"
+            style="background: {getStatusColor(member.status)}"
+          ></div>
+
           <div class="card-content">
             <div class="member-avatar">
               <div class="avatar-ring"></div>
-              <img 
-                src={member.avatar} 
-                alt={member.name}
-                class="avatar-image"
-              />
-              <div class="avatar-badge">
-              </div>
+              <img src={member.avatar} alt={member.name} class="avatar-image" />
+              <div class="avatar-badge"></div>
             </div>
 
             <div class="member-info">
               <h3 class="member-name">{member.name}</h3>
               <p class="member-role">{member.role}</p>
               <div class="member-status">
-                <div class="status-dot" style="background: {getStatusColor(member.status)}"></div>
+                <div
+                  class="status-dot"
+                  style="background: {getStatusColor(member.status)}"
+                ></div>
                 <span class="status-text">{getStatusText(member.status)}</span>
               </div>
             </div>
 
             <div class="member-stats">
               <div class="expand-btn">
-                <div class="expand-icon" class:rotated={selectedMember?.id === member.id}>
-                  <ArrowTeam/>
+                <div
+                  class="expand-icon"
+                  class:rotated={selectedMember?.id === member.id}
+                >
+                  <ArrowTeam />
                 </div>
               </div>
             </div>
@@ -137,7 +146,7 @@
             <div class="member-details">
               <div class="skills-section">
                 <div class="skills-header">
-                  <StackTech/>
+                  <StackTech />
                   <span>Technological Stack</span>
                 </div>
                 <div class="skills-grid">
@@ -152,35 +161,53 @@
                   <span>Links</span>
                 </div>
                 <div class="links-grid">
-                  <button 
+                  <button
                     class="link-item github-link"
                     on:click={(e) => openLink(member.github, e)}
                     title="Ver perfil de GitHub"
                   >
                     <div class="link-icon">
-                      <Github/>
+                      <Github />
                     </div>
                     <div class="link-content">
                       <span class="link-label">GitHub</span>
-                      <span class="link-url">@{member.github.split('/').pop()}</span>
+                      <span class="link-url"
+                        >@{member.github.split("/").pop()}</span
+                      >
                     </div>
                     <div class="link-arrow">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
                       </svg>
                     </div>
                   </button>
 
-                  <button 
+                  <button
                     class="link-item linkedin-link"
                     on:click={(e) => openLink(member.linkedin, e)}
                     title="Ver perfil de LinkedIn"
                   >
                     <div class="link-icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                        <rect x="2" y="9" width="4" height="12"/>
-                        <circle cx="4" cy="4" r="2"/>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                        />
+                        <rect x="2" y="9" width="4" height="12" />
+                        <circle cx="4" cy="4" r="2" />
                       </svg>
                     </div>
                     <div class="link-content">
@@ -188,31 +215,61 @@
                       <span class="link-url">View professional profile</span>
                     </div>
                     <div class="link-arrow">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
                       </svg>
                     </div>
                   </button>
 
-                  <button 
+                  <button
                     class="link-item portfolio-link"
                     on:click={(e) => openLink(member.portfolio, e)}
                     title="Ver portafolio"
                   >
                     <div class="link-icon">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                        <line x1="8" y1="21" x2="16" y2="21"/>
-                        <line x1="12" y1="17" x2="12" y2="21"/>
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <rect
+                          x="2"
+                          y="3"
+                          width="20"
+                          height="14"
+                          rx="2"
+                          ry="2"
+                        />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
                       </svg>
                     </div>
                     <div class="link-content">
                       <span class="link-label">Portfolio</span>
-                      <span class="link-url">{member.portfolio.replace('https://', '')}</span>
+                      <span class="link-url"
+                        >{member.portfolio.replace("https://", "")}</span
+                      >
                     </div>
                     <div class="link-arrow">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
                       </svg>
                     </div>
                   </button>
@@ -224,26 +281,25 @@
       {/each}
     </div>
 
-    <div class="info-column">
-    </div>
+    <div class="info-column"></div>
   </div>
 </div>
 
 <style>
   .team-container {
     position: relative;
-    background: 
-      linear-gradient(135deg, 
-        rgba(15, 23, 42, 0.95) 0%, 
-        rgba(30, 41, 59, 0.92) 50%,
-        rgba(51, 65, 85, 0.90) 100%
-      );
+    background: linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.95) 0%,
+      rgba(30, 41, 59, 0.92) 50%,
+      rgba(51, 65, 85, 0.9) 100%
+    );
     backdrop-filter: blur(24px) saturate(180%);
     border-radius: 16px;
     border: 1px solid rgba(148, 163, 184, 0.1);
     padding: 2rem;
     overflow: hidden;
-    box-shadow: 
+    box-shadow:
       0 24px 48px -12px rgba(0, 0, 0, 0.25),
       0 0 0 1px rgba(255, 255, 255, 0.05);
     width: 100%;
@@ -256,8 +312,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-      linear-gradient(rgba(148, 163, 184, 0.02) 1px, transparent 1px),
+    background-image: linear-gradient(
+        rgba(148, 163, 184, 0.02) 1px,
+        transparent 1px
+      ),
       linear-gradient(90deg, rgba(148, 163, 184, 0.02) 1px, transparent 1px);
     background-size: 32px 32px;
     opacity: 0.6;
@@ -270,7 +328,12 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.6), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(99, 102, 241, 0.6),
+      transparent
+    );
     animation: scan-line 8s ease-in-out infinite;
     pointer-events: none;
   }
@@ -290,8 +353,11 @@
   .header-icon {
     width: 48px;
     height: 48px;
-    background: 
-      linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(168, 85, 247, 0.08));
+    background: linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.12),
+      rgba(168, 85, 247, 0.08)
+    );
     border: 1px solid rgba(99, 102, 241, 0.2);
     border-radius: 12px;
     display: flex;
@@ -305,12 +371,7 @@
   .team-title {
     font-size: 1.75rem;
     font-weight: 800;
-    background: linear-gradient(
-      135deg, 
-      #f8fafc 0%, 
-      #a5b4fc 30%, 
-      #e2e8f0 70%
-    );
+    background: linear-gradient(135deg, #f8fafc 0%, #a5b4fc 30%, #e2e8f0 70%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -357,11 +418,11 @@
 
   .member-card.featured {
     border-color: rgba(99, 102, 241, 0.15);
-    background: 
-      linear-gradient(135deg, 
-        rgba(99, 102, 241, 0.06) 0%, 
-        rgba(168, 85, 247, 0.03) 100%
-      );
+    background: linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.06) 0%,
+      rgba(168, 85, 247, 0.03) 100%
+    );
   }
 
   .member-card:hover {
@@ -372,13 +433,13 @@
   }
 
   .member-card.expanded {
-    background: 
-      linear-gradient(135deg, 
-        rgba(99, 102, 241, 0.1) 0%, 
-        rgba(168, 85, 247, 0.05) 100%
-      );
+    background: linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.1) 0%,
+      rgba(168, 85, 247, 0.05) 100%
+    );
     border-color: rgba(99, 102, 241, 0.25);
-    box-shadow: 
+    box-shadow:
       0 12px 40px rgba(99, 102, 241, 0.15),
       0 0 0 1px rgba(99, 102, 241, 0.1);
   }
@@ -399,7 +460,12 @@
     left: -100%;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.04), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(99, 102, 241, 0.04),
+      transparent
+    );
     transition: left 0.6s ease;
     pointer-events: none;
   }
@@ -602,13 +668,18 @@
   }
 
   .link-item::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.03), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(99, 102, 241, 0.03),
+      transparent
+    );
     transition: left 0.6s ease;
     pointer-events: none;
   }
@@ -709,19 +780,39 @@
   }
 
   @keyframes shimmer {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 
   @keyframes pulse-icon {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.05); }
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
   }
 
   @keyframes scan-line {
-    0% { transform: translateY(0); opacity: 1; }
-    50% { opacity: 0.6; }
-    100% { transform: translateY(100vh); opacity: 0; }
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
   }
 
   @keyframes slide-up {
@@ -732,18 +823,34 @@
   }
 
   @keyframes rotate-ring {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   @keyframes pulse-status {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.7; transform: scale(1.1); }
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
   }
 
   @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
   }
 
   @keyframes expand-details {
