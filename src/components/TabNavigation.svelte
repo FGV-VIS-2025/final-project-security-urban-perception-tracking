@@ -3,13 +3,12 @@
   import { goto } from '$app/navigation';
   import { base } from '$app/paths';
   import Icon from "../lib/Icon.svelte";
-  import { onMount } from 'svelte';
 
   const navSections = [
     {
       title: "Main",
       items: [
-        { id: "overview", label: "Overview", icon: "home" }, // Cambiado de "" a "overview"
+        { id: "", label: "Overview", icon: "home" },
         { id: "temporal", label: "Eye Tracking Vis", icon: "eye" },
         { id: "map", label: "Interactive Map", icon: "map", badge: "" },
       ],
@@ -21,56 +20,37 @@
   ];
 
   let sidebarOpen = false;
-  let isNavigating = false;
 
-  function getCurrentRoute(pathname) {
-    const cleanPath = pathname.replace(base, '').replace(/^\/+/, '').replace(/\/+$/, '');
-    return cleanPath || 'overview'; // Si está vacío, es overview
-  }
+  // Simplificar el manejo de la ruta actual
+  $: currentRoute = $page.url.pathname === '/' 
+    ? '' 
+    : $page.url.pathname.slice(1); // Quitar la barra inicial
 
-  $: currentRoute = getCurrentRoute($page.url.pathname);
-
-  onMount(() => {
-    const currentPath = $page.url.pathname;
-    if (currentPath === '/' || currentPath === base + '/' || currentPath === base) {
-      console.log('Redirecting from root to /overview');
-      goto('/overview', { replaceState: true });
-    }
-  });
-
+  // Función mejorada para navegación
   async function selectTab(tabId) {
-    if (isNavigating) {
-      console.log('Navigation already in progress, skipping...');
-      return;
-    }
-
     try {
-      isNavigating = true;
+      // Construir la ruta target
+      const targetRoute = base + (tabId ? `/${tabId}` : '/');
       
-      const targetRoute = `/${tabId}`;
+      console.log('Attempting to navigate to:', targetRoute);
+      console.log('tabId:', tabId);
       
-      console.log('Navigating to:', targetRoute);
-      console.log('Current route:', currentRoute, 'Target ID:', tabId);
-      
+      // Cerrar sidebar en móvil
       if (window.innerWidth <= 768) {
         sidebarOpen = false;
       }
       
-      if (currentRoute === tabId) {
-        console.log('Already on target route, skipping navigation');
-        return;
-      }
+      // Usar goto sin base ya que base está vacío
+      await goto(targetRoute, { 
+        replaceState: false,
+        noScroll: false,
+        keepFocus: false,
+        invalidateAll: true
+      });
       
-      await goto(targetRoute);
-      
-      console.log('Navigation completed successfully');
-      
+      console.log('Navigation completed to:', targetRoute);
     } catch (error) {
-      console.error('Navigation error:', error);
-    } finally {
-      setTimeout(() => {
-        isNavigating = false;
-      }, 100);
+      console.error('Error navigating:', error);
     }
   }
 
@@ -88,12 +68,11 @@
     }
   }
 
-  // Debug
+  // Debug: para verificar las rutas
   $: {
-    console.log('=== DEBUG INFO ===');
-    console.log('Page pathname:', $page.url.pathname);
+    console.log('Current pathname:', $page.url.pathname);
+    console.log('Base:', base);
     console.log('Current route:', currentRoute);
-    console.log('==================');
   }
 </script>
 
@@ -131,12 +110,10 @@
             <div 
               class="nav-item" 
               class:active={currentRoute === item.id}
-              class:navigating={isNavigating}
               on:click={() => selectTab(item.id)}
               on:keydown={(e) => e.key === "Enter" && selectTab(item.id)}
               role="button"
               tabindex="0"
-              style="pointer-events: {isNavigating ? 'none' : 'auto'}"
             >
               <div class="nav-item-glow"></div>
               <div class="nav-content">
