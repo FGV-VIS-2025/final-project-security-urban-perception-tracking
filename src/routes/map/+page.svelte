@@ -193,7 +193,7 @@
       const popupContent = createPopupContent(point, color, hololensColor, pp2Color);
 
       marker.bindPopup(popupContent, {
-        maxWidth: 320,
+        maxWidth: 440,
         className: "custom-popup",
       });
 
@@ -435,7 +435,7 @@
     top: 16px; 
     right: 16px;
     background: rgba(255, 255, 255, 0.95);
-    padding: 1.25rem;
+    padding: 0.5rem;
     border-radius: 16px;
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -445,10 +445,10 @@
   }
 
   .legend-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: #2d3748;
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -467,21 +467,20 @@
   }
 
   .legend-color {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     border: 2px solid white;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
 
   .legend-text {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #2d3748;
     font-weight: 600;
   }
 
   :global(.leaflet-container) {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     height: 100% !important;
     width: 100% !important;
     background: #f8fafc !important;
@@ -497,19 +496,19 @@
   }
 
   :global(.leaflet-popup-content) {
-    margin: 12px 16px;
     line-height: 1.5;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 8px 8px !important;
   }
 
   :global(.leaflet-popup-content h3) {
-    margin: 0 0 12px 0;
+    margin: 0 0 6px 0;
     font-weight: 700;
   }
 
   :global(.leaflet-popup-content-wrapper) {
     border-radius: 12px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  padding: 4px !important;
   }
 
   :global(.leaflet-popup-tip) {

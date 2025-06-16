@@ -85,8 +85,8 @@
         return;
       }
       
-      const width = 400;
-      const height = 400;
+      const width = 380;
+      const height = 380;
       const outerRadius = Math.min(width, height) * 0.4;
       const innerRadius = outerRadius - 20;
   
@@ -236,10 +236,10 @@
             .style("pointer-events", "none")
             .style("left", (event.pageX + 10) + "px")
             .style("top", (event.pageY - 10) + "px")
-            .text(`P${participants[d.source.index]} ↔ P${participants[d.target.index]}`);
-            //.text(`P${participants[d.source.index]} ↔ P${participants[d.target.index]}: ${similarity} similitud`);
+            //.text(`P${participants[d.source.index]} ↔ P${participants[d.target.index]}`);
+            .text(`P${participants[d.source.index]} ↔ P${participants[d.target.index]}: ${similarity} similitud`);
           
-          setTimeout(() => tooltip.remove(), 150);
+          setTimeout(() => tooltip.remove(), 1050);
         })
         .on("mouseout", function(event, d) {
           d3.select(this).style("opacity", 
