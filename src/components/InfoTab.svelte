@@ -3,11 +3,13 @@
   import Objectives from "./overview/Objectives.svelte";
   import Methodology from "./overview/Methodology.svelte";
   import Dataset from "./overview/Dataset.svelte";
+    import Participants from "./Participants.svelte";
 </script>
 
 <div class="spectacular-container">
   <Cover/>
   <Objectives/>
+  <Participants/>
   <Methodology/>
   <Dataset/>
 </div>
