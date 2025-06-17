@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import * as d3 from "d3";
   import { base } from "$app/paths";
+  import Information from "../../lib/Icons/Information.svelte";
 
   export let selectedParticipant = null;
 
@@ -277,31 +278,6 @@
 
 <div class="chord-diagram-section">
     <svg bind:this={svgElement} class="chord-svg"></svg>
-    
-    <!-- Ícono de información con tooltip -->
-    <div class="info-icon-container">
-      <div class="info-icon" 
-           on:mouseenter={() => showTooltip = true}
-           on:mouseleave={() => showTooltip = false}>
-        ⓘ
-      </div>
-      
-      {#if showTooltip}
-        <div class="info-tooltip">
-          <div class="tooltip-content">
-            <h4>Participant Similarity Analysis</h4>
-            <p><strong>Jaccard Index:</strong> |A ∩ B| / |A ∪ B|</p>
-            <p>• A ∩ B = Common images viewed<br>• A ∪ B = Total unique images</p>
-            
-            <div class="behavioral-patterns">
-              <p><strong>Behavioral Insights:</strong></p>
-              <p>• Visual attention patterns & preferences</p>
-              <p>• Viewer clustering by exploration behavior</p>
-            </div>
-          </div>
-        </div>
-      {/if}
-    </div>
 </div>
 
 <style>
@@ -314,77 +290,6 @@
     align-items: center;
     justify-content: center;
     position: relative;
-  }
-
-  .info-icon-container {
-    position: absolute;
-    top: 50%;
-    right: 40px;
-    transform: translateY(-50%);
-    z-index: 10;
-  }
-
-  .info-icon {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #3b82f6;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-
-  .info-icon:hover {
-    background: #2563eb;
-    transform: scale(1.1);
-  }
-
-  .info-tooltip {
-    position: absolute;
-    top: -80px;
-    right: 25px;
-    width: 280px;
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    z-index: 1000;
-    animation: fadeIn 0.2s ease-out;
-  }
-
-  .tooltip-content {
-    padding: 12px;
-    font-size: 12px;
-    line-height: 1.3;
-  }
-
-  .tooltip-content h4 {
-    margin: 0 0 8px 0;
-    color: #1e293b;
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  .tooltip-content p {
-    margin: 0 0 6px 0;
-    color: #475569;
-  }
-
-  .behavioral-patterns {
-    border-top: 1px solid #e2e8f0;
-    padding-top: 8px;
-    margin-top: 8px;
-  }
-
-  .behavioral-patterns p {
-    font-size: 11px;
-    margin: 3px 0;
   }
 
   @keyframes fadeIn {
