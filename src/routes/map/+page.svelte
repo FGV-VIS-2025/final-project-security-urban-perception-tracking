@@ -87,9 +87,10 @@
               });
             }
 
-            const pointId = parseInt(key) + 1;
-            const imageIndex = parseInt(key); 
-
+            //const pointId = parseInt(key) + 1;
+            //const imageIndex = parseInt(key); 
+            const imageFileIndex = parseInt(key); // Este es 0-149 (nombre del archivo)
+            const pointId = imageFileIndex + 1;   // Este es 1-150 (número para UI)
             return {
               id: pointId, 
               imageIndex: imageIndex,
