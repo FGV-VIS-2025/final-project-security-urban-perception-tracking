@@ -7,8 +7,8 @@
   export let imagePath = "";
   export let imageWidth = 800;
   export let imageHeight = 600;
-  // export let imageWidth = 600;
-  // export let imageHeight = 450;
+  export let currentImageIndex = 0; // NUEVO: recibe el índice real de la imagen (0-149)
+  
   let svgContainer;
   let eyeTrackingData = [];
   let participants = [];
@@ -26,14 +26,14 @@
     await loadParticipants();
   });
 
-  $: if (mounted && $currentImage) {
+  // ACTUALIZADO: usar currentImageIndex en lugar de $currentImage
+  $: if (mounted && currentImageIndex !== undefined) {
     loadEyeTrackingData();
     selectedParticipant = null;
   }
 
   async function loadEyeTrackingData() {
     try {
-
       const response = await fetch(base + "/ALL_PROJECT_con_clase.csv");
       if (response.ok) {
         const csvText = await response.text();
@@ -48,7 +48,8 @@
   }
 
   async function loadParticipants() {
-    const imageData = eyeTrackingData.filter(d => d.ImageName == $currentImage);
+    // CORREGIDO: usar currentImageIndex en lugar de $currentImage
+    const imageData = eyeTrackingData.filter(d => d.ImageName == currentImageIndex);
     participants = [...new Set(imageData.map(d => d.participante))].sort((a, b) => a - b);
   }
 
@@ -141,10 +142,11 @@
       { Time: 9.983, X: -0.001, Y: 1.0073, participante: 10 }
     ];
 
+    // CORREGIDO: usar currentImageIndex en lugar de $currentImage
     return realData.map(d => ({
       Time: d.Time,
       ImageIndex: 0,
-      ImageName: $currentImage,
+      ImageName: currentImageIndex,
       X: d.X,
       Y: d.Y,
       Z: 1.9762,
@@ -204,9 +206,9 @@
     // Limpiar visualización anterior
     d3.select(svgContainer).select(".gaze-points").selectAll("*").remove();
 
-    // Filtrar datos para el participante seleccionado e imagen actual
+    // CORREGIDO: usar currentImageIndex en lugar de $currentImage
     const participantData = eyeTrackingData.filter(d => 
-      d.participante === selectedParticipant && d.ImageName == $currentImage
+      d.participante === selectedParticipant && d.ImageName == currentImageIndex
     );
 
     if (participantData.length === 0) return;
@@ -404,7 +406,8 @@
   <!-- Panel de participantes -->
   <div class="participants-panel">
     <h3>👥 Participants</h3>
-    <p class="panel-subtitle">Image {$currentImage}</p>
+    <!-- CORREGIDO: mostrar currentImageIndex + 1 para que se vea como 1-150 -->
+    <p class="panel-subtitle">Image {currentImageIndex + 1}</p>
     
     <div class="participants-list">
       {#each participants as participant}
@@ -423,8 +426,30 @@
       <div class="selected-info">
         <h4>🎯 Active Tracking</h4>
         <p><strong>Participant:</strong> {selectedParticipant}</p>
-        <p><strong>Image:</strong> {$currentImage}</p>
-        <p><strong>Data Points:</strong> {eyeTrackingData.filter(d => d.participante === selectedParticipant && d.ImageName == $currentImage).length}</p>
+        <!-- CORREGIDO: mostrar currentImageIndex + 1 para que se vea como 1-150 -->
+        <p><strong>Image:</strong> {currentImageIndex + 1}</p>
+        <p><strong>Data Points:</strong> {eyeTrackingData.filter(d => d.participante === selectedParticipant && d.ImageName == currentImageIndex).length}</p>
+      </div>
+    {/if}
+
+    <!-- LEYENDA MOVIDA AQUÍ -->
+    {#if selectedParticipant}
+      <div class="legend-panel">
+        <h4>📍 Leyenda</h4>
+        <div class="legend-items">
+          <div class="legend-item">
+            <div class="legend-dot green"></div>
+            <span class="legend-label">Punto Inicial</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot red"></div>
+            <span class="legend-label">Punto Final</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot blue"></div>
+            <span class="legend-label">Trayectoria</span>
+          </div>
+        </div>
       </div>
     {/if}
   </div>
@@ -434,7 +459,7 @@
     <div class="image-container">
       <img
         src={imagePath}
-        alt="Image {$currentImage}"
+        alt="Image {currentImageIndex + 1}"
         style="width: {imageWidth}px; height: {imageHeight}px;"
         on:load={onImageLoad}
       />
@@ -447,23 +472,6 @@
       >
         <g class="gaze-points"></g>
       </svg>
-
-      <!-- LEYENDA SUPERPUESTA EN LA IMAGEN -->
-      {#if selectedParticipant}
-        <div class="floating-legend">
-          <h4>📍 Leyenda</h4>
-          <div class="legend-items-floating">
-            <div class="legend-item-floating">
-              <span style="color: #00ff00; font-size: 16px;">🟢</span>
-              <span class="legend-label">Punto Inicial</span>
-            </div>
-            <div class="legend-item-floating">
-              <span style="color: #ff0000; font-size: 16px;">🔴</span>
-              <span class="legend-label">Punto Final</span>
-            </div>
-          </div>
-        </div>
-      {/if}
     </div>
 
     {#if !selectedParticipant}
@@ -576,6 +584,60 @@
     margin: 0.25rem 0;
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.8);
+  }
+
+  .legend-panel {
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    margin-top: 1rem;
+  }
+
+  .legend-panel h4 {
+    margin: 0 0 0.75rem 0;
+    color: #667eea;
+    font-size: 1rem;
+  }
+
+  .legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .legend-dot.green {
+    background-color: #00ff00;
+    border: 1px solid #fff;
+  }
+
+  .legend-dot.red {
+    background-color: #ff0000;
+    border: 1px solid #fff;
+  }
+
+  .legend-dot.blue {
+    background-color: #00bfff;
+    border: 1px solid #fff;
+  }
+
+  .legend-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
   }
 
   .visualization-area {

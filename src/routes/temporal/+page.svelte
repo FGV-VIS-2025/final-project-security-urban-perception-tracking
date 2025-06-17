@@ -13,7 +13,9 @@
   let showFixations = false;
 
   $: currentConfig = $config;
-  $: imagePath = `${currentConfig.imageBasePath}${currentConfig.imagePrefix}${$currentImage}${currentConfig.imageExtension}`;
+  // FIX: Convertir de 1-150 (slider) a 0-149 (archivos de imagen)
+  $: imageIndex = $currentImage - 1;
+  $: imagePath = `${currentConfig.imageBasePath}${currentConfig.imagePrefix}${imageIndex}${currentConfig.imageExtension}`;
 
   onMount(() => {
     mounted = true;
@@ -259,6 +261,7 @@
           {imagePath}
           imageWidth={600}
           imageHeight={450}
+          currentImageIndex={imageIndex}
         />
       </div>
     {:else if showFixations}
@@ -275,7 +278,7 @@
           </button>
         </div>
 
-        <FixationVisualization {imagePath} imageWidth={600} imageHeight={450} />
+        <FixationVisualization {imagePath} imageWidth={600} imageHeight={450} currentImageIndex={imageIndex} />
       </div>
     {:else if showEyeTracking}
       <!-- Eye Tracking Visualization -->
@@ -295,6 +298,7 @@
           {imagePath}
           imageWidth={600}
           imageHeight={450}
+          currentImageIndex={imageIndex}
         />
       </div>
     {:else}
@@ -327,7 +331,7 @@
           <img
             bind:this={imageElement}
             src={imagePath}
-            alt="Image {$currentImage}"
+            alt="Image {$currentImage} (File: {imageIndex}.jpg)"
             class="main-image"
             class:loaded={imageLoaded}
             class:hidden={imageError}
@@ -340,6 +344,10 @@
           <div class="info-row">
             <span class="info-label">Image ID:</span>
             <span class="info-value">{$currentImage}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">File:</span>
+            <span class="info-value">{imageIndex}.jpg</span>
           </div>
           <div class="info-row">
             <span class="info-label">Path:</span>

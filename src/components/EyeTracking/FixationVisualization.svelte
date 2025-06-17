@@ -7,6 +7,7 @@
   export let imagePath = "";
   export let imageWidth = 600;
   export let imageHeight = 450;
+  export let currentImageIndex = 0; // NUEVO: recibe el índice real de la imagen (0-149)
   
   let svgContainer;
   let gazeData = [];
@@ -23,7 +24,8 @@
     await loadGazeData();
   });
 
-  $: if (mounted && $currentImage) {
+  // ACTUALIZADO: usar currentImageIndex en lugar de $currentImage
+  $: if (mounted && currentImageIndex !== undefined) {
     loadGazeData();
   }
 
@@ -34,10 +36,10 @@
         const csvText = await response.text();
         const allData = parseCSV(csvText);
         
-        // Filtrar datos para la imagen actual
-        gazeData = allData.filter(d => d.ImageName == $currentImage);
+        // CORREGIDO: usar currentImageIndex en lugar de $currentImage
+        gazeData = allData.filter(d => d.ImageName == currentImageIndex);
         
-        console.log(`Datos de gaze cargados para imagen ${$currentImage}:`, gazeData.length);
+        console.log(`Datos de gaze cargados para imagen ${currentImageIndex}:`, gazeData.length);
         
         // Detectar fijaciones usando algoritmo I-VT
         detectFixations();
@@ -183,7 +185,7 @@
         
         fixEvents.push({
           participante: participant,
-          ImageName: $currentImage,
+          ImageName: currentImageIndex, // CORREGIDO: usar currentImageIndex
           start: start,
           end: end,
           duration: duration,
@@ -197,7 +199,7 @@
     });
 
     fixationData = fixEvents;
-    console.log(`Fijaciones detectadas para imagen ${$currentImage}:`, fixationData.length);
+    console.log(`Fijaciones detectadas para imagen ${currentImageIndex}:`, fixationData.length);
     console.log("Fijaciones por participante:", 
       participants.map(p => ({
         participante: p, 
@@ -296,25 +298,6 @@
         .attr("r", 6) // Tamaño original pequeño
         .attr("stroke-width", 2);
     });
-
-  // Agregar números de participante en las fijaciones (más pequeños)
-  /*
-  fixationGroup.selectAll(".fixation-label")
-    .data(fixationData)
-    .enter()
-    .append("text")
-    .attr("class", "fixation-label")
-    .attr("x", d => d.x_centroid)
-    .attr("y", d => d.y_centroid + 2) // Centrado verticalmente
-    .attr("text-anchor", "middle")
-    .attr("font-size", "8px") // Más pequeño
-    .attr("font-weight", "bold")
-    .attr("fill", "#fff")
-    .attr("stroke", "#000")
-    .attr("stroke-width", 0.3)
-    .attr("pointer-events", "none")
-    .text(d => d.participante);
-    */
 }
 
   function onImageLoad() {
@@ -334,7 +317,8 @@
   <!-- Panel de información -->
   <div class="info-panel">
     <h3>🎯 Fixation Analysis</h3>
-    <p class="panel-subtitle">Image {$currentImage}</p>
+    <!-- CORREGIDO: mostrar currentImageIndex + 1 para que se vea como 1-150 -->
+    <p class="panel-subtitle">Image {currentImageIndex + 1}</p>
     
     <div class="fixation-stats">
       <div class="stat-item">
@@ -353,7 +337,6 @@
       </div>
     </div>
 
-
     <!-- Estadísticas por participante -->
     {#if fixationData.length > 0}
       <div class="participant-stats">
@@ -369,6 +352,25 @@
         </div>
       </div>
     {/if}
+
+    <!-- LEYENDA MOVIDA AQUÍ -->
+    <div class="legend-panel">
+      <h4>📍 Leyenda</h4>
+      <div class="legend-items">
+        <div class="legend-item">
+          <div class="legend-dot fixation"></div>
+          <span class="legend-label">Fijaciones</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot gaze"></div>
+          <span class="legend-label">Puntos Gaze</span>
+        </div>
+      </div>
+      <div class="legend-note">
+        <small>Círculos naranjas = Fijaciones detectadas</small>
+        <small>Puntos azules = Trayectoria de gaze</small>
+      </div>
+    </div>
   </div>
 
   <!-- Visualización principal -->
@@ -376,7 +378,7 @@
     <div class="image-container">
       <img
         src={imagePath}
-        alt="Image {$currentImage}"
+        alt="Image {currentImageIndex + 1}"
         style="width: {imageWidth}px; height: {imageHeight}px;"
         on:load={onImageLoad}
       />
@@ -389,32 +391,9 @@
       >
         <g class="fixation-points"></g>
       </svg>
-
-      <!-- Leyenda flotante -->
-  <div class="external-legend">
-    <h4>📍 Leyenda</h4>
-    <div class="legend-items-external">
-      <div class="legend-item-external">
-        <div class="legend-dot" style="background-color: transparent; width: 12px; height: 12px; border-radius: 50%; border: 2px solid #ff6b35;"></div>
-        <span class="legend-label">Fijaciones</span>
-      </div>
-      <div class="legend-item-external">
-        <div class="legend-dot" style="background-color: #00bfff; width: 8px; height: 8px; border-radius: 50%; border: 1px solid white;"></div>
-        <span class="legend-label">Puntos Gaze</span>
-      </div>
-    </div>
-    <div class="legend-note">
-      <small>Círculos naranjas = Fijaciones detectadas</small>
-      <small>Puntos azules = Trayectoria de gaze</small>
     </div>
   </div>
 </div>
-
-    </div>
-  </div>
-
-
-
 
 <style>
   .fixation-container {
@@ -501,11 +480,104 @@
     pointer-events: none;
   }
 
+  .participant-stats {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+  }
+
+  .participant-stats h4 {
+    margin: 0 0 0.8rem 0;
+    color: #ff6b35;
+    font-size: 0.9rem;
+  }
+
+  .participant-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+    max-height: 120px;
+    overflow-y: auto;
+  }
+
+  .participant-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    padding: 0.2rem 0;
+  }
+
+  .participant-id {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+  }
+
+  .participant-count {
+    color: #ff6b35;
+    font-weight: 500;
+  }
+
+  .legend-panel {
+    background: rgba(255, 107, 53, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    margin-top: 1rem;
+  }
+
+  .legend-panel h4 {
+    margin: 0 0 0.75rem 0;
+    color: #ff6b35;
+    font-size: 1rem;
+  }
+
+  .legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .legend-dot.fixation {
+    background-color: transparent;
+    border: 2px solid #ff6b35;
+  }
+
+  .legend-dot.gaze {
+    background-color: #00bfff;
+    border: 1px solid white;
+  }
+
   .legend-label {
     font-size: 0.8rem;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
-    white-space: nowrap;
+  }
+
+  .legend-note {
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+  }
+
+  .legend-note small {
+    display: block;
+    font-size: 0.7rem;
+    margin-bottom: 0.25rem;
   }
 
   /* Responsive */
@@ -523,51 +595,5 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
     }
-    .participant-stats {
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 8px;
-        padding: 1rem;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        margin-top: 1rem;
-    }
-
-    .participant-stats h4 {
-        margin: 0 0 0.8rem 0;
-        color: #ff6b35;
-        font-size: 0.9rem;
-    }
-
-    .participant-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.4rem;
-        max-height: 120px;
-        overflow-y: auto;
-    }
-
-    .participant-row {
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.75rem;
-        padding: 0.2rem 0;
-    }
-
-    .participant-id {
-        color: rgba(255, 255, 255, 0.8);
-        font-weight: 600;
-    }
-
-    .participant-count {
-        color: #ff6b35;
-        font-weight: 500;
-    }
-
-    .legend-note {
-        margin-top: 0.5rem;
-        text-align: center;
-        color: rgba(255, 255, 255, 0.6);
-    }
-
-
   }
 </style>
