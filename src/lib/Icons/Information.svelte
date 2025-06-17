@@ -1,0 +1,33 @@
+<script>
+  export let size = 24;
+</script>
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  {...$$restProps}
+>
+  <circle
+    cx="12"
+    cy="12"
+    r="10"
+    stroke="#141B34"
+    stroke-width="1.5"
+    stroke-linecap="square"
+  />
+  <path
+    d="M12 8V12.5"
+    stroke="#141B34"
+    stroke-width="1.5"
+    stroke-linecap="square"
+  />
+  <path
+    d="M12 15.9883V15.9983"
+    stroke="#141B34"
+    stroke-width="1.5"
+    stroke-linecap="square"
+  />
+</svg>
