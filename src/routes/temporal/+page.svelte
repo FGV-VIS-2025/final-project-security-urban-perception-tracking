@@ -1,5 +1,5 @@
 <script>
-  import { currentImage, config, getImagePath } from "../../stores/appStore.js";
+  import { currentImage, config } from "../../stores/appStore.js";
   import { onMount } from "svelte";
   import { base } from "$app/paths";
   import EyeTrackingVisualization from "../../components/EyeTracking/EyeTrackingVisualization.svelte";
@@ -13,8 +13,8 @@
   let showFixations = false;
 
   $: currentConfig = $config;
-  //$: imagePath = `${currentConfig.imageBasePath}${currentConfig.imagePrefix}${$currentImage}${currentConfig.imageExtension}`;
-  $: imagePath = getImagePath($currentImage, currentConfig);
+  $: imagePath = `${currentConfig.imageBasePath}${currentConfig.imagePrefix}${$currentImage}${currentConfig.imageExtension}`;
+
   onMount(() => {
     mounted = true;
   });

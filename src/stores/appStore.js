@@ -1,8 +1,7 @@
 import { writable } from 'svelte/store';
-
 export const activeTab = writable('overview');
-export const currentImage = writable(1); // Para Interactive Map (1-150)
-export const eyeTrackingImage = writable(1); // Para Eye Tracking (1-150)
+export const currentImage = writable(1); //Para Interactivee Map (Tercera pestanha)
+export const eyeTrackingImage = writable(1); // Para la segunda pestanha
 
 export const mapData = writable({
     points: [
@@ -28,19 +27,19 @@ export const config = writable({
     paperSubtitle: 'Eye-tracking visualization'
 });
 
-// Guardar punto seleccionado del mapa
+//Guardar punto seleccionado del mapa
 export const selectedMapPoint = writable(null);
 
 export const setActiveTab = (tab) => {
     activeTab.set(tab);
 };
 
-// Funcionalidad de Interactive Map (1-150)
+// Funcionalidad de Interactive Map
 export const setCurrentImage = (imageIndex) => {
     currentImage.set(Math.max(1, Math.min(150, imageIndex)));
 };
 
-// Funcionalidad para Eye Tracking Vis (1-150)
+// Nueva funcionalidad para definir la imagen de imagem do Eye Tracking Vis
 export const setEyeTrackingImage = (imageIndex) => {
     eyeTrackingImage.set(Math.max(1, Math.min(150, imageIndex)));
 };
@@ -52,17 +51,6 @@ export const addMapPoint = (point) => {
     }));
 };
 
-// Función helper para convertir número de imagen (1-150) a nombre de archivo (0-149)
 export const getImagePath = (imageNumber, config) => {
-    const fileIndex = imageNumber - 1; // Convertir de 1-150 a 0-149
-    return `${config.imageBasePath}${config.imagePrefix}${fileIndex}${config.imageExtension}`;
-};
-
-// Función helper para convertir nombre de archivo (0-149) a número de imagen (1-150)
-export const getImageNumberFromFileName = (fileName) => {
-    const match = fileName.match(/(\d+)/);
-    if (match) {
-        return parseInt(match[1]) + 1; // Convertir de 0-149 a 1-150
-    }
-    return 1;
+    return `${config.imageBasePath}${config.imagePrefix}${imageNumber}${config.imageExtension}`;
 };

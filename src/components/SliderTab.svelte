@@ -1,5 +1,5 @@
 <script>
-  import { eyeTrackingImage, config, getImagePath  } from "../stores/appStore.js";
+  import { eyeTrackingImage, config } from "../stores/appStore.js";
   //import { currentImage, config } from "../stores/appStore.js";
   import { onMount } from "svelte";
   import { base } from "$app/paths";
@@ -11,9 +11,9 @@
 
   $: currentConfig = $config;
   // Convertir el currentImage (que va de 1-150) a índice de imagen (0-149)
-  //$: imageIndex = $eyeTrackingImage - 1;
-  //$: imagePath = `${currentConfig.imageBasePath}${currentConfig.imagePrefix}${imageIndex}${currentConfig.imageExtension}`;
-  $: imagePath = getImagePath($eyeTrackingImage, currentConfig);
+  $: imageIndex = $eyeTrackingImage - 1;
+  $: imagePath = `${currentConfig.imageBasePath}${currentConfig.imagePrefix}${imageIndex}${currentConfig.imageExtension}`;
+
   onMount(() => {
     mounted = true;
   });

@@ -48,7 +48,6 @@
   }
 
   async function loadParticipants() {
-    const imageFileIndex = $currentImage - 1; 
     const imageData = eyeTrackingData.filter(d => d.ImageName == $currentImage);
     participants = [...new Set(imageData.map(d => d.participante))].sort((a, b) => a - b);
   }
