@@ -439,15 +439,15 @@
         <div class="legend-items">
           <div class="legend-item">
             <div class="legend-dot green"></div>
-            <span class="legend-label">Punto Inicial</span>
+            <span class="legend-label">starting point</span>
           </div>
           <div class="legend-item">
             <div class="legend-dot red"></div>
-            <span class="legend-label">Punto Final</span>
+            <span class="legend-label">ending point</span>
           </div>
           <div class="legend-item">
             <div class="legend-dot blue"></div>
-            <span class="legend-label">Trayectoria</span>
+            <span class="legend-label">trajectory</span>
           </div>
         </div>
       </div>
