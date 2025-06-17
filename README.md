@@ -7,7 +7,7 @@ Project Page: [https://fgv-vis-2025.github.io/final-project-security-urban-perce
 ## Abstract
 This project introduces a visual prototype centered on Urban Security Perception: a profound exploration into the results of an experiment on how participants of diverse nationalities perceive safety based on various urban images from the city of Rio de Janeiro. This application leverages visualization techniques, utilizing a range of intuitive interactive graphical objects, thereby enabling users to explore all possible characteristics derived from this experiment.
 
-[Link to Paper](https://github.com/FGV-VIS-2025/final-project-security-urban-perception-tracking/blob/main/Final_Paper_SUPT.pdf) | [Link to Demo Video](https://github.com/FGV-VIS-2025/final-project-security-urban-perception-tracking/blob/main/Video_Trailer.mp4)
+[Link to Paper](https://github.com/FGV-VIS-2025/final-project-security-urban-perception-tracking/blob/main/Final_Paper_SUPT.pdf) | [Link to Demo Video](https://drive.google.com/file/d/1Fl3zPNC71CCgjNKnp_jwBXjfyvwcWDHn/view?usp=drive_link)
 
 ## Project's Process
 The group agreed to address the topic of Urban Perception, as one of the members is currently working on this research area. Furthermore, the availability of the dataset containing experimental results, along with comparative datasets from Place2Pulse and auxiliary datasets, sparked interest in developing a visual prototype as the final project.
